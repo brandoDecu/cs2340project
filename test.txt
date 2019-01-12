@@ -1,1 +1,4 @@
 Testing Zack's Commit with Git and SSH key.
+--------------------------- TEST ----------------------------
+Second Test - Changing Git Bash name for Zack and recommit changes to master.
+--------------------------- TEST ----------------------------
