@@ -5,7 +5,7 @@ Our team is developing an Android Application based on the old Palm Pilot game c
 
 You can find information about Space Traders here: http://spronck.net/spacetrader/STFrames.html
 
-Developers: 
+## Developers
 
 
 Max Al-Hasso                        malhasso3@gatech.edu
