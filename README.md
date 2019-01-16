@@ -15,6 +15,7 @@ Ildebrando de Courten
 icourten3@gatech.edu
 
 Josh Martín-Jaffe
+
 jmjaffe37@gatech.edu
 
 Joel Rajakumar                      
