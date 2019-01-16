@@ -1,6 +1,23 @@
 # CS 2340 Android Project
-This is the GitHub repo for our CS 2340 project.
+This is the GitHub repository for our CS 2340 project at the Georgia Institute of Technology during the Spring 2019 semester.
 
-We are developing an Android Application based on the old Palm Pilot game called Space Traders.
+Our team is developing an Android Application based on the old Palm Pilot game called Space Traders.
 
 You can find information about Space Traders here: http://spronck.net/spacetrader/STFrames.html
+
+Developers: 
+
+Zack Vogel  
+dvogel3@gatech.edu
+
+Max Al-Hasso                        
+malhasso3@gatech.edu
+
+Ildebrando de Courten           
+icourten3@gatech.edu
+
+Joel Rajakumar                      
+joeldraj4@gatech.edu
+
+Josh Martín-Jaffe
+jmjaffe37@gatech.edu
