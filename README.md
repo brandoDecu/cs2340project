@@ -7,8 +7,6 @@ You can find information about Space Traders here: http://spronck.net/spacetrade
 
 Developers: 
 
-Zack Vogel  
-dvogel3@gatech.edu
 
 Max Al-Hasso                        
 malhasso3@gatech.edu
@@ -16,8 +14,11 @@ malhasso3@gatech.edu
 Ildebrando de Courten           
 icourten3@gatech.edu
 
+Josh Martín-Jaffe
+jmjaffe37@gatech.edu
+
 Joel Rajakumar                      
 joeldraj4@gatech.edu
 
-Josh Martín-Jaffe
-jmjaffe37@gatech.edu
+Zack Vogel  
+dvogel3@gatech.edu
