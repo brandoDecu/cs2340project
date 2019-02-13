@@ -1,4 +1,4 @@
-package com.example.spacetrader;
+package edu.gatech.space_trader;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
