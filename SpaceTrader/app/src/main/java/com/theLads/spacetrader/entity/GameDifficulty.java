@@ -1,4 +1,4 @@
-package com.example.spacetrader.entity;
+package com.theLads.spacetrader.entity;
 
 public enum GameDifficulty {
 

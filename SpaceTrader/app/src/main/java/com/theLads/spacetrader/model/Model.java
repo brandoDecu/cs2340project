@@ -1,4 +1,4 @@
-package com.example.spacetrader.model;
+package com.theLads.spacetrader.model;
 
 import java.util.HashMap;
 import java.util.Map;

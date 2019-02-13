@@ -1,4 +1,4 @@
-package com.example.spacetrader.model;
+package com.theLads.spacetrader.model;
 
 
 
@@ -9,7 +9,7 @@ public abstract class Interactor {
 
     private Repository myRepository;
 
-    protected Interactor(Repository repo) {
+    Interactor(Repository repo) {
         myRepository = repo;
     }
 

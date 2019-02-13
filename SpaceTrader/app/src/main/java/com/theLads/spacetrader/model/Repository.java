@@ -1,11 +1,11 @@
-package com.example.spacetrader.model;
+package com.theLads.spacetrader.model;
 
 import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.spacetrader.entity.Player;
+import com.theLads.spacetrader.entity.Player;
 
 /**
  * This class is an abstraction of the data storage for the business classes

@@ -1,8 +1,8 @@
-package com.example.spacetrader.model;
+package com.theLads.spacetrader.model;
 
 import android.util.Log;
 
-import com.example.spacetrader.entity.Player;
+import com.theLads.spacetrader.entity.Player;
 
 
 public class PlayerInteractor extends Interactor {

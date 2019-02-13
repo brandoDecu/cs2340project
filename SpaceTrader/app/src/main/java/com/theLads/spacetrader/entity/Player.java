@@ -1,4 +1,4 @@
-package com.example.spacetrader.entity;
+package com.theLads.spacetrader.entity;
 
 /** This class represents a single player for the Space Trader game. */
 public class Player {
