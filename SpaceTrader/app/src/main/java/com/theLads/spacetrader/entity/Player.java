@@ -23,6 +23,9 @@ public class Player {
     /** This represents the player's ship */
     private Ship ship;
 
+    /** Player credits*/
+    private int credits;
+
     /**
      *
      * @param nam name of Character
@@ -38,6 +41,7 @@ public class Player {
         this.traderSkill = trader;
         this.engineerSkill = engineer;
         this.ship = new Ship(ShipType.GNAT);
+        this.credits = 1000;
     }
 
     //Getter methods for the different attributes of the player class
@@ -63,6 +67,8 @@ public class Player {
         return engineerSkill;
     }
 
+    public int getCredits() {return credits;}
+
     //Setter methods for the Player attributes
     public void setName(String nam) { characterName = nam; }
 
@@ -73,6 +79,8 @@ public class Player {
     public void setTraderSkill(int skill) {traderSkill = skill; }
 
     public void setEngineerSkill(int skill) {engineerSkill = skill; }
+
+    public void setCredits(int credits) {this.credits = credits;}
 
 
     @Override
