@@ -20,6 +20,9 @@ public class Player {
     /** This represents the name of the player's character. */
     private String characterName;
 
+    /** This represents the player's ship */
+    private Ship ship;
+
     /**
      *
      * @param nam name of Character
@@ -34,6 +37,7 @@ public class Player {
         this.fighterSkill = fighter;
         this.traderSkill = trader;
         this.engineerSkill = engineer;
+        this.ship = new Ship(ShipType.GNAT);
     }
 
     //Getter methods for the different attributes of the player class
