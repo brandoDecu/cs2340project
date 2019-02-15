@@ -5,6 +5,7 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.theLads.spacetrader.entity.Game;
 import com.theLads.spacetrader.entity.Player;
 
 /**
@@ -26,13 +27,13 @@ public class Repository {
 
 
     /** all the students known in the application */
-    private List<Player> allPlayers;
+    private List<Game> allGames;
 
     /**
      * Make a new Repository object
      */
     public Repository() {
-        allPlayers = new ArrayList<>();
+        allGames = new ArrayList<>();
     }
 
 
@@ -40,25 +41,27 @@ public class Repository {
      * get all the students in teh system
      * @return list of all students
      */
-    public List<Player> getAllPlayers() { return allPlayers;}
+    public List<Game> getAllGames() { return allGames;}
 
 
     /** add a new player to the system
      *
-     * @param player the student to add
+     * @param g the game to add
      */
-    public void addPlayer(Player player) {
-        player.setPlayerId(Repository.getNextUniqueID());
-        allPlayers.add(player);
+    public void addGame(Game g) {
+        g.setGameId(Repository.getNextUniqueID());
+        allGames.add(g);
     }
 
     /**
-     * Updates the values stored in a Student
-     * @param p the student to update
+     * Updates the values stored in a Game. This is useless right now
+     * @param g the game to update
      */
-    public void updatePlayer(Player p) {
-        for (Player player: allPlayers) {
-            if (player.getPlayerId() == p.getPlayerId()) {
+    public void updateGame(Game g) {
+        for (Game game: allGames) {
+            if (game.getGameId() == g.getGameId()) {
+                Player player = game.getPlayer();
+                Player p = g.getPlayer();
                 player.setName(p.getName());
                 player.setFighterSkill(p.getFighterSkill());
                 player.setPilotSkill(p.getPilotSkill());
@@ -67,6 +70,6 @@ public class Repository {
                 return;
             }
         }
-        Log.d("APP", "Student not found with id = " + p.getPlayerId());
+        Log.d("APP", "Game not found with id = " + g.getGameId());
     }
 }

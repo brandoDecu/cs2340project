@@ -63,8 +63,6 @@ public class Player {
         return engineerSkill;
     }
 
-    public int getPlayerId() { return playerId; }
-
     //Setter methods for the Player attributes
     public void setName(String nam) { characterName = nam; }
 
@@ -75,8 +73,6 @@ public class Player {
     public void setTraderSkill(int skill) {traderSkill = skill; }
 
     public void setEngineerSkill(int skill) {engineerSkill = skill; }
-
-    public void setPlayerId(int id) {this.playerId = id; }
 
 
     @Override

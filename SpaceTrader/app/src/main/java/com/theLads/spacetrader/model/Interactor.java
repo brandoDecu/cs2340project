@@ -16,4 +16,5 @@ public abstract class Interactor {
     protected Repository getRepository() {
         return myRepository;
     }
+
 }
