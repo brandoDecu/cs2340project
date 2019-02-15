@@ -13,15 +13,12 @@ import java.util.Map;
  */
 
 public class Model {
+//    Model is a facade so that UI knows nothing about the backend
 
     /** the data repository */
     private Repository myRepository;
 
     private Map<String, Object> interactorMap;
-
-    private Game game;
-
-    private Player player;
 
     private static  Model instance = new Model();
 
@@ -39,17 +36,15 @@ public class Model {
     }
 
     private void registerInteractors() {
-        interactorMap.put("Player", new PlayerInteractor(myRepository));
+        interactorMap.put("Game", new GameInteractor(myRepository));
     }
 
 
-    public PlayerInteractor getPlayerInteractor() {
-        return (PlayerInteractor) interactorMap.get("Player");
+    public GameInteractor getGameInteractor() {
+        return (GameInteractor) interactorMap.get("Game");
     }
 
-//    public void createGame(GameDifficulty diff,String id, int pilot, int fighter, int trader, int enginr, int name) {
-//        game = new Game(diff);
-//        player = new Player(id, pilot, fighter, trader, enginr, name)
-//    }
+
+
 
 }
