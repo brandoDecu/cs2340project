@@ -3,5 +3,3 @@ Testing Zack's Commit with Git and SSH key.
 Second Test - Changing Git Bash name for Zack and recommit changes to master.
 --------------------------- TEST ----------------------------
 Third Test - Adding Verification flag for commit command git commit -S -m
---------------------------- TEST ----------------------------
-Testing Joel's collaboration setting
