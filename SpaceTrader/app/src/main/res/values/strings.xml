@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SpaceTrader</string>
+    <string name="app_name">Space Trader</string>
     <string name="welcome_to_space_trader">Welcome to Space Trader!</string>
     <string name="player_name">Player Name</string>
 </resources>
