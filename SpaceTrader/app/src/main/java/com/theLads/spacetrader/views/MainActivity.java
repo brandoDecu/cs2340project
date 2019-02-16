@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.theLads.spacetrader.R;
 import com.theLads.spacetrader.entity.GameDifficulty;
@@ -41,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
         editTraderSkill = findViewById(R.id.editTraderSkill);
         editPilotSkill = findViewById(R.id.editPilotSkill);
         editFighterSkill = findViewById(R.id.editFighterSkill);
+
+        difficultySpinner = findViewById(R.id.difficultySpinner);
 //        Button button = findViewById(R.id.add_button);
 
         ArrayAdapter<GameDifficulty> adapter = new ArrayAdapter<>(this,
@@ -52,31 +55,38 @@ public class MainActivity extends AppCompatActivity {
     public void onAddPressed(View view) {
         Log.d("Edit", "Add/Update Game Pressed");
 
-        String name = nameField.getText().toString();
         GameDifficulty difficulty = (GameDifficulty) difficultySpinner.getSelectedItem();
+        int engineerS = 0;
+        int tradeS = 0;
+        int pilotS = 0;
+        int fightS = 0;
+        int total = 0;
 
         try {
-            int engineerS = Integer.parseInt(editEngineerSkill.getText().toString());
-            int tradeS = Integer.parseInt(editTraderSkill.getText().toString());
-            int pilotS = Integer.parseInt(editPilotSkill.getText().toString());
-            int fightS = Integer.parseInt(editFighterSkill.getText().toString());
+            engineerS = Integer.parseInt(editEngineerSkill.getText().toString());
+            tradeS = Integer.parseInt(editTraderSkill.getText().toString());
+            pilotS = Integer.parseInt(editPilotSkill.getText().toString());
+            fightS = Integer.parseInt(editFighterSkill.getText().toString());
+            total = engineerS + tradeS + pilotS + fightS;
+
+            String name = nameField.getText().toString();
         } catch (Exception e) {
-
+            Toast.makeText(this, "You must write valid, numbers in each skill field", Toast.LENGTH_LONG).show();
         }
 
-//        student.setName(nameField.getText().toString());
-//        student.setMajor((String) majorSpinner.getSelectedItem());
-//        student.setStanding(ClassStanding.val2e( (String) standingSpinner.getSelectedItem()));
 
-        Log.d("Edit", "Got new player info: " + student);
+//        //student.setName(nameField.getText().toString());
+//        //student.setMajor((String) majorSpinner.getSelectedItem());
+//        //student.setStanding(ClassStanding.val2e( (String) standingSpinner.getSelectedItem()));
 
-        //do the right thing depending on whether this is a new student or an edit
-        if (editing) {
-            viewModel.updateStudent(student);
+        if (engineerS < 0 || tradeS < 0 || pilotS < 0 || fightS < 0) {
+            Toast.makeText(this, "Skill points cannot be negative bitch", Toast.LENGTH_LONG).show();
+
+        } else if (total == 16) {
+            Toast.makeText(this, "Character created!", Toast.LENGTH_LONG).show();
+//            finish();
         } else {
-            viewModel.addStudent(student);
+            Toast.makeText(this, "Skill points must add up to 16", Toast.LENGTH_LONG).show();
         }
-
-        finish();
     }
 }
