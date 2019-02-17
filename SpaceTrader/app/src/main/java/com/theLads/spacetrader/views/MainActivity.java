@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
             String name = nameField.getText().toString();
         } catch (Exception e) {
-            Toast.makeText(this, "You must write valid, numbers in each skill field", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "You must write valid numbers in each skill field", Toast.LENGTH_LONG).show();
         }
 
 
@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
 //        //student.setStanding(ClassStanding.val2e( (String) standingSpinner.getSelectedItem()));
 
         if (engineerS < 0 || tradeS < 0 || pilotS < 0 || fightS < 0) {
-            Toast.makeText(this, "Skill points cannot be negative bitch", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Skill points cannot be negative", Toast.LENGTH_LONG).show();
 
         } else if (total == 16) {
             Toast.makeText(this, "Character created!", Toast.LENGTH_LONG).show();
