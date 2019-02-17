@@ -67,6 +67,8 @@ public class Repository {
                 player.setPilotSkill(p.getPilotSkill());
                 player.setTraderSkill(p.getTraderSkill());
                 player.setEngineerSkill(p.getEngineerSkill());
+                player.setCredits(p.getCredits());
+                player.setShip(p.getShip());
                 return;
             }
         }

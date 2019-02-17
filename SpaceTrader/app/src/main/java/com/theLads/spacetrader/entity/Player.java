@@ -26,6 +26,8 @@ public class Player {
     /** Player credits*/
     private int credits;
 
+    private GameDifficulty difficulty;
+
     /**
      *
      * @param nam name of Character
@@ -69,6 +71,9 @@ public class Player {
 
     public int getCredits() {return credits;}
 
+    public Ship getShip() {return ship;}
+
+
     //Setter methods for the Player attributes
     public void setName(String nam) { characterName = nam; }
 
@@ -82,12 +87,16 @@ public class Player {
 
     public void setCredits(int credits) {this.credits = credits;}
 
+    public void setShip(Ship ship) {this.ship = ship; }
+
+
 
     @Override
     public String toString() {
         return String.format("Player: %s, Pilot: %d, Fighter: %d, Trader: %d," +
-                        "Engineer: %d", characterName, pilotSkill, fighterSkill,
-                traderSkill, engineerSkill);
+                        "Engineer: %d, Credits: %d, " + ship,
+                characterName, pilotSkill, fighterSkill,
+                traderSkill, engineerSkill, credits);
     }
 
 }

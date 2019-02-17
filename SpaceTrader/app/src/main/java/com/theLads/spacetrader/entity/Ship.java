@@ -1,9 +1,10 @@
 package com.theLads.spacetrader.entity;
 
 public class Ship {
+
     private ShipType type;
     private int health;
-
+    private int cargoCapacity;
 
     /*
     Constructor for Ship
@@ -12,6 +13,7 @@ public class Ship {
 
         this.type = type;
         this.health = type.getMaxHealth();
+        this.cargoCapacity = type.getCargoCapaticy();
     }
 
 
@@ -28,5 +30,11 @@ public class Ship {
      */
     public int getHealth() {
         return health;
+    }
+
+    @Override
+    public String toString() {
+        return "Ship Type: " + type + " with Max Health: " +
+                health + " with Cargo Capacity: " + cargoCapacity;
     }
 }

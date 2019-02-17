@@ -29,9 +29,5 @@ public enum ShipType {
         return cargoCapaticy;
     }
 
-    @Override
-    public String toString() {
-        return "Ship Type: " + typeName + " with Max Health: " +
-                maxHealth + " with Cargo Capacity: " + cargoCapaticy;
-    }
+
 }

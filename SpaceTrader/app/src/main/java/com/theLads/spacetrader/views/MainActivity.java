@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.theLads.spacetrader.R;
+import com.theLads.spacetrader.entity.Game;
 import com.theLads.spacetrader.entity.GameDifficulty;
 import com.theLads.spacetrader.entity.Player;
 import com.theLads.spacetrader.viewmodels.AddGameViewModel;
@@ -31,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
     private Spinner difficultySpinner;
 
     private Player player;
+
+    private Game game;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
