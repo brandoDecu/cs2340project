@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.theLads.spacetrader.R;
 import com.theLads.spacetrader.entity.GameDifficulty;
+import com.theLads.spacetrader.entity.Player;
 import com.theLads.spacetrader.viewmodels.AddGameViewModel;
 
 
@@ -28,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
     private EditText editFighterSkill;
 
     private Spinner difficultySpinner;
+
+    private Player player;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
         int fightS = 0;
         int total = 0;
 
+        String name = "";
+
         try {
             engineerS = Integer.parseInt(editEngineerSkill.getText().toString());
             tradeS = Integer.parseInt(editTraderSkill.getText().toString());
@@ -69,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
             fightS = Integer.parseInt(editFighterSkill.getText().toString());
             total = engineerS + tradeS + pilotS + fightS;
 
-            String name = nameField.getText().toString();
+            name = (String) nameField.getText().toString();
         } catch (Exception e) {
             Toast.makeText(this, "You must write valid numbers in each skill field", Toast.LENGTH_LONG).show();
         }
@@ -84,6 +89,9 @@ public class MainActivity extends AppCompatActivity {
 
         } else if (total == 16) {
             Toast.makeText(this, "Character created!", Toast.LENGTH_LONG).show();
+            //String nam, int pilot, int fighter, int trader, int engineer
+            player = new Player(name, pilotS, fightS, tradeS,  engineerS);
+            Log.d("Player Made: ", player.toString());
 //            finish();
         } else {
             Toast.makeText(this, "Skill points must add up to 16", Toast.LENGTH_LONG).show();
