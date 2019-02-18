@@ -1,5 +1,6 @@
 package com.theLads.spacetrader.views;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -56,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
                 R.layout.spinner_item, GameDifficulty.values());
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         difficultySpinner.setAdapter(adapter);
+
+        viewModel = ViewModelProviders.of(this).get(AddGameViewModel.class);
     }
 
     public void onAddPressed(View view) {
@@ -76,8 +79,32 @@ public class MainActivity extends AppCompatActivity {
             pilotS = Integer.parseInt(editPilotSkill.getText().toString());
             fightS = Integer.parseInt(editFighterSkill.getText().toString());
             total = engineerS + tradeS + pilotS + fightS;
+//            Toast.makeText(this, "" + total, Toast.LENGTH_LONG).show();
 
             name = (String) nameField.getText().toString();
+
+
+            if (name.equals("")) {
+                Toast.makeText(this, "Name cannot be empty", Toast.LENGTH_LONG).show();
+
+            } else if (engineerS < 0 || tradeS < 0 || pilotS < 0 || fightS < 0) {
+                Toast.makeText(this, "Skill points cannot be negative", Toast.LENGTH_LONG).show();
+
+
+            } else if (total == 16) {
+                Toast.makeText(this, "Character created!", Toast.LENGTH_LONG).show();
+                //String nam, int pilot, int fighter, int trader, int engineer
+
+                player = new Player(name, pilotS, fightS, tradeS,  engineerS);
+                Log.d("Player Made: ", player.toString());
+                viewModel.createGame(difficulty, name, pilotS, fightS, tradeS, engineerS);
+//            finish();
+            } else {
+                Toast.makeText(this, "Skill points must add up to 16", Toast.LENGTH_LONG).show();
+            }
+
+
+
         } catch (Exception e) {
             Toast.makeText(this, "You must write valid numbers in each skill field", Toast.LENGTH_LONG).show();
         }
@@ -87,17 +114,6 @@ public class MainActivity extends AppCompatActivity {
 //        //student.setMajor((String) majorSpinner.getSelectedItem());
 //        //student.setStanding(ClassStanding.val2e( (String) standingSpinner.getSelectedItem()));
 
-        if (engineerS < 0 || tradeS < 0 || pilotS < 0 || fightS < 0) {
-            Toast.makeText(this, "Skill points cannot be negative", Toast.LENGTH_LONG).show();
 
-        } else if (total == 16) {
-            Toast.makeText(this, "Character created!", Toast.LENGTH_LONG).show();
-            //String nam, int pilot, int fighter, int trader, int engineer
-            player = new Player(name, pilotS, fightS, tradeS,  engineerS);
-            Log.d("Player Made: ", player.toString());
-//            finish();
-        } else {
-            Toast.makeText(this, "Skill points must add up to 16", Toast.LENGTH_LONG).show();
-        }
     }
 }
