@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 //        Button button = findViewById(R.id.add_button);
 
         ArrayAdapter<GameDifficulty> adapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_spinner_item, GameDifficulty.values());
+                R.layout.spinner_item, GameDifficulty.values());
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         difficultySpinner.setAdapter(adapter);
     }
