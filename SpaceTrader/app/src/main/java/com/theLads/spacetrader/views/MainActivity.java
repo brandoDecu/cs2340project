@@ -94,7 +94,6 @@ public class MainActivity extends AppCompatActivity {
             } else if (total == 16) {
                 Toast.makeText(this, "Character created!", Toast.LENGTH_LONG).show();
 
-                Log.d("Player Made: ", player.toString());
                 viewModel.createGame(difficulty, name, pilotS, fightS, tradeS, engineerS);
 //            finish();
             } else {
