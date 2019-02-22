@@ -27,37 +27,19 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="394dp"
-        android:layout_height="61dp"
+        android:layout_height="34dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="Welcome to Space Trader!"
-        android:textAlignment="center"
-        android:textColor="#FFFF"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/enter_info"
-        android:layout_width="395dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="Enter Player Information"
         android:textAlignment="center"
         android:textColor="#FFFF"
-        android:textSize="18sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
@@ -79,12 +61,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/editPilotSkill"
-        app:layout_constraintTop_toBottomOf="@+id/enter_info" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.42000002" />
 
     <TextView
         android:id="@+id/ViewText3"
         android:layout_width="395dp"
-        android:layout_height="48dp"
+        android:layout_height="41dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
@@ -101,18 +84,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.37" />
+        app:layout_constraintVertical_bias="0.32999998" />
 
     <EditText
         android:id="@+id/editPilotSkill"
         android:layout_width="180dp"
-        android:layout_height="64dp"
+        android:layout_height="44dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
@@ -130,12 +112,11 @@
     <EditText
         android:id="@+id/editFighterSkill"
         android:layout_width="180dp"
-        android:layout_height="63dp"
+        android:layout_height="44dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
         android:hint="Fighter Skill Points"
@@ -151,7 +132,7 @@
     <EditText
         android:id="@+id/editTraderSkill"
         android:layout_width="180dp"
-        android:layout_height="64dp"
+        android:layout_height="44dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
@@ -173,13 +154,12 @@
     <EditText
         android:id="@+id/editEngineerSkill"
         android:layout_width="180dp"
-        android:layout_height="64dp"
+        android:layout_height="44dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
         android:hint="Engineer Skill Points"
@@ -195,7 +175,7 @@
 
     <Spinner
         android:id="@+id/difficultySpinner"
-        android:layout_width="199dp"
+        android:layout_width="142dp"
         android:layout_height="29dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
@@ -215,7 +195,7 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="194dp"
+        android:layout_width="175dp"
         android:layout_height="33dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
@@ -223,18 +203,18 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
-        android:text="Difficulty Level"
-        android:textAlignment="viewStart"
+        android:text="Difficulty Level:"
+        android:textAlignment="textEnd"
         android:textColor="#FFFF"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/difficultySpinner"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/difficultySpinner"
-        app:layout_constraintVertical_bias="0.44" />
+        app:layout_constraintVertical_bias="0.26999998" />
 
     <Button
         android:id="@+id/confirmPlayerButton"
@@ -248,9 +228,10 @@
         android:text="@string/accept"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.973"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/difficultySpinner"
-        app:layout_constraintVertical_bias="0.7" />
+        app:layout_constraintTop_toBottomOf="@+id/difficultySpinner"
+        app:layout_constraintVertical_bias="0.88" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline"
