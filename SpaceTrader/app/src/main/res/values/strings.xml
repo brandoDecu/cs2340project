@@ -1,6 +1,31 @@
 <resources>
     <string name="app_name">Space Trader</string>
+    <string name="choose_ss">Choose a Solar System</string>
     <string name="welcome_to_space_trader">Welcome to Space Trader!</string>
     <string name="player_name">Player Name</string>
+    <string name="max_pts">Player Skill Attributes (16 points)</string>
+    <string name="diff_level">Difficulty Level:</string>
     <string name="accept">Accept</string>
+
+
+    <string name="story0">Welcome Space Trader!</string>
+    <string name="story1">Get ready to embark in a wild adventure that will span the vast infinity of space.\n
+
+        You will be trading all kinds of goods to all kinds of wacky individuals across the
+        cosmos.\n
+        By taking advantage of supply and demand differences between solar systems
+        you have the opportunity to amass a forture over time and become an interplanetary multigazillionaire.
+    </string>
+
+
+
+
+
+
+
+
+
+
+
+
 </resources>

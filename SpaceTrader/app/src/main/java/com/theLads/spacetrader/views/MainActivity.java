@@ -1,6 +1,7 @@
 package com.theLads.spacetrader.views;
 
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -95,7 +96,11 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Character created!", Toast.LENGTH_LONG).show();
 
                 viewModel.createGame(difficulty, name, pilotS, fightS, tradeS, engineerS);
-//            finish();
+                Intent i = new Intent(this, NewActivity.class);
+                this.startActivity(i);
+                this.finish();
+
+//
             } else {
                 Toast.makeText(this, "Skill points must add up to 16", Toast.LENGTH_LONG).show();
             }
@@ -105,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
         } catch (Exception e) {
             Toast.makeText(this, "You must write valid numbers in each skill field", Toast.LENGTH_LONG).show();
         }
+
 
 
 //        //student.setName(nameField.getText().toString());
