@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.theLads.spacetrader.R;
+import com.theLads.spacetrader.entity.Galaxy;
 import com.theLads.spacetrader.entity.Game;
 import com.theLads.spacetrader.entity.GameDifficulty;
 import com.theLads.spacetrader.entity.Player;

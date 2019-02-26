@@ -5,11 +5,13 @@ public class Game {
     private GameDifficulty difficulty;
     private Player player;
     private int gameId;
+    private Galaxy galaxy;
 
     /*
     Constructor for Game
      */
-    public Game(GameDifficulty difficulty, Player player) {
+    public Game(GameDifficulty difficulty, Player player, Galaxy galaxy) {
+        this.galaxy = galaxy;
         this.difficulty = difficulty;
         this.player = player;
     }
