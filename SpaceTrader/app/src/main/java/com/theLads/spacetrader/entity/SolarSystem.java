@@ -38,7 +38,7 @@ public class SolarSystem {
     }
     @Override
     public String toString() {
-        return String.format("Solar System: %s, Resource Level: %d, Tech Level: %d, " +
+        return String.format("Solar System %s, Resource Level: %d, Tech Level: %d, " +
                         "Location: (%d, %d)", name,
                 resourceLevel, techLevel, xCoord, yCoord);
     }
