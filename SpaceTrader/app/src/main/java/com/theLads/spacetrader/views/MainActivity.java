@@ -2,6 +2,7 @@ package com.theLads.spacetrader.views;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -13,7 +14,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.theLads.spacetrader.R;
-import com.theLads.spacetrader.entity.Galaxy;
 import com.theLads.spacetrader.entity.Game;
 import com.theLads.spacetrader.entity.GameDifficulty;
 import com.theLads.spacetrader.entity.Player;
@@ -38,10 +38,14 @@ public class MainActivity extends AppCompatActivity {
 
     private Game game;
 
+    MediaPlayer music;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        music = MediaPlayer.create(MainActivity.this, R.raw.music_intro);
+        music.start();
 
         /*
          * Grab the dialog widgets so we can get info for later
@@ -118,6 +122,9 @@ public class MainActivity extends AppCompatActivity {
 //        //student.setMajor((String) majorSpinner.getSelectedItem());
 //        //student.setStanding(ClassStanding.val2e( (String) standingSpinner.getSelectedItem()));
 
-
+    }
+    public void onResume() {
+        super.onResume();
+        music.start();
     }
 }
