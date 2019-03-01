@@ -1,4 +1,4 @@
-package com.theLads.spacetrader.entity;
+package com.theLads.spacetrader.entity.enums;
 
 public enum ShipType {
     GNAT ("GNAT", 100,500);
