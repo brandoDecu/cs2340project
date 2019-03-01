@@ -7,14 +7,19 @@ public enum ShipType {
 
     private int maxHealth;
 
-    private int cargoCapaticy;
+    private int cargoCapacity;
 
+    /**
+     * Constructor for the type of ship to be created
+     * @param typeName name of the type of ship
+     * @param maxHealth the overall total health the ship can have
+     * @param cargoCapacity the overall total capacity a ship can have
+     */
 
-
-    ShipType(String typeName, int maxHealth, int cargoCapaticy) {
+    ShipType(String typeName, int maxHealth, int cargoCapacity) {
         this.typeName = typeName;
         this.maxHealth = maxHealth;
-        this.cargoCapaticy = cargoCapaticy;
+        this.cargoCapacity = cargoCapacity;
     }
 
     public String getTypeName() {
@@ -25,8 +30,8 @@ public enum ShipType {
         return maxHealth;
     }
 
-    public int getCargoCapaticy() {
-        return cargoCapaticy;
+    public int getCargoCapacity() {
+        return cargoCapacity;
     }
 
 

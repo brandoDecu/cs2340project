@@ -6,27 +6,30 @@ public class Ship {
     private int health;
     private int cargoCapacity;
 
-    /*
-    Constructor for Ship
+    /**
+     * Ship constructor that takes in a ShipType enum and creates a ship for the player
+     * @param type
      */
     public Ship(ShipType type) {
 
         this.type = type;
         this.health = type.getMaxHealth();
-        this.cargoCapacity = type.getCargoCapaticy();
+        this.cargoCapacity = type.getCargoCapacity();
     }
 
 
 
-    /*
+    /**
     Getter for ShipType
+     @return ShipType of ship
      */
     public ShipType getType() {
         return type;
     }
 
-    /*
+    /**
     Getter for health
+     @return max health
      */
     public int getHealth() {
         return health;

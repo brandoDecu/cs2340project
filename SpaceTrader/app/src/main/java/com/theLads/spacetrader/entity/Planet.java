@@ -10,7 +10,11 @@ public class Planet {
 
     private int resources;
 
-
+    /**
+     * Planet constructor that takes in a name and creates a planet with random values for tech,
+     * resources, and location in the solar system
+     * @param nam name of the planet
+     */
 
     Planet(String nam) {
 
@@ -30,13 +34,28 @@ public class Planet {
         this.resources =  resultResource;
     }
 
+    /**
+     * Getter method for the name of planet
+     * @return String
+     */
+
     public String getName() {
         return name;
     }
 
+    /**
+     * Getter method for the tech level of the planet
+     * @return String
+     */
+
     public int getTechLvl() {
         return techLvl;
     }
+
+    /**
+     * Getter method for the resources level of planet
+     * @return String
+     */
 
     public int getResources() {
         return resources;

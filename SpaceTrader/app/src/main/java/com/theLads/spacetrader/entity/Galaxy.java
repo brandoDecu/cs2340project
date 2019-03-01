@@ -9,6 +9,10 @@ public class Galaxy {
 
     Collection<SolarSystem> galaxyList = new ArrayList<>();
 
+    /**
+     * Galaxy constructor that creates a galaxy upon game entry
+     */
+
     public Galaxy() {
         SolarSystem xi = new SolarSystem("Xi");
         galaxyList.add(xi);

@@ -16,6 +16,10 @@ public class SolarSystem {
 
     private int yCoord;
 
+    /**
+     * Solar system constructor that builds a solar system for the game
+     * @param name Name of the solar system to be created; creates a planet with the same name
+     */
 
     SolarSystem(String name) {
         this.planet = new Planet(name);
@@ -27,12 +31,27 @@ public class SolarSystem {
         techLevel = planet.getTechLvl();
         resourceLevel = planet.getResources();
     }
+
+    /**
+     * Getter method for the name of solar system
+     * @return String
+     */
     public String getName() {
         return name;
     }
+
+    /**
+     * Getter method for the tech level of solar system
+     * @return int
+     */
     public int getTechLevel() {
         return techLevel;
     }
+
+    /**
+     * Getter method for the resource level of solar system
+     * @return int
+     */
     public int getResourceLevel() {
         return resourceLevel;
     }
