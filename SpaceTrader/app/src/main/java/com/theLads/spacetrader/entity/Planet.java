@@ -36,7 +36,7 @@ public class Planet {
 
     /**
      * Getter method for the name of planet
-     * @return String
+     * @return String name
      */
 
     public String getName() {
@@ -45,7 +45,7 @@ public class Planet {
 
     /**
      * Getter method for the tech level of the planet
-     * @return String
+     * @return tech level
      */
 
     public int getTechLvl() {
@@ -54,7 +54,7 @@ public class Planet {
 
     /**
      * Getter method for the resources level of planet
-     * @return String
+     * @return resources level
      */
 
     public int getResources() {
