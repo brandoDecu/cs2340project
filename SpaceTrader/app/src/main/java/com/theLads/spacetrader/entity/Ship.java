@@ -1,5 +1,7 @@
 package com.theLads.spacetrader.entity;
 
+import com.theLads.spacetrader.entity.enums.ShipType;
+
 public class Ship {
 
     private ShipType type;

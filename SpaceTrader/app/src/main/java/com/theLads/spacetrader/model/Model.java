@@ -1,9 +1,5 @@
 package com.theLads.spacetrader.model;
 
-import com.theLads.spacetrader.entity.Game;
-import com.theLads.spacetrader.entity.GameDifficulty;
-import com.theLads.spacetrader.entity.Player;
-
 import java.util.HashMap;
 import java.util.Map;
 

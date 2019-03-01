@@ -10,12 +10,11 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.theLads.spacetrader.R;
 import com.theLads.spacetrader.entity.Game;
-import com.theLads.spacetrader.entity.GameDifficulty;
+import com.theLads.spacetrader.entity.enums.GameDifficulty;
 import com.theLads.spacetrader.entity.Player;
 import com.theLads.spacetrader.viewmodels.AddGameViewModel;
 
@@ -48,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         music.start();
         music.setLooping(true);
 
-        /*
+                /*
          * Grab the dialog widgets so we can get info for later
          */
         nameField = findViewById(R.id.nameField);

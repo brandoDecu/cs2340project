@@ -1,5 +1,8 @@
 package com.theLads.spacetrader.entity;
 
+import com.theLads.spacetrader.entity.enums.GameDifficulty;
+import com.theLads.spacetrader.entity.enums.ShipType;
+
 /** This class represents a single player for the Space Trader game. */
 public class Player {
 

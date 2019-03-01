@@ -7,7 +7,7 @@ import android.util.Log;
 
 import com.theLads.spacetrader.entity.Galaxy;
 import com.theLads.spacetrader.entity.Game;
-import com.theLads.spacetrader.entity.GameDifficulty;
+import com.theLads.spacetrader.entity.enums.GameDifficulty;
 import com.theLads.spacetrader.entity.Player;
 import com.theLads.spacetrader.model.GameInteractor;
 import com.theLads.spacetrader.model.Model;

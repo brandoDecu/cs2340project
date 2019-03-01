@@ -1,16 +1,19 @@
 package com.theLads.spacetrader.entity;
 
+import com.theLads.spacetrader.entity.enums.Resources;
+import com.theLads.spacetrader.entity.enums.TechLevel;
+
 import java.util.Random;
 
 public class Planet {
 
     private String name;
 
-    private int techLvl;
+    private TechLevel techLvl;
 
-    private int resources;
+    private Resources resources;
 
-    private marketPlace market;
+    private MarketPlace market;
 
     /**
      * Planet constructor that takes in a name and creates a planet with random values for tech,
@@ -26,16 +29,16 @@ public class Planet {
         int lowTech = 0;
         int highTech = 7;
         int resultTech = r1.nextInt(highTech-lowTech) + lowTech;
-        this.techLvl = resultTech;
+        this.techLvl = TechLevel.values()[resultTech];
 
 
         Random r2 = new Random();
         int lowResource = 0;
         int highResource = 12;
         int resultResource = r2.nextInt(highResource-lowResource) + lowResource;
-        this.resources =  resultResource;
+        this.resources =  Resources.values()[resultResource];
 
-        this.market = new marketPlace();
+        this.market = new MarketPlace(techLvl, resources);
     }
 
 
@@ -53,7 +56,7 @@ public class Planet {
      * @return tech level
      */
 
-    public int getTechLvl() {
+    public TechLevel getTechLvl() {
         return techLvl;
     }
 
@@ -62,7 +65,7 @@ public class Planet {
      * @return resources level
      */
 
-    public int getResources() {
+    public Resources getResources() {
         return resources;
     }
 
