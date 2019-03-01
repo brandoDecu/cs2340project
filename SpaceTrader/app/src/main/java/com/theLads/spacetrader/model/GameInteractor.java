@@ -22,6 +22,9 @@ public class GameInteractor extends Interactor {
         Log.d("APP", "Interactor: updating game: " + g);
     }
 
+    public Game getCurrentGame() {
+        return getRepository().getCurrentGame();
+    }
 //    public void buyItem
 //    public void sellItem
 }

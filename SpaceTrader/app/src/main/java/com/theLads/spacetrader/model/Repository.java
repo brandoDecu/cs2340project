@@ -25,6 +25,8 @@ public class Repository {
         return next_id++;
     }
 
+    private Game currentGame;
+
 
     /** all the students known in the application */
     private List<Game> allGames;
@@ -43,6 +45,9 @@ public class Repository {
      */
     public List<Game> getAllGames() { return allGames;}
 
+    public Game getCurrentGame(){
+        return currentGame;
+    }
 
     /** add a new player to the system
      *
@@ -50,8 +55,10 @@ public class Repository {
      */
     public void addGame(Game g) {
         g.setGameId(Repository.getNextUniqueID());
+        currentGame = g;
         allGames.add(g);
     }
+
 
     /**
      * Updates the values stored in a Game. This is useless right now
