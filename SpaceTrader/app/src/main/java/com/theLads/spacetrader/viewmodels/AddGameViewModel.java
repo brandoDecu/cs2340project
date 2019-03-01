@@ -21,9 +21,6 @@ public class AddGameViewModel extends AndroidViewModel {
     }
 
 
-
-
-
     public void createGame(GameDifficulty diff, String name, int pilot, int fighter, int trader, int enginr) {
 //        validate data here
 
