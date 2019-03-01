@@ -10,6 +10,8 @@ public class Planet {
 
     private int resources;
 
+    private marketPlace market;
+
     /**
      * Planet constructor that takes in a name and creates a planet with random values for tech,
      * resources, and location in the solar system
@@ -32,7 +34,10 @@ public class Planet {
         int highResource = 12;
         int resultResource = r2.nextInt(highResource-lowResource) + lowResource;
         this.resources =  resultResource;
+
+        this.market = new marketPlace();
     }
+
 
     /**
      * Getter method for the name of planet
