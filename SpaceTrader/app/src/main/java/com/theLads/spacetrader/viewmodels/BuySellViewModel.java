@@ -16,6 +16,9 @@ public class BuySellViewModel extends AndroidViewModel {
         super(application);
         interactor = Model.getInstance().getGameInteractor();
     }
+    public Game getCurrentGame() {
+        return interactor.getCurrentGame();
+    }
 
 }
 
