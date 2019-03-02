@@ -1,6 +1,9 @@
 package com.theLads.spacetrader.entity;
 
 import com.theLads.spacetrader.entity.enums.GameDifficulty;
+import com.theLads.spacetrader.entity.enums.ItemType;
+
+import java.util.List;
 
 public class Game {
 
@@ -18,8 +21,6 @@ public class Game {
         this.player = player;
     }
 
-
-
     /* Getter for ID */
     public int getGameId() { return gameId; }
 
@@ -36,6 +37,34 @@ public class Game {
     public Player getPlayer() {
         return player;
     }
+
+    public Galaxy getGalaxy() {
+        return galaxy;
+    }
+
+    public List<Integer> getCargoQuantities() {
+        return player.getCargoQuantities();
+    }
+
+    public List<Double> getMarketPrices() {
+        return galaxy.getMarketPrices();
+    }
+
+    public List<Integer> getMarketQuantities() {
+        return galaxy.getMarketQuantities();
+    }
+
+    public void buyItem(ItemType item, int quantity, double price) {
+        galaxy.buyItem(item, quantity);
+        player.buyItem(item, quantity, price);
+    }
+
+    public void sellItem(ItemType item, int quantity, double price) {
+        galaxy.sellItem(item, quantity);
+        player.sellItem(item, quantity, price);
+    }
+
+    public double getCredits() {return player.getCredits();}
 
 
 }

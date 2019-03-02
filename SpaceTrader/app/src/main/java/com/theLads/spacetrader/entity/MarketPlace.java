@@ -1,5 +1,7 @@
 package com.theLads.spacetrader.entity;
 
+import android.content.ClipData;
+
 import com.theLads.spacetrader.entity.enums.ItemType;
 import com.theLads.spacetrader.entity.enums.Resources;
 import com.theLads.spacetrader.entity.enums.TechLevel;
@@ -29,16 +31,26 @@ public class MarketPlace {
         return new ArrayList<ItemType>(Arrays.asList(ItemType.values()));
     }
 
-    public List<Integer> getItemQuantity() {
+    public List<Integer> getMarketQuantities() {
         return itemQuantity;
     }
 
-    public List<Double> getItemPrice() {
+    public List<Double> getPrices() {
         return itemPrice;
     }
 
-    public void setItemQuantity(ItemType item, int quantity) {
-        int index = getItems().indexOf(item);
-        itemQuantity.set(index, quantity);
+    public double getCostOf(ItemType item) {
+        return itemPrice.get(item.getIndex());
     }
+
+    public int getQuantityOf(ItemType item) {
+        return itemQuantity.get(item.getIndex());
+    }
+
+
+    public void setItemQuantity(ItemType item, int quantity) {
+        itemQuantity.set(item.getIndex(), quantity);
+    }
+
+
 }

@@ -1,8 +1,10 @@
 package com.theLads.spacetrader.entity;
 
+import com.theLads.spacetrader.entity.enums.ItemType;
 import com.theLads.spacetrader.entity.enums.Resources;
 import com.theLads.spacetrader.entity.enums.TechLevel;
 
+import java.util.List;
 import java.util.Random;
 
 public class Planet {
@@ -67,6 +69,24 @@ public class Planet {
 
     public Resources getResources() {
         return resources;
+    }
+
+
+    public List<Double> getMarketPrices() {
+        return market.getPrices();
+    }
+
+    public List<Integer> getMarketQuantities() {
+        return market.getMarketQuantities();
+    }
+
+    public void buyItem(ItemType item, int quantity) {
+        market.setItemQuantity(item, market.getQuantityOf(item) - quantity);
+    }
+
+    public void sellItem(ItemType item, int quantity) {
+        market.setItemQuantity(item, market.getQuantityOf(item) + quantity);
+
     }
 
 }

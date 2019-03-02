@@ -2,12 +2,18 @@ package com.theLads.spacetrader.entity;
 
 import android.util.Log;
 
+import com.theLads.spacetrader.entity.enums.ItemType;
+
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
+import java.util.Random;
 
 public class Galaxy {
 
-    Collection<SolarSystem> solarSystemsList = new ArrayList<>();
+    private List<SolarSystem> solarSystemsList = new ArrayList<>();
+    private SolarSystem currentSolarSystem;
+
 
     /**
      * Galaxy constructor that creates a galaxy upon game entry
@@ -53,6 +59,31 @@ public class Galaxy {
         SolarSystem cretan = new SolarSystem("Cretan");
         solarSystemsList.add(cretan);
         Log.d("Solar System Created", cretan.toString());
+
+        // Current solar system is random upon starting the game
+        Random rand = new Random();
+        currentSolarSystem = solarSystemsList.get(rand.nextInt(solarSystemsList.size()-1));
     }
 
+    public Collection<SolarSystem> getSolarSystemsList() {
+        return solarSystemsList;
+    }
+
+
+    public List<Double> getMarketPrices() {
+        return currentSolarSystem.getMarketPrices();
+    }
+
+    public List<Integer> getMarketQuantities() {
+        return currentSolarSystem.getMarketQuantities();
+    }
+
+    public void buyItem(ItemType item, int quantity) {
+        currentSolarSystem.buyItem(item, quantity);
+    }
+
+    public void sellItem(ItemType item, int quantity) {
+        currentSolarSystem.sellItem(item, quantity);
+
+    }
 }

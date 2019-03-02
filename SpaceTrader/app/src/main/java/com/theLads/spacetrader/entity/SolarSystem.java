@@ -1,6 +1,9 @@
 package com.theLads.spacetrader.entity;
 
+import com.theLads.spacetrader.entity.enums.ItemType;
+
 import java.util.LinkedList;
+import java.util.List;
 
 public class SolarSystem {
 
@@ -28,6 +31,24 @@ public class SolarSystem {
      */
     public String getName() {
         return planet.getName();
+    }
+
+
+    public List<Double> getMarketPrices() {
+        return planet.getMarketPrices();
+    }
+
+    public List<Integer> getMarketQuantities() {
+        return planet.getMarketQuantities();
+    }
+
+    public void buyItem(ItemType item, int quantity) {
+        planet.buyItem(item, quantity);
+    }
+
+    public void sellItem(ItemType item, int quantity) {
+        planet.sellItem(item, quantity);
+
     }
 
 

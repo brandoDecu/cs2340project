@@ -4,6 +4,9 @@ import android.util.Log;
 
 import com.theLads.spacetrader.entity.Game;
 import com.theLads.spacetrader.entity.Player;
+import com.theLads.spacetrader.entity.enums.ItemType;
+
+import java.util.List;
 
 
 public class GameInteractor extends Interactor {
@@ -17,14 +20,31 @@ public class GameInteractor extends Interactor {
         getRepository().addGame(g);
     }
 
-    public void updateGame(Game g) {
-        getRepository().updateGame(g);
-        Log.d("APP", "Interactor: updating game: " + g);
-    }
 
     public Game getCurrentGame() {
         return getRepository().getCurrentGame();
     }
-//    public void buyItem
-//    public void sellItem
+
+
+    public List<Integer> getCargoQuantities() {
+        return getCurrentGame().getCargoQuantities();
+    }
+
+    public List<Double> getMarketPrices() {
+        return getCurrentGame().getMarketPrices();
+    }
+
+    public List<Integer> getMarketQuantities() {
+        return getCurrentGame().getMarketQuantities();
+    }
+
+    public void buyItem(ItemType item, int quantity, double price) {
+        getCurrentGame().buyItem(item, quantity, price);
+    }
+
+    public void sellItem(ItemType item, int quantity, double price) {
+        getCurrentGame().sellItem(item, quantity, price);
+    }
+
+    public double getCredits() {return getCurrentGame().getCredits();}
 }

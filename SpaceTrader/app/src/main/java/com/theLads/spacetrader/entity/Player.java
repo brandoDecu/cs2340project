@@ -1,7 +1,10 @@
 package com.theLads.spacetrader.entity;
 
 import com.theLads.spacetrader.entity.enums.GameDifficulty;
+import com.theLads.spacetrader.entity.enums.ItemType;
 import com.theLads.spacetrader.entity.enums.ShipType;
+
+import java.util.List;
 
 /** This class represents a single player for the Space Trader game. */
 public class Player {
@@ -27,7 +30,7 @@ public class Player {
     private Ship ship;
 
     /** Player credits*/
-    private int credits;
+    private double credits;
 
     private GameDifficulty difficulty;
 
@@ -72,7 +75,7 @@ public class Player {
         return engineerSkill;
     }
 
-    public int getCredits() {return credits;}
+    public double getCredits() {return credits;}
 
     public Ship getShip() {return ship;}
 
@@ -91,6 +94,25 @@ public class Player {
     public void setCredits(int credits) {this.credits = credits;}
 
     public void setShip(Ship ship) {this.ship = ship; }
+
+
+
+    public List<Integer> getCargoQuantities() {
+        return ship.getCargoQuantities();
+    }
+
+    public void buyItem(ItemType item, int quantity, double price) {
+        credits -= price*quantity;
+        ship.setItemQuantity(item, ship.getQuantityOf(item) + quantity);
+    }
+
+    public void sellItem(ItemType item, int quantity, double price) {
+        credits += price*quantity;
+        ship.setItemQuantity(item, ship.getQuantityOf(item) - quantity);
+    }
+
+
+
 
 
 
