@@ -17,16 +17,9 @@
         you have the opportunity to amass a fortune over time and become an interplanetary multibillionaire. \n
         Amass a fortune and retire to the moon!
     </string>
-
-
-
-
-
-
-
-
-
-
+    <string name="buy_activity_title">Buy</string>
+    <string name="buy_quantity">Quantity</string>
+    <string name="buy_activity_desc">How many would you like to buy?</string>
 
 
 </resources>
