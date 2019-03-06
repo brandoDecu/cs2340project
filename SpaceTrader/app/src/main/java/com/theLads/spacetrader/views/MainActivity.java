@@ -85,7 +85,6 @@ public class MainActivity extends AppCompatActivity {
             pilotS = Integer.parseInt(editPilotSkill.getText().toString());
             fightS = Integer.parseInt(editFighterSkill.getText().toString());
             total = engineerS + tradeS + pilotS + fightS;
-//            Toast.makeText(this, "" + total, Toast.LENGTH_LONG).show();
 
             name = (String) nameField.getText().toString();
 
