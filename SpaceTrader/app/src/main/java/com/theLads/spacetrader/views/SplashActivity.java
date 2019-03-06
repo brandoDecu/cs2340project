@@ -10,7 +10,7 @@ public class SplashActivity extends AppCompatActivity {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent = new Intent(this, NewLoadGameActivity.class);
-        startActivity(intent);
-        finish();
+        this.startActivity(intent);
+        this.finish();
     }
 }

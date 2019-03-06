@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Character created!", Toast.LENGTH_LONG).show();
 
                 viewModel.createGame(difficulty, name, pilotS, fightS, tradeS, engineerS);
-                Intent i = new Intent(this, NewActivity.class);
+                Intent i = new Intent(this, GalaxyActivity.class);
                 this.startActivity(i);
                 this.finish();
 
