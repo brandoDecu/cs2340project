@@ -87,7 +87,6 @@ public class MainActivity extends AppCompatActivity {
             pilotS = Integer.parseInt(editPilotSkill.getText().toString());
             fightS = Integer.parseInt(editFighterSkill.getText().toString());
             total = engineerS + tradeS + pilotS + fightS;
-//            Toast.makeText(this, "" + total, Toast.LENGTH_LONG).show();
 
         } catch (Exception e) {
             Toast.makeText(this, "You must write valid numbers in each skill field", Toast.LENGTH_LONG).show();
@@ -104,8 +103,9 @@ public class MainActivity extends AppCompatActivity {
         } else if (total == 16) {
             Toast.makeText(this, "Character created!", Toast.LENGTH_LONG).show();
 
+
             viewModel.createGame(difficulty, name, pilotS, fightS, tradeS, engineerS);
-            Intent i = new Intent(this, NewActivity.class);
+            Intent i = new Intent(this, GalaxyActivity.class);
             this.startActivity(i);
             this.finish();
 
