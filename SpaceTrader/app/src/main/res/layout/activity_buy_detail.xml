@@ -5,20 +5,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/space">
+    android:background="@drawable/store">
+
+    <TextView
+        android:id="@+id/creditsTag"
+        android:layout_width="wrap_content"
+        android:layout_height="21dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="236dp"
+        android:background="#808080"
+        android:text="ActualCredits"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/creditsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="236dp"
+        android:background="#808080"
+        android:text="Your Credits:"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/desc"
         android:layout_width="wrap_content"
         android:layout_height="41dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="260dp"
+        android:layout_marginTop="344dp"
         android:layout_marginEnd="8dp"
+        android:background="#FFFFFF"
         android:text="@string/buy_activity_desc"
-        android:textSize="18sp"
-        android:textColor="#FFFFFF"
+        android:textColor="#000000"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.244"
+        app:layout_constraintHorizontal_bias="0.195"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -29,13 +54,14 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
         android:autofillHints=""
+        android:background="#FFFFFF"
         android:ems="10"
         android:hint="@string/buy_quantity"
         android:inputType="textPersonName"
-        android:textColor="#FFFF"
+        android:textColor="#000000"
         android:textColorHint="#BBCC"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/desc"
@@ -43,41 +69,84 @@
 
 
     <TextView
-        android:id="@+id/Title"
-        android:layout_width="wrap_content"
-        android:layout_height="41dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/buy_activity_title"
-        android:textSize="24sp"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/itemType"
         android:layout_width="wrap_content"
         android:layout_height="21dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="136dp"
+        android:background="#808080"
         android:text="ItemType"
-        android:textColor="#FFFFFF"
+        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Title" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/itemQuant"
         android:layout_width="wrap_content"
         android:layout_height="21dp"
-        android:layout_marginStart="116dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="280dp"
+        android:background="#808080"
         android:text="Item Quant Avail"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/itemType"
-        app:layout_constraintStart_toEndOf="@+id/itemType"
-        app:layout_constraintTop_toBottomOf="@+id/Title"
-        app:layout_constraintVertical_bias="0.0" />
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/priceTag"
+        android:layout_width="wrap_content"
+        android:layout_height="21dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="184dp"
+        android:background="#808080"
+        android:text="ActualPrice"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/itemLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="21dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="136dp"
+        android:background="#808080"
+        android:text="Item:"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/priceLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="184dp"
+        android:background="#808080"
+        android:text="Price:"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/inStore"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="280dp"
+        android:background="#808080"
+        android:text="In Store:"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/Buy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="40dp"
+        android:text="Buy"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quatityField" />
 </android.support.constraint.ConstraintLayout>
