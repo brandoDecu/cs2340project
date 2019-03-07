@@ -1,8 +1,5 @@
 package com.theLads.spacetrader.entity.enums;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 /**
  * Enum class for type of items for the marketplace
  */
