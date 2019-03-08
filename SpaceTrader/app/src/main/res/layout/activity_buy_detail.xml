@@ -26,7 +26,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="236dp"
         android:background="#808080"
-        android:text="Your Credits:"
+        android:text="@string/playerCredits"
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -111,7 +111,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="136dp"
         android:background="#808080"
-        android:text="Item:"
+        android:text="@string/shopItem"
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -123,7 +123,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="184dp"
         android:background="#808080"
-        android:text="Price:"
+        android:text="@string/shopPrice"
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -135,7 +135,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="280dp"
         android:background="#808080"
-        android:text="In Store:"
+        android:text="@string/storeSupply"
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -146,7 +146,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="40dp"
-        android:text="Buy"
+        android:text="@string/buy_detail_activity"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/quatityField" />
 </android.support.constraint.ConstraintLayout>
