@@ -65,7 +65,7 @@ public class Galaxy {
         currentSolarSystem = solarSystemsList.get(rand.nextInt(solarSystemsList.size()-1));
     }
 
-    public Collection<SolarSystem> getSolarSystemsList() {
+    public List<SolarSystem> getSolarSystemsList() {
         return solarSystemsList;
     }
 

@@ -28,28 +28,14 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".views.NewActivity"
+        <activity android:name=".views.GalaxyActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
-        <activity android:name=".views.GalaxyActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
 
         <activity android:name=".views.SolarSystemActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <activity android:name=".views.BuyActivity">
@@ -83,7 +69,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity android:name=".views.NewLoadGameActivity" />
 
 
     </application>

@@ -91,7 +91,7 @@ public class Player {
 
     public void setEngineerSkill(int skill) {engineerSkill = skill; }
 
-    public void setCredits(int credits) {this.credits = credits;}
+    public void setCredits(double credits) {this.credits = credits;}
 
     public void setShip(Ship ship) {this.ship = ship; }
 
@@ -119,7 +119,7 @@ public class Player {
     @Override
     public String toString() {
         return String.format("Player: %s, Pilot: %d, Fighter: %d, Trader: %d," +
-                        "Engineer: %d, Credits: %d, " + ship,
+                        "Engineer: %d, Credits: %.2f, " + ship,
                 characterName, pilotSkill, fighterSkill,
                 traderSkill, engineerSkill, credits);
     }
