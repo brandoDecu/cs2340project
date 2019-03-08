@@ -23,6 +23,7 @@ public class NewLoadGameActivity extends AppCompatActivity{
         music = MediaPlayer.create(NewLoadGameActivity.this, R.raw.music_intro);
         music.start();
         music.setLooping(true);
+        setTitle("");
     }
     public void onNewGamePressed(View view) {
         Intent i = new Intent(this, MainActivity.class);
