@@ -43,9 +43,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        music = MediaPlayer.create(MainActivity.this, R.raw.music_intro);
-        music.start();
-        music.setLooping(true);
 
                 /*
          * Grab the dialog widgets so we can get info for later
