@@ -66,5 +66,15 @@ public class Game {
 
     public double getCredits() {return player.getCredits();}
 
+    public List<SolarSystem> getSolarSystems() {return galaxy.getSolarSystems();}
+
+    public List<String> getSolarSystemNames() {return galaxy.getSolarSystemNames();}
+
+    public List<Integer> getSolarSystemDistances() {return galaxy.getDistances();}
+
+    public void travelTo(SolarSystem solarSystem) {
+        galaxy.travelTo(solarSystem);
+    }
+
 
 }

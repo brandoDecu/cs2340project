@@ -33,6 +33,13 @@ public class SolarSystem {
         return planet.getName();
     }
 
+    public int getxCoord() {
+        return xCoord;
+    }
+
+    public int getyCoord() {
+        return yCoord;
+    }
 
     public List<Double> getMarketPrices() {
         return planet.getMarketPrices();

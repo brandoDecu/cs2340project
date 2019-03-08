@@ -4,6 +4,7 @@ import android.util.Log;
 
 import com.theLads.spacetrader.entity.Game;
 import com.theLads.spacetrader.entity.Player;
+import com.theLads.spacetrader.entity.SolarSystem;
 import com.theLads.spacetrader.entity.enums.ItemType;
 
 import java.util.List;
@@ -47,4 +48,14 @@ public class GameInteractor extends Interactor {
     }
 
     public double getCredits() {return getCurrentGame().getCredits();}
+
+    public List<SolarSystem> getSolarSystems() {return getCurrentGame().getSolarSystems();}
+
+    public List<String> getSolarSystemNames() {return getCurrentGame().getSolarSystemNames();}
+
+    public List<Integer> getSolarSystemDistances() {return getCurrentGame().getSolarSystemDistances();}
+
+    public void travelTo(SolarSystem solarSystem) {
+        getCurrentGame().travelTo(solarSystem);
+    }
 }

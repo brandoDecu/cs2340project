@@ -9,10 +9,14 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Random;
 
+import static java.lang.Math.abs;
+import static java.lang.Math.sqrt;
+
 public class Galaxy {
 
     private List<SolarSystem> solarSystemsList = new ArrayList<>();
     private SolarSystem currentSolarSystem;
+    private static int numSolarSystems;
 
 
     /**
@@ -20,53 +24,52 @@ public class Galaxy {
      */
 
     public Galaxy() {
-        SolarSystem xi = new SolarSystem("Xi");
-        solarSystemsList.add(xi);
-        Log.d("Solar System Created", xi.toString());
+        solarSystemsList.add(new SolarSystem("XiPing"));
+        solarSystemsList.add(new SolarSystem("Squanch"));
+        solarSystemsList.add(new SolarSystem("Ugan"));
+        solarSystemsList.add(new SolarSystem("Squimble"));
+        solarSystemsList.add(new SolarSystem("Urth"));
+        solarSystemsList.add(new SolarSystem("Usuh"));
+        solarSystemsList.add(new SolarSystem("Yumin"));
+        solarSystemsList.add(new SolarSystem("Etaly"));
+        solarSystemsList.add( new SolarSystem("Pelonia"));
+        solarSystemsList.add(new SolarSystem("Cretan"));
 
-        SolarSystem liberia = new SolarSystem("Liberia");
-        solarSystemsList.add(liberia);
-        Log.d("Solar System Created", liberia.toString());
-
-        SolarSystem ugan = new SolarSystem("Ugan");
-        solarSystemsList.add(ugan);
-        Log.d("Solar System Created", ugan.toString());
-
-        SolarSystem russ = new SolarSystem("Russ");
-        solarSystemsList.add(russ);
-        Log.d("Solar System Created", russ.toString());
-
-        SolarSystem ukra = new SolarSystem("Ukra");
-        solarSystemsList.add(ukra);
-        Log.d("Solar System Created", ukra.toString());
-
-        SolarSystem usa = new SolarSystem("Usa");
-        solarSystemsList.add(usa);
-        Log.d("Solar System Created", usa.toString());
-
-        SolarSystem yumin = new SolarSystem("Yumin");
-        solarSystemsList.add(yumin);
-        Log.d("Solar System Created", yumin.toString());
-
-        SolarSystem etaly = new SolarSystem("Etaly");
-        solarSystemsList.add(etaly);
-        Log.d("Solar System Created", etaly.toString());
-
-        SolarSystem peland = new SolarSystem("Peland");
-        solarSystemsList.add(peland);
-        Log.d("Solar System Created", peland.toString());
-
-        SolarSystem cretan = new SolarSystem("Cretan");
-        solarSystemsList.add(cretan);
-        Log.d("Solar System Created", cretan.toString());
+        numSolarSystems = solarSystemsList.size();
 
         // Current solar system is random upon starting the game
         Random rand = new Random();
-        currentSolarSystem = solarSystemsList.get(rand.nextInt(solarSystemsList.size()-1));
+        currentSolarSystem = solarSystemsList.get(rand.nextInt(numSolarSystems-1));
     }
 
-    public List<SolarSystem> getSolarSystemsList() {
+    public List<SolarSystem> getSolarSystems() {
         return solarSystemsList;
+    }
+
+    public List<String> getSolarSystemNames() {
+        List<SolarSystem> solarSystems = getSolarSystems();
+        List<String> names = new ArrayList<>();
+        for (int i = 0; i < numSolarSystems; i++) {
+            names.add(solarSystems.get(i).getName());
+        }
+        return names;
+    }
+
+    public List<Integer> getDistances() {
+        List<SolarSystem> solarSystems = getSolarSystems();
+        List<Integer> distances  = new ArrayList<>();
+        for (int i = 0; i < numSolarSystems; i++) {
+            int xcoord = solarSystems.get(i).getxCoord();
+            int ycoord = solarSystems.get(i).getyCoord();
+
+            int currxCoord = currentSolarSystem.getxCoord();
+            int curryCoord = currentSolarSystem.getyCoord();
+
+            int xDist = abs(xcoord - currxCoord);
+            int yDist = abs(ycoord - curryCoord);
+            distances.add((int) sqrt(xDist*xDist + yDist*yDist));
+        }
+        return distances;
     }
 
 
@@ -84,6 +87,9 @@ public class Galaxy {
 
     public void sellItem(ItemType item, int quantity) {
         currentSolarSystem.sellItem(item, quantity);
+    }
 
+    public void travelTo(SolarSystem solarSystem) {
+        currentSolarSystem = solarSystem;
     }
 }
