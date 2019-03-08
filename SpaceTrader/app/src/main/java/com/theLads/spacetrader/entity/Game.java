@@ -72,5 +72,9 @@ public class Game {
 
     public List<Integer> getSolarSystemDistances() {return galaxy.getDistances();}
 
+    public void travelTo(SolarSystem solarSystem) {
+        galaxy.travelTo(solarSystem);
+    }
+
 
 }

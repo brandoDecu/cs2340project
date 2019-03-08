@@ -87,6 +87,9 @@ public class Galaxy {
 
     public void sellItem(ItemType item, int quantity) {
         currentSolarSystem.sellItem(item, quantity);
+    }
 
+    public void travelTo(SolarSystem solarSystem) {
+        currentSolarSystem = solarSystem;
     }
 }

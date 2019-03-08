@@ -54,4 +54,8 @@ public class GameInteractor extends Interactor {
     public List<String> getSolarSystemNames() {return getCurrentGame().getSolarSystemNames();}
 
     public List<Integer> getSolarSystemDistances() {return getCurrentGame().getSolarSystemDistances();}
+
+    public void travelTo(SolarSystem solarSystem) {
+        getCurrentGame().travelTo(solarSystem);
+    }
 }

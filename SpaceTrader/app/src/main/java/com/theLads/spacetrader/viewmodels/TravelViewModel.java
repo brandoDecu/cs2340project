@@ -28,6 +28,10 @@ public class TravelViewModel extends AndroidViewModel {
 
     public List<Integer> getSolarSystemDistances() {return interactor.getSolarSystemDistances();}
 
+    public void travelTo(SolarSystem solarSystem) {
+        interactor.travelTo(solarSystem);
+    }
+
 
 
 
