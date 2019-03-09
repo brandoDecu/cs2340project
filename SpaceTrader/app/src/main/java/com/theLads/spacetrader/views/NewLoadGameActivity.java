@@ -15,11 +15,11 @@ import com.theLads.spacetrader.R;
 
 public class NewLoadGameActivity extends AppCompatActivity{
 
+    MediaPlayer music;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        MediaPlayer music;
         music = MediaPlayer.create(NewLoadGameActivity.this, R.raw.music_intro);
         music.start();
         music.setLooping(true);
@@ -28,5 +28,11 @@ public class NewLoadGameActivity extends AppCompatActivity{
         Intent i = new Intent(this, MainActivity.class);
         this.startActivity(i);
         this.finish();
+    }
+
+    public void onResume() {
+        super.onResume();
+        music.start();
+        music.setLooping(true);
     }
 }
