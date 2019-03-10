@@ -11,9 +11,9 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 public class MarketPlace {
-
 
 
     private List<Integer> itemQuantity = new ArrayList<>();
@@ -22,8 +22,9 @@ public class MarketPlace {
 
     public MarketPlace(TechLevel techLvl, Resources resources) {
         for(ItemType item : ItemType.values()) {
-            itemQuantity.add(50);
-            itemPrice.add(9.99);
+            itemQuantity.add((new Random().nextInt(40)+10));
+            itemPrice.add((item.getBasePrice()*item.getIndex()/
+                    (resources.getIndex() + techLvl.getIndex())));
         }
     }
 

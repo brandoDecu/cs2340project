@@ -43,9 +43,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        music = MediaPlayer.create(MainActivity.this, R.raw.music_intro);
-        music.start();
-        music.setLooping(true);
 
                 /*
          * Grab the dialog widgets so we can get info for later
@@ -80,39 +77,38 @@ public class MainActivity extends AppCompatActivity {
         String name = "";
 
         try {
+            name = (String) nameField.getText().toString();
+
             engineerS = Integer.parseInt(editEngineerSkill.getText().toString());
             tradeS = Integer.parseInt(editTraderSkill.getText().toString());
             pilotS = Integer.parseInt(editPilotSkill.getText().toString());
             fightS = Integer.parseInt(editFighterSkill.getText().toString());
             total = engineerS + tradeS + pilotS + fightS;
 
-            name = (String) nameField.getText().toString();
-
-
-            if (name.equals("")) {
-                Toast.makeText(this, "Name cannot be empty", Toast.LENGTH_LONG).show();
-
-            } else if (engineerS < 0 || tradeS < 0 || pilotS < 0 || fightS < 0) {
-                Toast.makeText(this, "Skill points cannot be negative", Toast.LENGTH_LONG).show();
-
-
-            } else if (total == 16) {
-                Toast.makeText(this, "Character created!", Toast.LENGTH_LONG).show();
-
-                viewModel.createGame(difficulty, name, pilotS, fightS, tradeS, engineerS);
-                Intent i = new Intent(this, GalaxyActivity.class);
-                this.startActivity(i);
-                this.finish();
-
-//
-            } else {
-                Toast.makeText(this, "Skill points must add up to 16", Toast.LENGTH_LONG).show();
-            }
-
-
-
         } catch (Exception e) {
             Toast.makeText(this, "You must write valid numbers in each skill field", Toast.LENGTH_LONG).show();
+        }
+
+
+        if (name.equals("")) {
+            Toast.makeText(this, "Name cannot be empty", Toast.LENGTH_LONG).show();
+
+        } else if (engineerS < 0 || tradeS < 0 || pilotS < 0 || fightS < 0) {
+            Toast.makeText(this, "Skill points cannot be negative", Toast.LENGTH_LONG).show();
+
+
+        } else if (total == 16) {
+            Toast.makeText(this, "Character created!", Toast.LENGTH_LONG).show();
+
+
+            viewModel.createGame(difficulty, name, pilotS, fightS, tradeS, engineerS);
+            Intent i = new Intent(this, GalaxyActivity.class);
+            this.startActivity(i);
+            this.finish();
+
+//
+        } else {
+            Toast.makeText(this, "Skill points must add up to 16", Toast.LENGTH_LONG).show();
         }
 
 
@@ -124,6 +120,5 @@ public class MainActivity extends AppCompatActivity {
     }
     public void onResume() {
         super.onResume();
-        music.start();
     }
 }
