@@ -1,8 +1,12 @@
 package com.theLads.spacetrader.views;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
 import com.theLads.spacetrader.R;
 import com.theLads.spacetrader.entity.enums.ItemType;
@@ -31,8 +35,7 @@ public class BuyActivity extends AppCompatActivity {
 
         /*
          Set up our recycler view by grabbing the layout for a single item
-         */
-        /*
+         *//*
         RecyclerView recyclerView = findViewById(R.id.item_list);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
