@@ -1,6 +1,7 @@
 package com.theLads.spacetrader.views;
 
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.ClipData;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -19,7 +20,7 @@ public class BuyDetailActivity extends AppCompatActivity {
 
     private BuySellViewModel viewModel;
 
-    private TextView itemType;
+    private TextView itemName;
     private TextView itemQuant;
     private TextView priceTag;
     private TextView creditsTag;
@@ -38,17 +39,18 @@ public class BuyDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buy_detail);
 
+        itemName = findViewById(R.id.itemLabel);
         quatityField = findViewById(R.id.quatityField);
         itemQuant = findViewById(R.id.itemQuant);
         priceTag = findViewById(R.id.priceTag);
         creditsTag = findViewById(R.id.creditsTag);;
-
-
-        supply = Model.getInstance().getGameInteractor().getMarketQuantities().get(0);
-        price = Model.getInstance().getGameInteractor().getMarketPrices().get(0);
+        item = ItemType.valueOf(getIntent().getExtras().getString("ITEM_DATA"));
+        supply = Model.getInstance().getGameInteractor().getMarketQuantities().get(item.ordinal());
+        price = Model.getInstance().getGameInteractor().getMarketPrices().get(item.ordinal());
         Double credits = Model.getInstance().getGameInteractor().getCredits();
 
-        itemQuant.setText(supply);
+        itemName.setText(String.format("%s", item.toString()));
+        itemQuant.setText(String.format("%d", supply));
         priceTag.setText(String.format("%.2f", price));
         creditsTag.setText(String.format("%.2f", credits));
 
@@ -61,7 +63,7 @@ public class BuyDetailActivity extends AppCompatActivity {
         quantity = Integer.parseInt(quatityField.getText().toString());
         if (quantity <= supply) {
             viewModel.buyItem(ItemType.WATER, quantity, price);
-            Toast.makeText(this, String.format("%f items baught", quantity), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, String.format("%f %ss baught", quantity, item.toString()), Toast.LENGTH_LONG).show();
 
             Intent i = new Intent(this, BuyActivity.class);
             this.startActivity(i);

@@ -26,11 +26,7 @@ public class NewLoadGameActivity extends AppCompatActivity{
         this.startActivity(i);
         this.finish();
     }
-    public void onStartGamePressed(View view) {
-        Intent i = new Intent(this, MainActivity.class);
-        this.startActivity(i);
-        this.finish();
-    }
+
 
     public void onResume() {
         super.onResume();

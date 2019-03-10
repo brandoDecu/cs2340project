@@ -43,7 +43,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
 
         Log.d("APP", "Binding: " + position + " " + itemList.get(position));
 
-        holder.itemIndex.setText(item.getIndex());
+        holder.itemIndex.setText(item.toString());
 
     }
 
@@ -69,8 +69,6 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
      */
     class ItemViewHolder extends RecyclerView.ViewHolder {
         private TextView itemIndex;
-
-
 
         public ItemViewHolder(@NonNull View itemView) {
             super(itemView);

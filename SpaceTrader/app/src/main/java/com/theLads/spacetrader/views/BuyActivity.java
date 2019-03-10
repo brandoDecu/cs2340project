@@ -35,7 +35,7 @@ public class BuyActivity extends AppCompatActivity {
 
         /*
          Set up our recycler view by grabbing the layout for a single item
-         *//*
+         */
         RecyclerView recyclerView = findViewById(R.id.item_list);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
@@ -48,7 +48,6 @@ public class BuyActivity extends AppCompatActivity {
         viewModel = ViewModelProviders.of(this).get(BuySellViewModel.class);
 
         Log.d("APP", viewModel.getMarketQuantities().toString());
-        */
     }
 
     @Override
@@ -60,7 +59,7 @@ public class BuyActivity extends AppCompatActivity {
             @Override
             public void onItemClicked(ItemType item) {
                 Intent intent = new Intent(BuyActivity.this, BuyDetailActivity.class);
-                intent.putExtra(ITEM_DATA, item);
+                intent.putExtra(ITEM_DATA, item.toString());
                 startActivityForResult(intent, EDIT_REQUEST);
             }
         });
