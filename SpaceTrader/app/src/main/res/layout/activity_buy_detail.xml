@@ -69,7 +69,7 @@
 
 
     <TextView
-        android:id="@+id/itemType"
+        android:id="@+id/itemName"
         android:layout_width="wrap_content"
         android:layout_height="21dp"
         android:layout_marginStart="128dp"
@@ -147,6 +147,7 @@
         android:layout_marginStart="28dp"
         android:layout_marginTop="40dp"
         android:text="@string/buy_detail_activity"
+        android:onClick="onBuyPressed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/quatityField" />
 </android.support.constraint.ConstraintLayout>

@@ -1,5 +1,7 @@
 package com.theLads.spacetrader.views;
 
+import android.app.PendingIntent;
+import android.app.TaskStackBuilder;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +13,9 @@ import android.util.Log;
 import com.theLads.spacetrader.R;
 import com.theLads.spacetrader.entity.enums.ItemType;
 import com.theLads.spacetrader.viewmodels.BuySellViewModel;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -47,18 +52,25 @@ public class BuyActivity extends AppCompatActivity {
         //grab our view model instance
         viewModel = ViewModelProviders.of(this).get(BuySellViewModel.class);
 
-        Log.d("APP", viewModel.getMarketQuantities().toString());
+//        Log.d("APP", viewModel.getMarketQuantities().toString());
     }
 
     @Override
     public void onResume() {
         super.onResume();
+//        List<Integer> itemList = new ArrayList<>();
+//        itemList.add(1);
         adapter.setItemList(viewModel.getMarketQuantities());
 
         adapter.setOnItemClickListener(new ItemAdapter.OnItemClickListener() {
             @Override
             public void onItemClicked(ItemType item) {
                 Intent intent = new Intent(BuyActivity.this, BuyDetailActivity.class);
+
+//                PendingIntent pendingIntent = TaskStackBuilder.create(this)
+//                        .addNextIntentWithParentStack(intent)
+//                        .getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
+
                 intent.putExtra(ITEM_DATA, item.toString());
                 startActivityForResult(intent, EDIT_REQUEST);
             }

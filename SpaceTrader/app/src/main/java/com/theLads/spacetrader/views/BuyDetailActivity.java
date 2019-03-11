@@ -39,35 +39,38 @@ public class BuyDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buy_detail);
 
-        itemName = findViewById(R.id.itemLabel);
+        // find text fields to set to specific item being bought
+        itemName = findViewById(R.id.itemName);
         quatityField = findViewById(R.id.quatityField);
         itemQuant = findViewById(R.id.itemQuant);
         priceTag = findViewById(R.id.priceTag);
-        creditsTag = findViewById(R.id.creditsTag);;
+        creditsTag = findViewById(R.id.creditsTag);
+
+        //get values from model
         item = ItemType.valueOf(getIntent().getExtras().getString("ITEM_DATA"));
         supply = Model.getInstance().getGameInteractor().getMarketQuantities().get(item.ordinal());
         price = Model.getInstance().getGameInteractor().getMarketPrices().get(item.ordinal());
         Double credits = Model.getInstance().getGameInteractor().getCredits();
 
+        // set text fields
         itemName.setText(String.format("%s", item.toString()));
         itemQuant.setText(String.format("%d", supply));
         priceTag.setText(String.format("%.2f", price));
         creditsTag.setText(String.format("%.2f", credits));
 
+        //grab viewModel
         viewModel = ViewModelProviders.of(this).get(BuySellViewModel.class);
 
     }
 
-    public void onAddPressed(View view) {
+    public void onBuyPressed(View view) {
 
         quantity = Integer.parseInt(quatityField.getText().toString());
         if (quantity <= supply) {
-            viewModel.buyItem(ItemType.WATER, quantity, price);
+            viewModel.buyItem(item, quantity, price);
             Toast.makeText(this, String.format("%f %ss baught", quantity, item.toString()), Toast.LENGTH_LONG).show();
 
-            Intent i = new Intent(this, BuyActivity.class);
-            this.startActivity(i);
-            this.finish();
+            finish();
         } else {
             Toast.makeText(this, String.format("This store only has %f of this item", supply), Toast.LENGTH_LONG).show();
         }

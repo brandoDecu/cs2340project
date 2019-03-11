@@ -23,8 +23,8 @@ public class MarketPlace {
     public MarketPlace(TechLevel techLvl, Resources resources) {
         for(ItemType item : ItemType.values()) {
             itemQuantity.add((new Random().nextInt(40)+10));
-            itemPrice.add((item.getBasePrice()*item.getIndex()/
-                    (resources.getIndex() + techLvl.getIndex())));
+            itemPrice.add((item.getBasePrice()*(item.ordinal() + 1) /
+                    (resources.ordinal() + techLvl.ordinal())));
         }
     }
 
@@ -41,16 +41,16 @@ public class MarketPlace {
     }
 
     public double getCostOf(ItemType item) {
-        return itemPrice.get(item.getIndex());
+        return itemPrice.get(item.ordinal());
     }
 
     public int getQuantityOf(ItemType item) {
-        return itemQuantity.get(item.getIndex());
+        return itemQuantity.get(item.ordinal());
     }
 
 
     public void setItemQuantity(ItemType item, int quantity) {
-        itemQuantity.set(item.getIndex(), quantity);
+        itemQuantity.set(item.ordinal(), quantity);
     }
 
 
