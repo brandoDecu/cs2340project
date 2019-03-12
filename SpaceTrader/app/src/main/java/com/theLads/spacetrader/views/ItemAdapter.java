@@ -54,6 +54,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
 
     public void setItemList(List<Integer> quantities) {
         Integer i = 0;
+        itemList.clear();
         for (Integer q : quantities) {
             if (q != 0) {
                 itemList.add(ItemType.values()[i]);
