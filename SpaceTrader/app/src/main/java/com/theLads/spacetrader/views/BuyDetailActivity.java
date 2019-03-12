@@ -67,10 +67,14 @@ public class BuyDetailActivity extends AppCompatActivity {
 
         quantity = Integer.parseInt(quatityField.getText().toString());
         if (quantity <= supply) {
-            viewModel.buyItem(item, quantity, price);
-            Toast.makeText(this, String.format("%f %ss baught", quantity, item.toString()), Toast.LENGTH_LONG).show();
+            try {
+                viewModel.buyItem(item, quantity, price);
+                Toast.makeText(this, String.format("%d %ss baught", quantity, item.toString()), Toast.LENGTH_LONG).show();
+                finish();
+            } catch (Exception e) {
+                Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
+            }
 
-            finish();
         } else {
             Toast.makeText(this, String.format("This store only has %f of this item", supply), Toast.LENGTH_LONG).show();
         }

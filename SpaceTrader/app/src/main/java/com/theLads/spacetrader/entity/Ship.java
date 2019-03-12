@@ -11,7 +11,7 @@ public class Ship {
 
     private ShipType type;
     private int health;
-    private List<Integer> cargoQuantities;
+    private List<Integer> cargoQuantities = new ArrayList<>();
 
     /**
      * Ship constructor that takes in a ShipType enum and creates a ship for the player
@@ -21,6 +21,9 @@ public class Ship {
 
         this.type = type;
         this.health = type.getMaxHealth();
+        for(ItemType item : ItemType.values()) {
+            cargoQuantities.add(0);
+        }
     }
 
 
