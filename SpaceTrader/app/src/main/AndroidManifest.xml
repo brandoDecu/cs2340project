@@ -70,6 +70,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".views.NewLoadGameActivity" />
+        <activity android:name=".views.MarketPlaceActivity" />
 
 
     </application>
