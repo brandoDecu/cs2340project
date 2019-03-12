@@ -76,7 +76,7 @@ public class BuyDetailActivity extends AppCompatActivity {
             }
 
         } else {
-            Toast.makeText(this, String.format("This store only has %f of this item", supply), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, String.format("This store only has %d of this item", supply), Toast.LENGTH_LONG).show();
         }
     }
 }
