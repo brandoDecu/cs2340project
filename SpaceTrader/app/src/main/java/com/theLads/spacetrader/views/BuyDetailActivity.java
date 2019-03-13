@@ -83,5 +83,8 @@ public class BuyDetailActivity extends AppCompatActivity {
 
     public void onBackPressed(View view) {
         super.onBackPressed();
+        Intent i = new Intent(this, BuyActivity.class);
+        this.startActivity(i);
+        this.finish();
     }
 }

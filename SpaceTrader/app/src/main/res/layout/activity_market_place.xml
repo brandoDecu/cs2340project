@@ -38,7 +38,7 @@
             android:layout_marginStart="153dp"
             android:layout_marginEnd="145dp"
             android:layout_marginBottom="210dp"
-            android:onClick="onSellClick"
+            android:onClick="onBuyClick"
             android:text="@string/sellItems" />
 
         <Button

@@ -58,8 +58,9 @@
     <string name="cargoSupply">In Cargo:</string>
 
     <string name="sell_detail_button">Sell</string>
-    <string name="sell_activity_desc">How many would you like to Sell?</string>
+    <string name="sell_activity_desc">How many would you like to sell?</string>
     <string name="choose_which_item_to_buy">Choose which item to buy:</string>
+    <string name="activityBuyBack">Back</string>
 
 
 </resources>
