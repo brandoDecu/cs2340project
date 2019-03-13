@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/store">
+    android:background="@drawable/sell_detail_cargo">
 
     <TextView
         android:id="@+id/creditsTag"
@@ -36,11 +36,11 @@
         android:layout_width="wrap_content"
         android:layout_height="41dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="344dp"
+        android:layout_marginTop="324dp"
         android:layout_marginEnd="8dp"
-        android:background="#FFFFFF"
-        android:text="@string/buy_activity_desc"
-        android:textColor="#000000"
+        android:background="#2f4260"
+        android:text="@string/sell_activity_desc"
+        android:textColor="#CCCCCC"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.195"
@@ -54,8 +54,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="40dp"
         android:autofillHints=""
         android:background="#FFFFFF"
         android:ems="10"
@@ -63,7 +63,7 @@
         android:inputType="textPersonName"
         android:textColor="#000000"
         android:textColorHint="#BBCC"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/desc"
         tools:targetApi="o" />
 
@@ -117,48 +117,50 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/priceLabel"
+        android:id="@+id/sellPriceLabel"
         android:layout_width="wrap_content"
         android:layout_height="19dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="184dp"
         android:background="#808080"
-        android:text="@string/shopPrice"
+        android:text="@string/sellPrice"
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/inStore"
+        android:id="@+id/inCargo"
         android:layout_width="wrap_content"
         android:layout_height="19dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="280dp"
         android:background="#808080"
-        android:text="@string/storeSupply"
+        android:text="@string/cargoSupply"
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/Buy"
+        android:id="@+id/Sell"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="40dp"
-        android:text="@string/buy_detail_button"
-        android:onClick="onBuyPressed"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="40dp"
+        android:onClick="onSellPressed"
+        android:text="@string/sell_detail_button"
+        android:background="#808080"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/quatityField" />
 
     <Button
         android:id="@+id/Back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginEnd="40dp"
         android:onClick="onBackPressed"
         android:text="@string/back"
-        app:layout_constraintStart_toStartOf="parent"
+        android:background="#808080"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/quatityField" />
 </android.support.constraint.ConstraintLayout>
