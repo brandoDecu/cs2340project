@@ -44,6 +44,7 @@
     <string name="buy_activity_desc">How many would you like to buy?</string>
     <string name="price">Start</string>
     <string name="welcome_to_the_market_place">Welcome to the Market Place!</string>
+    <string name="choose_which_item_to_buy">Choose which item to buy:</string>
 
 
 </resources>

@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.theLads.spacetrader.R;
+import com.theLads.spacetrader.entity.Player;
 import com.theLads.spacetrader.entity.enums.ItemType;
 import com.theLads.spacetrader.model.Model;
 import com.theLads.spacetrader.viewmodels.BuySellViewModel;
@@ -69,7 +70,7 @@ public class BuyDetailActivity extends AppCompatActivity {
         if (quantity <= supply) {
             try {
                 viewModel.buyItem(item, quantity, price);
-                Toast.makeText(this, String.format("%d %ss baught", quantity, item.toString()), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, String.format("%d %s bought!", quantity, item.toString()), Toast.LENGTH_LONG).show();
                 finish();
             } catch (Exception e) {
                 Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
