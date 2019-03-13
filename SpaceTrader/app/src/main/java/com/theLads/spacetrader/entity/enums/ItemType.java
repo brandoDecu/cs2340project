@@ -6,16 +6,16 @@ package com.theLads.spacetrader.entity.enums;
 
 public enum ItemType {
 
-    WATER (0, 30),
-    FURS (1, 30),
-    FOOD (2, 40),
-    ORE (3, 10),
-    GAMES (4, 15),
-    FIREARMS (5, 100),
-    MEDICINE (6, 30),
-    MACHINES (7, 30),
-    NARCOTICS (8, 100000),
-    ROBOTS (9, 10000);
+    WATER (0, 80),
+    FURS (1, 125),
+    FOOD (2, 250),
+    ORE (3, 100),
+    GAMES (4, 150),
+    FIREARMS (5, 1000),
+    MEDICINE (6, 300),
+    MACHINES (7, 300),
+    NARCOTICS (8, 40000),
+    ROBOTS (9, 20000);
 
     private final int index;
     private final double basePrice;
