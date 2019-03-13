@@ -34,16 +34,31 @@
     <string name="newGameStart">Start</string>
 
     <!--main/buyDetailActivity-->
+    <string name="welcome_to_the_market_place">Welcome to the Market Place!</string>
+    <string name="buyItems">Buy Items</string>
+    <string name="sellItems">Sell Items</string>
+    <string name="Travel">Travel</string>
+
+
+
+    <!--main/buyDetailActivity-->
     <string name="shopItem">Item:</string>
     <string name="shopPrice">Price:</string>
     <string name="playerCredits">Your Credits:</string>
     <string name="storeSupply">In Store:</string>
 
-    <string name="buy_detail_activity">Buy</string>
+    <string name="buy_detail_button">Buy</string>
     <string name="buy_quantity">Quantity</string>
     <string name="buy_activity_desc">How many would you like to buy?</string>
     <string name="price">Start</string>
-    <string name="welcome_to_the_market_place">Welcome to the Market Place!</string>
+    <string name="back">Back</string>
+
+    <!--main/sellDetailActivity-->
+    <string name="sellPrice">Sell Price:</string>
+    <string name="cargoSupply">In Cargo:</string>
+
+    <string name="sell_detail_button">Sell</string>
+    <string name="sell_activity_desc">How many would you like to Sell?</string>
     <string name="choose_which_item_to_buy">Choose which item to buy:</string>
 
 

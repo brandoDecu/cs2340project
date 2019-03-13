@@ -44,7 +44,7 @@ public class BuySellViewModel extends AndroidViewModel {
     }
 
     public void sellItem(ItemType item, int quantity, double price) {
-        if (getCargoQuantities().get(item.getIndex()) >= quantity) {
+        if (getCargoQuantities().get(item.ordinal()) >= quantity) {
             interactor.sellItem(item, quantity, price);
         } else {
             throw new IllegalArgumentException("You don't have enough of this item");
