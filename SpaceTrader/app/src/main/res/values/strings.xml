@@ -43,6 +43,7 @@
     <string name="buy_quantity">Quantity</string>
     <string name="buy_activity_desc">How many would you like to buy?</string>
     <string name="price">Start</string>
+    <string name="welcome_to_the_market_place">Welcome to the Market Place!</string>
 
 
 </resources>
