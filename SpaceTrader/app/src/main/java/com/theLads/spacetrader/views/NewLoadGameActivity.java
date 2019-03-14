@@ -24,7 +24,7 @@ public class NewLoadGameActivity extends AppCompatActivity{
     public void onNewGamePressed(View view) {
         Intent i = new Intent(this, MainActivity.class);
         this.startActivity(i);
-        this.finish();
+        //this.finish();
     }
 
 

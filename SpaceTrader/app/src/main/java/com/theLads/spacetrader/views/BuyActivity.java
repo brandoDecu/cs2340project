@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 
 import com.theLads.spacetrader.R;
 import com.theLads.spacetrader.entity.enums.ItemType;
@@ -35,7 +36,7 @@ public class BuyActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_buy);
+        setContentView(R.layout.activity_trade);
 
 
         /*
@@ -70,4 +71,16 @@ public class BuyActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void onBackPressed(View view) {
+        super.onBackPressed();
+    }
+
+//    public void onBuyActivityBackPressed(View view) {
+//        super.onBackPressed();
+//        Intent i = new Intent(this, MarketPlaceActivity.class);
+//        this.startActivity(i);
+//        this.finish();
+//
+//    }
 }

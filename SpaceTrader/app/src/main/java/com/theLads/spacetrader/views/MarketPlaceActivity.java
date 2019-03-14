@@ -29,7 +29,14 @@ public class MarketPlaceActivity extends AppCompatActivity {
     public void onBuyClick(View view) {
         Intent i = new Intent(this, BuyActivity.class);
         this.startActivity(i);
-        this.finish();
+        //this.finish();
+    }
+
+    public void onSellClick(View view) {
+        Intent i = new Intent(this, SellActivity.class);
+        this.startActivity(i);
+        //this.finish();
+
     }
 
 }
