@@ -64,4 +64,12 @@
     <string name="activityBuyBack">Back</string>
 
 
+    <!--welcome to planet-->
+    <string name="travel">Travel</string>
+    <string name="buy">Buy</string>
+    <string name="sell">Sell</string>
+
+
+
+
 </resources>
