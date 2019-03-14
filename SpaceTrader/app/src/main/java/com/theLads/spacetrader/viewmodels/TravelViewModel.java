@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.theLads.spacetrader.entity.Game;
+import com.theLads.spacetrader.entity.Planet;
 import com.theLads.spacetrader.entity.SolarSystem;
 import com.theLads.spacetrader.entity.enums.ItemType;
 import com.theLads.spacetrader.model.GameInteractor;
@@ -21,6 +22,7 @@ public class TravelViewModel extends AndroidViewModel {
         super(application);
         interactor = Model.getInstance().getGameInteractor();
     }
+    public String getPlanetName() {return interactor.getPlanetName();}
 
     public List<SolarSystem> getSolarSystems() { return interactor.getSolarSystems();}
 

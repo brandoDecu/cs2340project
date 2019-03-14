@@ -72,6 +72,7 @@ public class Galaxy {
         return distances;
     }
 
+    public String getPlanetName() {return currentSolarSystem.getName();}
 
     public List<Double> getMarketPrices() {
         return currentSolarSystem.getMarketPrices();

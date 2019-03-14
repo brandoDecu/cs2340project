@@ -47,4 +47,12 @@
     <string name="choose_which_item_to_buy">Choose which item to buy:</string>
 
 
+    <!--welcome to planet-->
+    <string name="travel">Travel</string>
+    <string name="buy">Buy</string>
+    <string name="sell">Sell</string>
+
+
+
+
 </resources>

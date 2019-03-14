@@ -42,6 +42,8 @@ public class Game {
         return galaxy;
     }
 
+    public String getPlanetName() {return galaxy.getPlanetName();}
+
     public List<Integer> getCargoQuantities() {
         return player.getCargoQuantities();
     }
