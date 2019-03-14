@@ -35,7 +35,9 @@ public class SellActivity extends AppCompatActivity {
          Set up our recycler view by grabbing the layout for a single item
          */
         RecyclerView recyclerView = findViewById(R.id.item_list);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setOrientation(linearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setHasFixedSize(true);
 
         // Setup the adapter for this recycler view

@@ -66,7 +66,7 @@ public class SellDetailActivity extends AppCompatActivity {
         if (quantity <= supply) {
             try {
                 viewModel.sellItem(item, quantity, price);
-                Toast.makeText(this, String.format("%d %s bought", quantity, item.toString()), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, String.format("%d %s sold", quantity, item.toString()), Toast.LENGTH_LONG).show();
                 finish();
             } catch (Exception e) {
                 Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
