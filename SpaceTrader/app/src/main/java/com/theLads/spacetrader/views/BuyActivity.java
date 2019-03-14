@@ -75,4 +75,12 @@ public class BuyActivity extends AppCompatActivity {
     public void onBackPressed(View view) {
         super.onBackPressed();
     }
+
+//    public void onBuyActivityBackPressed(View view) {
+//        super.onBackPressed();
+//        Intent i = new Intent(this, MarketPlaceActivity.class);
+//        this.startActivity(i);
+//        this.finish();
+//
+//    }
 }

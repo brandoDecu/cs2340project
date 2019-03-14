@@ -26,5 +26,6 @@ public class MarketPlaceActivity extends AppCompatActivity {
         Intent i = new Intent(this, SellActivity.class);
         this.startActivity(i);
         //this.finish();
+
     }
 }

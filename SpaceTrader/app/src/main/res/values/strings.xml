@@ -61,5 +61,7 @@
     <string name="sell_activity_desc">How many would you like to Sell?</string>
     <string name="choose_an_item">Choose an item:</string>
 
+    <string name="activityBuyBack">Back</string>
+
 
 </resources>

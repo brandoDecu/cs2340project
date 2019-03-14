@@ -27,6 +27,7 @@ public class SellActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_trade);
 
 
@@ -61,6 +62,7 @@ public class SellActivity extends AppCompatActivity {
             }
         });
     }
+
 
     public void onBackPressed(View view) {
         super.onBackPressed();
