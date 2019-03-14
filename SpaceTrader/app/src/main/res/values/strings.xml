@@ -59,7 +59,7 @@
 
     <string name="sell_detail_button">Sell</string>
     <string name="sell_activity_desc">How many would you like to Sell?</string>
-    <string name="choose_which_item_to_buy">Choose which item to buy:</string>
+    <string name="choose_an_item">Choose an item:</string>
 
 
 </resources>
