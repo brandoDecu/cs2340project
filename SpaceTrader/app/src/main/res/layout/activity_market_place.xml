@@ -20,28 +20,30 @@
             app:layout_constraintStart_toStartOf="parent" />
 
 
-        <Button
-            android:id="@+id/goToSell"
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="12dp"
-            android:layout_marginBottom="12dp"
-            android:text="@string/sell"
-            app:layout_constraintBottom_toTopOf="@+id/GoToTravel"
-            app:layout_constraintStart_toStartOf="parent" />
+    <Button
+        android:id="@+id/goToSell"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="12dp"
+        android:onClick="onSellClick"
+        android:text="@string/sell"
+        app:layout_constraintBottom_toTopOf="@+id/GoToTravel"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
-        <Button
-            android:id="@+id/GoToBuy"
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="12dp"
-            android:layout_marginBottom="12dp"
-            android:text="@string/buy"
-            app:layout_constraintBottom_toTopOf="@+id/goToSell"
-            app:layout_constraintStart_toStartOf="parent" />
+    <Button
+        android:id="@+id/GoToBuy"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="12dp"
+        android:onClick="onBuyClick"
+        android:text="@string/buy"
+        app:layout_constraintBottom_toTopOf="@+id/goToSell"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
     <TextView

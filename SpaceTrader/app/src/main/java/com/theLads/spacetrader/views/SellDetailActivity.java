@@ -23,7 +23,7 @@ public class SellDetailActivity extends AppCompatActivity {
     private TextView itemQuant;
     private TextView priceTag;
     private TextView creditsTag;
-    private EditText quatityField;
+    private EditText quantityField;
 
     private ItemType item;
 
@@ -38,7 +38,7 @@ public class SellDetailActivity extends AppCompatActivity {
 
         // find text fields to set to specific item being bought
         itemName = findViewById(R.id.itemName);
-        quatityField = findViewById(R.id.quatityField);
+        quantityField = findViewById(R.id.quatityField);
         itemQuant = findViewById(R.id.itemQuant);
         priceTag = findViewById(R.id.priceTag);
         creditsTag = findViewById(R.id.creditsTag);
@@ -62,18 +62,18 @@ public class SellDetailActivity extends AppCompatActivity {
 
     public void onSellPressed(View view) {
 
-        quantity = Integer.parseInt(quatityField.getText().toString());
+        quantity = Integer.parseInt(quantityField.getText().toString());
         if (quantity <= supply) {
             try {
                 viewModel.sellItem(item, quantity, price);
-                Toast.makeText(this, String.format("%d %ss baught", quantity, item.toString()), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, String.format("%d %s bought", quantity, item.toString()), Toast.LENGTH_LONG).show();
                 finish();
             } catch (Exception e) {
                 Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
             }
 
         } else {
-            Toast.makeText(this, String.format("This you have has %d %ss", supply, item.toString()), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, String.format("This you have has %d %s", supply, item.toString()), Toast.LENGTH_LONG).show();
         }
     }
 
