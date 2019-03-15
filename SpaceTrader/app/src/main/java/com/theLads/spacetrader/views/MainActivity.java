@@ -13,11 +13,12 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.theLads.spacetrader.R;
+import com.theLads.spacetrader.entity.Galaxy;
 import com.theLads.spacetrader.entity.Game;
 import com.theLads.spacetrader.entity.enums.GameDifficulty;
 import com.theLads.spacetrader.entity.Player;
 import com.theLads.spacetrader.viewmodels.AddGameViewModel;
-
+import com.theLads.spacetrader.views.StartActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -102,7 +103,11 @@ public class MainActivity extends AppCompatActivity {
 
 
             viewModel.createGame(difficulty, name, pilotS, fightS, tradeS, engineerS);
-            Intent i = new Intent(this, GalaxyActivity.class);
+            Log.d("malleable", "malleable");
+
+            Intent i = new Intent(this, StartActivity.class);
+            Log.d("aga", "aga");
+
             this.startActivity(i);
             this.finish();
 
