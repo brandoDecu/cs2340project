@@ -39,4 +39,10 @@ public class MarketPlaceActivity extends AppCompatActivity {
 
     }
 
+    public void onTravelClick(View view) {
+        Intent i = new Intent(this, GalaxyActivity.class);
+        this.startActivity(i);
+        this.finish();
+
+    }
 }
