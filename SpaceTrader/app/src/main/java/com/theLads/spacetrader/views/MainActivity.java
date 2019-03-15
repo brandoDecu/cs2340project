@@ -79,13 +79,32 @@ public class MainActivity extends AppCompatActivity {
 
         try {
             name = (String) nameField.getText().toString();
+        } catch (Exception e) {
+            Toast.makeText(this, "You must write valid numbers in each skill field", Toast.LENGTH_LONG).show();
+        }
 
+        try {
             engineerS = Integer.parseInt(editEngineerSkill.getText().toString());
+        } catch (Exception e) {
+            Toast.makeText(this, "You must write valid numbers in each skill field", Toast.LENGTH_LONG).show();
+        }
+        try {
             tradeS = Integer.parseInt(editTraderSkill.getText().toString());
+        } catch (Exception e) {
+            Toast.makeText(this, "You must write valid numbers in each skill field", Toast.LENGTH_LONG).show();
+        }
+        try {
             pilotS = Integer.parseInt(editPilotSkill.getText().toString());
+        } catch (Exception e) {
+            Toast.makeText(this, "You must write valid numbers in each skill field", Toast.LENGTH_LONG).show();
+        }
+        try {
             fightS = Integer.parseInt(editFighterSkill.getText().toString());
+        } catch (Exception e) {
+            Toast.makeText(this, "You must write valid numbers in each skill field", Toast.LENGTH_LONG).show();
+        }
+        try {
             total = engineerS + tradeS + pilotS + fightS;
-
         } catch (Exception e) {
             Toast.makeText(this, "You must write valid numbers in each skill field", Toast.LENGTH_LONG).show();
         }
@@ -98,10 +117,12 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Skill points cannot be negative", Toast.LENGTH_LONG).show();
 
 
-        } else if (total == 16) {
+        } else if (total <= 16) {
             Toast.makeText(this, "Character created!", Toast.LENGTH_LONG).show();
-
-
+            if (total < 16) {
+                int bonusCreds = (16 - total) * 100;
+                Toast.makeText(this, String.format("Character created with %d extra credits!", bonusCreds), Toast.LENGTH_LONG).show();
+            }
             viewModel.createGame(difficulty, name, pilotS, fightS, tradeS, engineerS);
             Log.d("malleable", "malleable");
 
@@ -110,19 +131,6 @@ public class MainActivity extends AppCompatActivity {
 
             this.startActivity(i);
             this.finish();
-
-//
-        } else if (total <= 16) {
-            int bonusCreds = (16 - total) * 100;
-            Toast.makeText(this, String.format("Character created with %d extra credits!", bonusCreds), Toast.LENGTH_LONG).show();
-
-
-            viewModel.createGame(difficulty, name, pilotS, fightS, tradeS, engineerS);
-            Intent i = new Intent(this, GalaxyActivity.class);
-            this.startActivity(i);
-            this.finish();
-
-//
         } else {
             Toast.makeText(this, "Skill points must add up to 16 or less", Toast.LENGTH_LONG).show();
         }
