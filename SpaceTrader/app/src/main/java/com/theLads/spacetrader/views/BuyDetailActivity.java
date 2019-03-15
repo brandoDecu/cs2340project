@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -29,7 +30,6 @@ public class BuyDetailActivity extends AppCompatActivity {
 
     private ItemType item;
 
-    private int quantity;
     private double price;
     private int supply;
 
@@ -66,25 +66,30 @@ public class BuyDetailActivity extends AppCompatActivity {
 
     public void onBuyPressed(View view) {
 
-        quantity = Integer.parseInt(quatityField.getText().toString());
-        if (quantity <= supply) {
-            try {
-                viewModel.buyItem(item, quantity, price);
-                Toast.makeText(this, String.format("%d %s bought!", quantity, item.toString()), Toast.LENGTH_LONG).show();
-                finish();
-            } catch (Exception e) {
-                Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
-            }
+        int quantity = 0;
 
+        try {
+            quantity = Integer.parseInt(quatityField.getText().toString());
+        } catch (Exception e) {
+            // error text will display from else statement
+        }
+
+        if (quantity > 0) {
+            if (quantity <= supply) {
+                try {
+                    viewModel.buyItem(item, quantity, price);
+                    Toast.makeText(this, String.format("%d %s bought!", quantity, item.toString()), Toast.LENGTH_LONG).show();
+                    finish();
+                } catch (Exception e) {
+                    Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
+                }
+
+            } else {
+                Toast.makeText(this, String.format("This store only has %d %ss", supply, item.toString()), Toast.LENGTH_LONG).show();
+            }
         } else {
-            Toast.makeText(this, String.format("This store only has %d %ss", supply, item.toString()), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Please enter a valid quantity to sell", Toast.LENGTH_LONG).show();
         }
     }
 
-    public void onBackPressed(View view) {
-        super.onBackPressed();
-        Intent i = new Intent(this, BuyActivity.class);
-        this.startActivity(i);
-        this.finish();
-    }
 }

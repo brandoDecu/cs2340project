@@ -107,8 +107,19 @@ public class MainActivity extends AppCompatActivity {
             this.finish();
 
 //
+        } else if (total <= 16) {
+            int bonusCreds = (16 - total) * 100;
+            Toast.makeText(this, String.format("Character created with %d extra credits!", bonusCreds), Toast.LENGTH_LONG).show();
+
+
+            viewModel.createGame(difficulty, name, pilotS, fightS, tradeS, engineerS);
+            Intent i = new Intent(this, GalaxyActivity.class);
+            this.startActivity(i);
+            this.finish();
+
+//
         } else {
-            Toast.makeText(this, "Skill points must add up to 16", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Skill points must add up to 16 or less", Toast.LENGTH_LONG).show();
         }
 
 

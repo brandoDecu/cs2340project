@@ -10,24 +10,26 @@
     <TextView
         android:id="@+id/creditsTag"
         android:layout_width="wrap_content"
-        android:layout_height="21dp"
+        android:layout_height="28sp"
         android:layout_marginStart="128dp"
         android:layout_marginTop="236dp"
-        android:background="#808080"
         android:text="ActualCredits"
-        android:textColor="#000000"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/creditsLabel"
         android:layout_width="wrap_content"
-        android:layout_height="19dp"
+        android:layout_height="28sp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="236dp"
-        android:background="#808080"
         android:text="@string/playerCredits"
-        android:textColor="#000000"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -38,10 +40,10 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="344dp"
         android:layout_marginEnd="8dp"
-        android:background="#FFFFFF"
         android:text="@string/buy_activity_desc"
-        android:textColor="#000000"
+        android:textColor="#FFFFFF"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.195"
         app:layout_constraintStart_toStartOf="parent"
@@ -57,12 +59,11 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:autofillHints=""
-        android:background="#FFFFFF"
         android:ems="10"
         android:hint="@string/buy_quantity"
         android:inputType="textPersonName"
         android:textColor="#000000"
-        android:textColorHint="#BBCC"
+        android:textColorHint="#CCCCCC"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/desc"
         tools:targetApi="o" />
@@ -71,12 +72,13 @@
     <TextView
         android:id="@+id/itemName"
         android:layout_width="wrap_content"
-        android:layout_height="21dp"
+        android:layout_height="28sp"
         android:layout_marginStart="128dp"
         android:layout_marginTop="136dp"
-        android:background="#808080"
         android:text="ItemType"
-        android:textColor="#000000"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -86,45 +88,49 @@
         android:layout_height="21dp"
         android:layout_marginStart="128dp"
         android:layout_marginTop="280dp"
-        android:background="#808080"
         android:text="Item Quant Avail"
-        android:textColor="#000000"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/priceTag"
         android:layout_width="wrap_content"
-        android:layout_height="21dp"
+        android:layout_height="28sp"
         android:layout_marginStart="128dp"
         android:layout_marginTop="184dp"
-        android:background="#808080"
         android:text="ActualPrice"
-        android:textColor="#000000"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/itemLabel"
         android:layout_width="wrap_content"
-        android:layout_height="21dp"
+        android:layout_height="28sp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="136dp"
-        android:background="#808080"
         android:text="@string/shopItem"
-        android:textColor="#000000"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/priceLabel"
         android:layout_width="wrap_content"
-        android:layout_height="19dp"
+        android:layout_height="28sp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="184dp"
-        android:background="#808080"
         android:text="@string/shopPrice"
-        android:textColor="#000000"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -134,9 +140,10 @@
         android:layout_height="19dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="280dp"
-        android:background="#808080"
         android:text="@string/storeSupply"
-        android:textColor="#000000"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -148,6 +155,9 @@
         android:layout_marginTop="40dp"
         android:text="@string/buy_detail_button"
         android:onClick="onBuyPressed"
+        android:background="#FFFFFF"
+        android:textSize="20dp"
+        android:textColor="#444444"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/quatityField" />
 <!--

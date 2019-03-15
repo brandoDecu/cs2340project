@@ -49,7 +49,9 @@ public class Player {
         this.traderSkill = trader;
         this.engineerSkill = engineer;
         this.ship = new Ship(ShipType.GNAT);
-        this.credits = 1000;
+
+        int total = pilot + fighter + trader + engineer;
+        this.credits = 1000 + (100 * (16 - total));
     }
 
     //Getter methods for the different attributes of the player class
