@@ -79,6 +79,8 @@ public class Player {
 
     public Ship getShip() {return ship;}
 
+    public int getFuel() {return ship.getFuel();}
+
 
     //Setter methods for the Player attributes
     public void setName(String nam) { characterName = nam; }

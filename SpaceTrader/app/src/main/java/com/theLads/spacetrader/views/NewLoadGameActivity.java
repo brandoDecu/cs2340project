@@ -22,7 +22,7 @@ public class NewLoadGameActivity extends AppCompatActivity{
         setTitle("");
     }
     public void onNewGamePressed(View view) {
-        Intent i = new Intent(this, MainActivity.class);
+        Intent i = new Intent(this, CreateGameActivity.class);
         this.startActivity(i);
         //this.finish();
     }

@@ -19,7 +19,7 @@ import com.theLads.spacetrader.entity.Player;
 import com.theLads.spacetrader.viewmodels.AddGameViewModel;
 
 
-public class MainActivity extends AppCompatActivity {
+public class CreateGameActivity extends AppCompatActivity {
 
 //    lets create a splash screen before moving to this screen
     private AddGameViewModel viewModel;

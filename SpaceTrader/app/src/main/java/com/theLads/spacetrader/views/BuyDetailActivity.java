@@ -1,18 +1,15 @@
 package com.theLads.spacetrader.views;
 
 import android.arch.lifecycle.ViewModelProviders;
-import android.content.ClipData;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.theLads.spacetrader.R;
-import com.theLads.spacetrader.entity.Player;
 import com.theLads.spacetrader.entity.enums.ItemType;
 import com.theLads.spacetrader.model.Model;
 import com.theLads.spacetrader.viewmodels.BuySellViewModel;
@@ -83,7 +80,7 @@ public class BuyDetailActivity extends AppCompatActivity {
 
     public void onBackPressed(View view) {
         super.onBackPressed();
-        Intent i = new Intent(this, BuyActivity.class);
+        Intent i = new Intent(this, BuySellActivity.class);
         this.startActivity(i);
         this.finish();
     }

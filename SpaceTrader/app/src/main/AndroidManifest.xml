@@ -11,6 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+
         <activity android:name=".views.SplashActivity"
             android:theme="@style/SplashTheme"
             android:exported="true">
@@ -20,7 +21,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".views.MainActivity">
+        <activity android:name=".views.CreateGameActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,7 +39,7 @@
 
         </activity>
 
-        <activity android:name=".views.BuyActivity">
+        <activity android:name=".views.BuySellActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -47,14 +48,6 @@
         </activity>
 
         <activity android:name=".views.BuyDetailActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-        <activity android:name=".views.SellActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

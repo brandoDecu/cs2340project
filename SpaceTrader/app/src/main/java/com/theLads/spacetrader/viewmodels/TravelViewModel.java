@@ -30,9 +30,21 @@ public class TravelViewModel extends AndroidViewModel {
 
     public List<Integer> getSolarSystemDistances() {return interactor.getSolarSystemDistances();}
 
+    public int getFuel() {return interactor.getFuel();}
+
     public void travelTo(SolarSystem solarSystem) {
-        interactor.travelTo(solarSystem);
+        int index = getSolarSystems().indexOf(solarSystem);
+        int fuelRequired = getSolarSystemDistances().get(index);
+        if (getFuel() >= fuelRequired) {
+            interactor.travelTo(solarSystem);
+        } else {
+            throw new IllegalArgumentException("You need " + fuelRequired + " fuel to travel here");
+        }
     }
+
+
+
+
 
 
 

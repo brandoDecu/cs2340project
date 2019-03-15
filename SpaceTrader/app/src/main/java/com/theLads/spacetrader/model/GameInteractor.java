@@ -61,4 +61,6 @@ public class GameInteractor extends Interactor {
     public void travelTo(SolarSystem solarSystem) {
         getCurrentGame().travelTo(solarSystem);
     }
+
+    public int getFuel() {return getCurrentGame().getFuel();}
 }

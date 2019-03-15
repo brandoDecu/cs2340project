@@ -78,5 +78,7 @@ public class Game {
         galaxy.travelTo(solarSystem);
     }
 
+    public int getFuel() {return player.getFuel();}
+
 
 }
