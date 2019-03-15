@@ -88,7 +88,7 @@ public class BuyDetailActivity extends AppCompatActivity {
                 Toast.makeText(this, String.format("This store only has %d %ss", supply, item.toString()), Toast.LENGTH_LONG).show();
             }
         } else {
-            Toast.makeText(this, "Please enter a valid quantity to sell", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Please enter a valid quantity to buy", Toast.LENGTH_LONG).show();
         }
     }
 
