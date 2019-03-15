@@ -62,8 +62,15 @@ public class SellDetailActivity extends AppCompatActivity {
 
     public void onSellPressed(View view) {
 
-        quantity = Integer.parseInt(quantityField.getText().toString());
-        if (quantity <= supply) {
+        int quantity = 0;
+
+        try {
+            quantity = Integer.parseInt(quantityField.getText().toString());
+        } catch (Exception e) {
+            // error text will display from else statement
+        }
+
+        if (quantity <= supply && quantity > 0) {
             try {
                 viewModel.sellItem(item, quantity, price);
                 Toast.makeText(this, String.format("%d %s sold", quantity, item.toString()), Toast.LENGTH_LONG).show();
@@ -72,12 +79,10 @@ public class SellDetailActivity extends AppCompatActivity {
                 Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
             }
 
+        } else if (quantity > supply){
+            Toast.makeText(this, String.format("You only have %d %ss", supply, item.toString()), Toast.LENGTH_LONG).show();
         } else {
-            Toast.makeText(this, String.format("This you have has %d %s", supply, item.toString()), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Please enter a valid quantity to sell", Toast.LENGTH_LONG).show();
         }
-    }
-
-    public void onBackPressed(View view) {
-        super.onBackPressed();
     }
 }
