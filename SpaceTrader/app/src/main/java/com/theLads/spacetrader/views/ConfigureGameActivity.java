@@ -13,14 +13,12 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.theLads.spacetrader.R;
-import com.theLads.spacetrader.entity.Galaxy;
 import com.theLads.spacetrader.entity.Game;
 import com.theLads.spacetrader.entity.enums.GameDifficulty;
 import com.theLads.spacetrader.entity.Player;
 import com.theLads.spacetrader.viewmodels.AddGameViewModel;
-import com.theLads.spacetrader.views.StartActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class ConfigureGameActivity extends AppCompatActivity {
 
 //    lets create a splash screen before moving to this screen
     private AddGameViewModel viewModel;
@@ -126,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
             viewModel.createGame(difficulty, name, pilotS, fightS, tradeS, engineerS);
             Log.d("malleable", "malleable");
 
-            Intent i = new Intent(this, StartActivity.class);
+            Intent i = new Intent(this, IntroStoryActivity.class);
             Log.d("aga", "aga");
 
             this.startActivity(i);

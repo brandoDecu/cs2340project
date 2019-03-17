@@ -1,5 +1,7 @@
 package com.theLads.spacetrader.views;
 
+import android.arch.lifecycle.ViewModelProvider;
+import android.arch.lifecycle.ViewModelProviders;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -10,6 +12,7 @@ import android.widget.TextView;
 
 import com.theLads.spacetrader.R;
 import com.theLads.spacetrader.entity.SolarSystem;
+import com.theLads.spacetrader.viewmodels.TravelViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,7 +45,11 @@ public class SolarSystemAdapter extends RecyclerView.Adapter<SolarSystemAdapter.
 
         Log.d("APP", "Binding: " + position + " " + solarSystemList.get(position));
 
-        holder.solarSystemIndex.setText(solarSystem.toString());
+        String solarSystemInfo = solarSystem.getName() + ": " + solarSystem.getTechLvl().toString()
+                + ", " + solarSystem.getResources().toString();
+
+        holder.solarSystemIndex.setText(solarSystemInfo);
+        holder.solarSystemIndex.setTextSize(13);
 
     }
 
@@ -79,6 +86,10 @@ public class SolarSystemAdapter extends RecyclerView.Adapter<SolarSystemAdapter.
                 }
             });
 
+        }
+
+        public void setText(String string) {
+            solarSystemIndex.setText(string);
         }
     }
 

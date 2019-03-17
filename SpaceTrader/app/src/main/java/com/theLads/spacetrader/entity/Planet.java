@@ -35,11 +35,14 @@ public class Planet {
 
 
         Random r2 = new Random();
-        int lowResource = 0;
         int highResource = 12;
-        int resultResource = r2.nextInt(highResource-lowResource) + lowResource;
-        this.resources =  Resources.values()[resultResource];
-
+        int resultResource = r2.nextInt(5);
+        if (resultResource <= 3) {
+            this.resources = Resources.NOSPECIALRESOURCES;
+        } else {
+            resultResource = r2.nextInt(highResource);
+            this.resources =  Resources.values()[resultResource];
+        }
         this.market = new MarketPlace(techLvl, resources);
     }
 

@@ -9,7 +9,7 @@ import android.view.View;
 
 import com.theLads.spacetrader.R;
 
-public class StartActivity extends AppCompatActivity{
+public class IntroStoryActivity extends AppCompatActivity{
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {

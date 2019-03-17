@@ -1,5 +1,7 @@
 package com.theLads.spacetrader.entity;
 
+import android.content.ClipData;
+
 import com.theLads.spacetrader.entity.enums.ItemType;
 import com.theLads.spacetrader.entity.enums.ShipType;
 
@@ -52,12 +54,14 @@ public class Ship {
         return cargoQuantities;
     }
 
+    public int getFuel() {return cargoQuantities.get(ItemType.FUEL.ordinal());}
+
     public int getQuantityOf(ItemType item) {
-        return cargoQuantities.get(item.getIndex());
+        return cargoQuantities.get(item.ordinal());
     }
 
     public void setItemQuantity(ItemType item, int quantity) {
-        cargoQuantities.set(item.getIndex(), quantity);
+        cargoQuantities.set(item.ordinal(), quantity);
     }
 
 

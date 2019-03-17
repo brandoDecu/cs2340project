@@ -74,6 +74,8 @@ public class SellDetailActivity extends AppCompatActivity {
             try {
                 viewModel.sellItem(item, quantity, price);
                 Toast.makeText(this, String.format("%d %s sold", quantity, item.toString()), Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(SellDetailActivity.this, BuySellActivity.class);
+                startActivity(intent);
                 finish();
             } catch (Exception e) {
                 Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();

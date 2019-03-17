@@ -1,6 +1,8 @@
 package com.theLads.spacetrader.entity;
 
 import com.theLads.spacetrader.entity.enums.ItemType;
+import com.theLads.spacetrader.entity.enums.Resources;
+import com.theLads.spacetrader.entity.enums.TechLevel;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -41,6 +43,10 @@ public class SolarSystem {
         return yCoord;
     }
 
+    public TechLevel getTechLvl() {return planet.getTechLvl();}
+
+    public Resources getResources() {return planet.getResources();}
+
     public List<Double> getMarketPrices() {
         return planet.getMarketPrices();
     }
@@ -57,7 +63,6 @@ public class SolarSystem {
         planet.sellItem(item, quantity);
 
     }
-
 
     @Override
     public String toString() {
