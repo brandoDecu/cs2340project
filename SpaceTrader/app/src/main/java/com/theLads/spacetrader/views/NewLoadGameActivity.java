@@ -22,7 +22,7 @@ public class NewLoadGameActivity extends AppCompatActivity{
         setTitle("");
     }
     public void onNewGamePressed(View view) {
-        Intent i = new Intent(this, MainActivity.class);
+        Intent i = new Intent(this, ConfigureGameActivity.class);
         this.startActivity(i);
         //this.finish();
     }
@@ -30,6 +30,7 @@ public class NewLoadGameActivity extends AppCompatActivity{
 
     public void onResume() {
         super.onResume();
+
         music.start();
         music.setLooping(true);
     }

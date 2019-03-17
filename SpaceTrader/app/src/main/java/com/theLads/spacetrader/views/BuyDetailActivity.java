@@ -1,19 +1,15 @@
 package com.theLads.spacetrader.views;
 
 import android.arch.lifecycle.ViewModelProviders;
-import android.content.ClipData;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.theLads.spacetrader.R;
-import com.theLads.spacetrader.entity.Player;
 import com.theLads.spacetrader.entity.enums.ItemType;
 import com.theLads.spacetrader.model.Model;
 import com.theLads.spacetrader.viewmodels.BuySellViewModel;
@@ -79,6 +75,8 @@ public class BuyDetailActivity extends AppCompatActivity {
                 try {
                     viewModel.buyItem(item, quantity, price);
                     Toast.makeText(this, String.format("%d %s bought!", quantity, item.toString()), Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(BuyDetailActivity.this, BuySellActivity.class);
+                    startActivity(intent);
                     finish();
                 } catch (Exception e) {
                     Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
@@ -91,5 +89,6 @@ public class BuyDetailActivity extends AppCompatActivity {
             Toast.makeText(this, "Please enter a valid quantity to buy", Toast.LENGTH_LONG).show();
         }
     }
+
 
 }

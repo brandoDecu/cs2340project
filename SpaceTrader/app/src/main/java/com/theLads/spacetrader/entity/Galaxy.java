@@ -24,16 +24,56 @@ public class Galaxy {
      */
 
     public Galaxy() {
-        solarSystemsList.add(new SolarSystem("XiPing"));
+        solarSystemsList.add(new SolarSystem("Fitness"));
         solarSystemsList.add(new SolarSystem("Squanch"));
         solarSystemsList.add(new SolarSystem("Ugan"));
         solarSystemsList.add(new SolarSystem("Squimble"));
         solarSystemsList.add(new SolarSystem("Urth"));
-        solarSystemsList.add(new SolarSystem("Usuh"));
+        solarSystemsList.add(new SolarSystem("Mibo"));
         solarSystemsList.add(new SolarSystem("Yumin"));
-        solarSystemsList.add(new SolarSystem("Etaly"));
-        solarSystemsList.add( new SolarSystem("Pelonia"));
+        solarSystemsList.add(new SolarSystem("Catanze Aro"));
+        solarSystemsList.add(new SolarSystem("Pelonia"));
         solarSystemsList.add(new SolarSystem("Cretan"));
+        solarSystemsList.add(new SolarSystem("Egmo"));
+        solarSystemsList.add(new SolarSystem("Gluon"));
+        solarSystemsList.add(new SolarSystem("Zlyp"));
+        solarSystemsList.add(new SolarSystem("Marze"));
+        solarSystemsList.add(new SolarSystem("Ghyf"));
+        solarSystemsList.add(new SolarSystem("JMJ 37"));
+        solarSystemsList.add(new SolarSystem("Darrzeevee"));
+        solarSystemsList.add(new SolarSystem("Jayrama"));
+        solarSystemsList.add(new SolarSystem("Il Debran"));
+        solarSystemsList.add(new SolarSystem("Has Maxel"));
+        solarSystemsList.add(new SolarSystem("H20Bob"));
+        solarSystemsList.add(new SolarSystem("Glich"));
+        solarSystemsList.add(new SolarSystem("Zero"));
+        solarSystemsList.add(new SolarSystem("ATL"));
+        solarSystemsList.add(new SolarSystem("XiPing"));
+        solarSystemsList.add(new SolarSystem("Arium"));
+        solarSystemsList.add(new SolarSystem("Lonely"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         numSolarSystems = solarSystemsList.size();
 
@@ -82,6 +122,8 @@ public class Galaxy {
         return currentSolarSystem.getMarketQuantities();
     }
 
+    public SolarSystem getCurrentSolarSystem() {return currentSolarSystem;}
+
     public void buyItem(ItemType item, int quantity) {
         currentSolarSystem.buyItem(item, quantity);
     }
@@ -93,4 +135,9 @@ public class Galaxy {
     public void travelTo(SolarSystem solarSystem) {
         currentSolarSystem = solarSystem;
     }
+
+    public int getDistanceTo(SolarSystem solarSystem) {
+        int index = solarSystemsList.indexOf(solarSystem);
+        return getDistances().get(index);
+    };
 }

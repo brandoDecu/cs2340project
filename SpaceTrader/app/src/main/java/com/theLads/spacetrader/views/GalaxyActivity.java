@@ -8,10 +8,14 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Toast;
 
 import com.theLads.spacetrader.R;
 import com.theLads.spacetrader.entity.SolarSystem;
 import com.theLads.spacetrader.viewmodels.TravelViewModel;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class GalaxyActivity extends AppCompatActivity {
 
@@ -37,28 +41,45 @@ public class GalaxyActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
 
+
+
+        //grab our view model instance
+        viewModel = ViewModelProviders.of(this).get(TravelViewModel.class);
+
         // Setup the adapter for this recycler view
         adapter = new SolarSystemAdapter();
         recyclerView.setAdapter(adapter);
 
-        //grab our view model instance
-        viewModel = ViewModelProviders.of(this).get(TravelViewModel.class);
 
     }
 
     @Override
     public void onResume() {
         super.onResume();
-
-        adapter.setSolarSystemList(viewModel.getSolarSystems());
+        List<SolarSystem> solarSystems = new ArrayList<SolarSystem>(viewModel.getSolarSystems());
+        solarSystems.remove(viewModel.getCurrentSolarSystem());
+        adapter.setSolarSystemList(solarSystems);
 
         adapter.setOnSolarSystemClickListener(new SolarSystemAdapter.OnSolarSystemClickListener() {
             @Override
             public void onSolarSystemClicked(SolarSystem solarSystem) {
-                viewModel.travelTo(solarSystem);
-                Intent intent = new Intent(GalaxyActivity.this, MarketPlaceActivity.class);
-                startActivityForResult(intent, EDIT_REQUEST);
+                try {
+                    viewModel.travelTo(solarSystem);
+                    Intent intent = new Intent(GalaxyActivity.this, MarketPlaceActivity.class);
+                    startActivityForResult(intent, EDIT_REQUEST);
+                    finish();
+                } catch (Exception e) {
+                    Toast.makeText(getApplication(), e.getMessage(), Toast.LENGTH_LONG).show();
+                }
+
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(GalaxyActivity.this, MarketPlaceActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

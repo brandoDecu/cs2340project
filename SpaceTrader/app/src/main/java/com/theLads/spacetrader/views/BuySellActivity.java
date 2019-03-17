@@ -1,28 +1,23 @@
 package com.theLads.spacetrader.views;
 
-import android.app.PendingIntent;
-import android.app.TaskStackBuilder;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 
 import com.theLads.spacetrader.R;
+import com.theLads.spacetrader.entity.MarketPlace;
 import com.theLads.spacetrader.entity.enums.ItemType;
 import com.theLads.spacetrader.viewmodels.BuySellViewModel;
-
-import java.util.ArrayList;
-import java.util.List;
 
 
 /**
  * This displays all students in the model, regardless of registration
  */
-public class BuyActivity extends AppCompatActivity {
+public class BuySellActivity extends AppCompatActivity {
 
     /** a key for passing data */
     public static final String ITEM_DATA = "ITEM_DATA";
@@ -32,9 +27,14 @@ public class BuyActivity extends AppCompatActivity {
     private BuySellViewModel viewModel;
     /** an adapter for the recycler view */
     private ItemAdapter adapter;
+    /** is this buy activity */
+    private Boolean isBuy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Intent intent = getIntent();
+        isBuy = intent.getBooleanExtra("isBuy", true);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trade);
 
@@ -59,28 +59,41 @@ public class BuyActivity extends AppCompatActivity {
     public void onResume() {
         super.onResume();
 
-        adapter.setItemList(viewModel.getMarketQuantities());
+        if (isBuy) {
+            adapter.setItemList(viewModel.getMarketQuantities());
 
-        adapter.setOnItemClickListener(new ItemAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClicked(ItemType item) {
-                Intent intent = new Intent(BuyActivity.this, BuyDetailActivity.class);
+            adapter.setOnItemClickListener(new ItemAdapter.OnItemClickListener() {
+                @Override
+                public void onItemClicked(ItemType item) {
+                    Intent intent = new Intent(BuySellActivity.this, BuyDetailActivity.class);
+                    intent.putExtra(ITEM_DATA, item.toString());
+                    startActivityForResult(intent, EDIT_REQUEST);
+                    finish();
+                }
+            });
 
-                intent.putExtra(ITEM_DATA, item.toString());
-                startActivityForResult(intent, EDIT_REQUEST);
-            }
-        });
+        } else {
+            adapter.setItemList(viewModel.getCargoQuantities());
+
+            adapter.setOnItemClickListener(new ItemAdapter.OnItemClickListener() {
+                @Override
+                public void onItemClicked(ItemType item) {
+                    Intent intent = new Intent(BuySellActivity.this, SellDetailActivity.class);
+                    intent.putExtra(ITEM_DATA, item.toString());
+                    startActivityForResult(intent, EDIT_REQUEST);
+                    finish();
+                }
+            });
+        }
+
+
     }
 
-    public void onBackPressed(View view) {
-        super.onBackPressed();
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(BuySellActivity.this, MarketPlaceActivity.class);
+        startActivity(intent);
+        finish();
     }
 
-//    public void onBuyActivityBackPressed(View view) {
-//        super.onBackPressed();
-//        Intent i = new Intent(this, MarketPlaceActivity.class);
-//        this.startActivity(i);
-//        this.finish();
-//
-//    }
 }
