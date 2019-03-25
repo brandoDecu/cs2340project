@@ -115,6 +115,10 @@ public class Player {
         ship.setItemQuantity(item, ship.getQuantityOf(item) - quantity);
     }
 
+    public void useFuel(int fuel) {
+        ship.setItemQuantity(ItemType.FUEL, ship.getQuantityOf(ItemType.FUEL) - fuel);
+    }
+
 
 
 

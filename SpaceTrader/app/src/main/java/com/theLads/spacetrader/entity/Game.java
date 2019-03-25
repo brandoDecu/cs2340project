@@ -75,6 +75,7 @@ public class Game {
     public List<Integer> getSolarSystemDistances() {return galaxy.getDistances();}
 
     public void travelTo(SolarSystem solarSystem) {
+        player.useFuel(galaxy.getDistanceTo(solarSystem));
         galaxy.travelTo(solarSystem);
     }
 

@@ -23,8 +23,7 @@ public class MarketPlace {
     public MarketPlace(TechLevel techLvl, Resources resources) {
         for(ItemType item : ItemType.values()) {
             itemQuantity.add((new Random().nextInt(40)+10));
-            itemPrice.add((item.getBasePrice()*(item.ordinal() + 1) /
-                    (resources.ordinal() + techLvl.ordinal())));
+            itemPrice.add((item.getBasePrice()*(item.ordinal() + 1))/(resources.ordinal()) + techLvl.ordinal() + 1);
         }
     }
 

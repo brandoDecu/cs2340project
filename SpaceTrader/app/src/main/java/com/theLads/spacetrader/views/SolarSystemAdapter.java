@@ -1,8 +1,10 @@
 package com.theLads.spacetrader.views;
 
+import android.app.Activity;
 import android.arch.lifecycle.ViewModelProvider;
 import android.arch.lifecycle.ViewModelProviders;
 import android.support.annotation.NonNull;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -25,6 +27,13 @@ public class SolarSystemAdapter extends RecyclerView.Adapter<SolarSystemAdapter.
     /** a listener for a touch event on the item */
     private OnSolarSystemClickListener listener;
 
+    public void setCurrAct(Activity currAct) {
+        this.currAct = currAct;
+    }
+
+    private Activity currAct;
+    private TravelViewModel viewModel;
+
     @NonNull
     @Override
     public SolarSystemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
@@ -33,6 +42,8 @@ public class SolarSystemAdapter extends RecyclerView.Adapter<SolarSystemAdapter.
         View solarSystemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.solar_system, parent, false);
 
+
+        viewModel = ViewModelProviders.of((FragmentActivity) currAct).get(TravelViewModel.class);
         return new SolarSystemViewHolder(solarSystemView);
     }
 
@@ -45,11 +56,9 @@ public class SolarSystemAdapter extends RecyclerView.Adapter<SolarSystemAdapter.
 
         Log.d("APP", "Binding: " + position + " " + solarSystemList.get(position));
 
-        String solarSystemInfo = solarSystem.getName() + ": " + solarSystem.getTechLvl().toString()
-                + ", " + solarSystem.getResources().toString();
+        String solarSystemInfo = solarSystem.getName() + " Dist: " + viewModel.getDistanceTo(solarSystem);
 
         holder.solarSystemIndex.setText(solarSystemInfo);
-        holder.solarSystemIndex.setTextSize(13);
 
     }
 

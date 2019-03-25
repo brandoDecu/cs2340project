@@ -87,4 +87,11 @@ public class SellDetailActivity extends AppCompatActivity {
             Toast.makeText(this, "Please enter a valid quantity to sell", Toast.LENGTH_LONG).show();
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this, BuySellActivity.class);
+        startActivity(intent);
+        finish();
+    }
 }

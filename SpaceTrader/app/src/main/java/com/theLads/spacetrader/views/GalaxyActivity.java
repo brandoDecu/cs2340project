@@ -48,6 +48,7 @@ public class GalaxyActivity extends AppCompatActivity {
 
         // Setup the adapter for this recycler view
         adapter = new SolarSystemAdapter();
+        adapter.setCurrAct(this);
         recyclerView.setAdapter(adapter);
 
 

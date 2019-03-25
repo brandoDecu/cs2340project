@@ -91,4 +91,12 @@ public class BuyDetailActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this, BuySellActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+
 }

@@ -64,6 +64,10 @@
     <string name="activityBuyBack">Back</string>
 
 
+    <!--travelActivity-->
+    <string name="choose_a_solarsystem">Choose a Solar System:</string>
+
+
     <!--welcome to planet-->
     <string name="travel">Travel</string>
     <string name="buy">Buy</string>
