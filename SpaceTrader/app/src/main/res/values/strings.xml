@@ -73,7 +73,8 @@
     <string name="buy">Buy</string>
     <string name="sell">Sell</string>
     <string name="busted_by_the_police">Busted by the Police!</string>
-
+    <string name="as_a_bribe_to_stay_of_your_back_you_pay_a_fine_of_50_of_your_credits_and_give_up_your_firearms_and_narcotics">As a bribe to stay of your back, you pay a fine of 50% of your credits and give up your Firearms and Narcotics.</string>
+    <string name="accept_deal">Accept Deal</string>
 
 
 </resources>

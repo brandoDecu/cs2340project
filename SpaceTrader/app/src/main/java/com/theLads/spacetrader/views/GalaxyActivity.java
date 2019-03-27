@@ -69,7 +69,7 @@ public class GalaxyActivity extends AppCompatActivity {
                     viewModel.travelTo(solarSystem);
                     Random r = new Random();
                     int highRandom = r.nextInt(100);
-                    if (highRandom <= 1) {
+                    if (highRandom <= 4) {
                         Intent i = new Intent(GalaxyActivity.this, PoliceRandomActivity.class);
                         startActivity(i);
                         finish();

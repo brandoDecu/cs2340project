@@ -75,11 +75,11 @@ public class Model {
             Log.e("Model", "Error casting a class from the binary file",e);
             success = false;
         }
-        if (myRepository == null || myRepository.getCurrentGame().getPlayer().getName() == null) {
-            success = false;
-        } else {
-            Log.d("Model", myRepository.getCurrentGame().getPlayer().getName());
-        }
+       // if (myRepository == null || myRepository.getCurrentGame().getPlayer().getName() == null) {
+        //    success = false;
+       // } else {
+        //    Log.d("Model", myRepository.getCurrentGame().getPlayer().getName());
+        //}
         Log.d("Model", "hello");
 
 

@@ -1,5 +1,6 @@
 package com.theLads.spacetrader.views;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -18,7 +19,8 @@ public class PoliceRandomActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.police_activity);
+        viewModel = ViewModelProviders.of(this).get(TravelViewModel.class);
     }
 
     public void onPoliceAccept(View view) {
