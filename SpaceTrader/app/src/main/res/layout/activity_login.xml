@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/main_background">
+    android:background="@drawable/pastel">
 
 
     <Button
@@ -46,5 +46,17 @@
         android:layout_marginStart="12dp"
         android:layout_marginBottom="12dp"
         android:text="@string/continueButton" />
+
+    <ImageView
+        android:id="@+id/logo_white"
+        android:layout_width="400dp"
+        android:layout_height="200dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
+        app:srcCompat="@drawable/logo_white" />
 
 </RelativeLayout>
