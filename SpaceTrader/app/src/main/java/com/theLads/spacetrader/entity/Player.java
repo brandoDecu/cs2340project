@@ -4,10 +4,11 @@ import com.theLads.spacetrader.entity.enums.GameDifficulty;
 import com.theLads.spacetrader.entity.enums.ItemType;
 import com.theLads.spacetrader.entity.enums.ShipType;
 
+import java.io.Serializable;
 import java.util.List;
 
 /** This class represents a single player for the Space Trader game. */
-public class Player {
+public class Player implements Serializable {
 
     private int playerId;
 

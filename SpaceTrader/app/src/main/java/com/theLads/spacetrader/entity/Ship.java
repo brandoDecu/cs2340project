@@ -5,11 +5,12 @@ import android.content.ClipData;
 import com.theLads.spacetrader.entity.enums.ItemType;
 import com.theLads.spacetrader.entity.enums.ShipType;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Ship {
+public class Ship implements Serializable {
 
     private ShipType type;
     private int health;

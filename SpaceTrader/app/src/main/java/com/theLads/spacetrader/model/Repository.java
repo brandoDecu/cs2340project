@@ -2,6 +2,7 @@ package com.theLads.spacetrader.model;
 
 import android.util.Log;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +14,7 @@ import com.theLads.spacetrader.entity.Player;
  * Normally this would passthrough to our ROOM (database) objects.   To keep this assignment
  * simple, we are just using in-memory storage
  */
-public class Repository {
+public class Repository implements Serializable {
 
     /***
      * This provides a mechanism to generate simple unique numbers to be used as
