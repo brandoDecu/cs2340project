@@ -16,6 +16,7 @@ import com.theLads.spacetrader.viewmodels.TravelViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class GalaxyActivity extends AppCompatActivity {
 
@@ -66,9 +67,17 @@ public class GalaxyActivity extends AppCompatActivity {
             public void onSolarSystemClicked(SolarSystem solarSystem) {
                 try {
                     viewModel.travelTo(solarSystem);
-                    Intent intent = new Intent(GalaxyActivity.this, MarketPlaceActivity.class);
-                    startActivityForResult(intent, EDIT_REQUEST);
-                    finish();
+                    Random r = new Random();
+                    int highRandom = r.nextInt(100);
+                    if (highRandom <= 1) {
+                        Intent i = new Intent(GalaxyActivity.this, PoliceRandomActivity.class);
+                        startActivity(i);
+                        finish();
+                    } else {
+                        Intent intent = new Intent(GalaxyActivity.this, MarketPlaceActivity.class);
+                        startActivityForResult(intent, EDIT_REQUEST);
+                        finish();
+                    }
                 } catch (Exception e) {
                     Toast.makeText(getApplication(), e.getMessage(), Toast.LENGTH_LONG).show();
                 }
