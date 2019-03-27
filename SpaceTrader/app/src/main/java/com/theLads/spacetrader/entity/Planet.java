@@ -4,10 +4,11 @@ import com.theLads.spacetrader.entity.enums.ItemType;
 import com.theLads.spacetrader.entity.enums.Resources;
 import com.theLads.spacetrader.entity.enums.TechLevel;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Random;
 
-public class Planet {
+public class Planet implements Serializable {
 
     private String name;
 

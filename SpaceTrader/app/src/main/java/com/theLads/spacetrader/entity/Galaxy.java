@@ -4,6 +4,7 @@ import android.util.Log;
 
 import com.theLads.spacetrader.entity.enums.ItemType;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -12,7 +13,7 @@ import java.util.Random;
 import static java.lang.Math.abs;
 import static java.lang.Math.sqrt;
 
-public class Galaxy {
+public class Galaxy implements Serializable {
 
     private List<SolarSystem> solarSystemsList = new ArrayList<>();
     private SolarSystem currentSolarSystem;

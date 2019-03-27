@@ -8,7 +8,10 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.theLads.spacetrader.R;
+import com.theLads.spacetrader.model.Model;
 import com.theLads.spacetrader.viewmodels.TravelViewModel;
+
+import java.io.File;
 
 public class MarketPlaceActivity extends AppCompatActivity {
 
@@ -42,11 +45,13 @@ public class MarketPlaceActivity extends AppCompatActivity {
         Intent i = new Intent(this, GalaxyActivity.class);
         this.startActivity(i);
         this.finish();
-
     }
 
     @Override
     public void onBackPressed() {
+        Model model = Model.getInstance();
+        File file = new File(this.getFilesDir(), Model.DEFAULT_BINARY_FILE_NAME);
+        model.saveBinaryRepository(file);
         super.onBackPressed();
     }
 }

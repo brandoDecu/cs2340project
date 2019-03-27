@@ -6,6 +6,7 @@ import com.theLads.spacetrader.entity.enums.ItemType;
 import com.theLads.spacetrader.entity.enums.Resources;
 import com.theLads.spacetrader.entity.enums.TechLevel;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -13,7 +14,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
-public class MarketPlace {
+public class MarketPlace implements Serializable {
 
 
     private List<Integer> itemQuantity = new ArrayList<>();
@@ -23,7 +24,7 @@ public class MarketPlace {
     public MarketPlace(TechLevel techLvl, Resources resources) {
         for(ItemType item : ItemType.values()) {
             itemQuantity.add((new Random().nextInt(40)+10));
-            itemPrice.add((item.getBasePrice()*(item.ordinal() + 1))/(resources.ordinal()) + techLvl.ordinal() + 1);
+            itemPrice.add((item.getBasePrice()*(item.ordinal() + 1))/(resources.ordinal() + techLvl.ordinal() + 1));
         }
     }
 

@@ -3,9 +3,10 @@ package com.theLads.spacetrader.entity;
 import com.theLads.spacetrader.entity.enums.GameDifficulty;
 import com.theLads.spacetrader.entity.enums.ItemType;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Game {
+public class Game implements Serializable {
 
     private GameDifficulty difficulty;
     private Player player;
