@@ -106,7 +106,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="40dp"
         android:layout_marginTop="40dp"
-        android:text="Piloting?:"
+        android:text="Piloting:"
         android:textAlignment="textEnd"
         android:textColor="@android:color/white"
         android:textSize="30sp"
