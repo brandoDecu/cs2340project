@@ -27,7 +27,13 @@ public class GameInteractor extends Interactor {
         return getRepository().getCurrentGame();
     }
 
-    public String getPlanetName() {return getCurrentGame().getPlanetName();}
+    public String getPlanetName() {
+        if (getCurrentGame() == null) {
+            Log.d("yolo", "ylol");
+        }
+
+        return getCurrentGame().getPlanetName();
+    }
 
     public void setCredits(double credits) {
         Player player = getCurrentGame().getPlayer();

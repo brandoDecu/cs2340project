@@ -67,6 +67,7 @@ public class Model {
             ObjectInputStream in = new ObjectInputStream(new FileInputStream(file));
             // assuming we saved our top level object, we read it back in with one line of code.
             myRepository = (Repository) in.readObject();
+            registerInteractors();
             in.close();
         } catch (IOException e) {
             Log.e("Model", "Error reading an entry from binary file",e);
@@ -75,11 +76,15 @@ public class Model {
             Log.e("Model", "Error casting a class from the binary file",e);
             success = false;
         }
-       // if (myRepository == null || myRepository.getCurrentGame().getPlayer().getName() == null) {
-        //    success = false;
-       // } else {
-        //    Log.d("Model", myRepository.getCurrentGame().getPlayer().getName());
-        //}
+
+        if (myRepository == null || myRepository.getCurrentGame().getPlayer().getName() == null) {
+            Log.d("Model", "Null");
+
+            success = false;
+        } else {
+            Log.d("Model", myRepository.getCurrentGame().getPlanetName());
+        }
+
         Log.d("Model", "hello");
 
 
