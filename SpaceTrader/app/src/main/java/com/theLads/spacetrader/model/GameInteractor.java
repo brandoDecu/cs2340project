@@ -35,6 +35,10 @@ public class GameInteractor extends Interactor {
         return getCurrentGame().getPlanetName();
     }
 
+    public void setCredits(double credits) {
+        Player player = getCurrentGame().getPlayer();
+        player.setCredits(credits);
+    }
 
     public List<Integer> getCargoQuantities() {
         return getCurrentGame().getCargoQuantities();

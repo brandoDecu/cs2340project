@@ -76,6 +76,7 @@ public class Model {
             Log.e("Model", "Error casting a class from the binary file",e);
             success = false;
         }
+
         if (myRepository == null || myRepository.getCurrentGame().getPlayer().getName() == null) {
             Log.d("Model", "Null");
 
@@ -83,6 +84,7 @@ public class Model {
         } else {
             Log.d("Model", myRepository.getCurrentGame().getPlanetName());
         }
+
         Log.d("Model", "hello");
 
 
