@@ -1,13 +1,11 @@
 package com.theLads.spacetrader.entity;
 
-import android.content.ClipData;
-
 import com.theLads.spacetrader.entity.enums.ItemType;
 import com.theLads.spacetrader.entity.enums.ShipType;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class Ship implements Serializable {
@@ -47,12 +45,12 @@ public class Ship implements Serializable {
         return health;
     }
 
-    public int getCargoCapacity() {
+    private int getCargoCapacity() {
         return type.getCargoCapacity();
     }
 
     public List<Integer> getCargoQuantities() {
-        return cargoQuantities;
+        return Collections.unmodifiableList(cargoQuantities);
     }
 
     public int getFuel() {return cargoQuantities.get(ItemType.FUEL.ordinal());}

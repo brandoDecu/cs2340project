@@ -8,7 +8,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -93,7 +92,7 @@ public final class Model {
      * @param file the binary file
      * @return success
      */
-    public boolean saveBinaryRepository(File file) {
+    public void saveBinaryRepository(File file) {
         boolean success = true;
         try {
             /*
@@ -116,9 +115,7 @@ public final class Model {
 
         } catch (IOException e) {
             Log.e("Model", "Error writing an entry from binary file",e);
-            success = false;
         }
-        return success;
     }
 
 

@@ -6,10 +6,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
 
 import com.theLads.spacetrader.R;
-import com.theLads.spacetrader.entity.MarketPlace;
 import com.theLads.spacetrader.entity.enums.ItemType;
 import com.theLads.spacetrader.viewmodels.BuySellViewModel;
 
@@ -20,7 +18,7 @@ import com.theLads.spacetrader.viewmodels.BuySellViewModel;
 public class BuySellActivity extends AppCompatActivity {
 
     /** a key for passing data */
-    public static final String ITEM_DATA = "ITEM_DATA";
+    private static final String ITEM_DATA = "ITEM_DATA";
     /** an int for the request code */
     private static final int EDIT_REQUEST = 5;
     /** our data model */

@@ -5,7 +5,6 @@ import com.theLads.spacetrader.entity.enums.Resources;
 import com.theLads.spacetrader.entity.enums.TechLevel;
 
 import java.io.Serializable;
-import java.util.LinkedList;
 import java.util.List;
 
 public class SolarSystem implements Serializable {

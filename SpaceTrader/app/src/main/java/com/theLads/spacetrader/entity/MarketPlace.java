@@ -1,7 +1,5 @@
 package com.theLads.spacetrader.entity;
 
-import android.content.ClipData;
-
 import com.theLads.spacetrader.entity.enums.ItemType;
 import com.theLads.spacetrader.entity.enums.Resources;
 import com.theLads.spacetrader.entity.enums.TechLevel;
@@ -9,12 +7,11 @@ import com.theLads.spacetrader.entity.enums.TechLevel;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
+import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 import java.util.Random;
 
-public class MarketPlace implements Serializable {
+class MarketPlace implements Serializable {
 
 
     private final List<Integer> itemQuantity = new ArrayList<>();
@@ -33,11 +30,11 @@ public class MarketPlace implements Serializable {
     }
 
     public List<Integer> getMarketQuantities() {
-        return itemQuantity;
+        return Collections.unmodifiableList(itemQuantity);
     }
 
     public List<Double> getPrices() {
-        return itemPrice;
+        return Collections.unmodifiableList(itemPrice);
     }
 
     public double getCostOf(ItemType item) {

@@ -1,7 +1,6 @@
 package com.theLads.spacetrader.views;
 
 import android.app.Activity;
-import android.arch.lifecycle.ViewModelProvider;
 import android.arch.lifecycle.ViewModelProviders;
 import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentActivity;
@@ -79,7 +78,7 @@ public class SolarSystemAdapter extends RecyclerView.Adapter<SolarSystemAdapter.
     class SolarSystemViewHolder extends RecyclerView.ViewHolder {
         private final TextView solarSystemIndex;
 
-        public SolarSystemViewHolder(@NonNull View solarSystemView) {
+        SolarSystemViewHolder(@NonNull View solarSystemView) {
             super(solarSystemView);
             solarSystemIndex = solarSystemView.findViewById(R.id.text_solar_system_id);
 
@@ -89,7 +88,7 @@ public class SolarSystemAdapter extends RecyclerView.Adapter<SolarSystemAdapter.
                 public void onClick(View view) {
                     int position = getAdapterPosition();
 
-                    if (listener != null && position != RecyclerView.NO_POSITION) {
+                    if ((listener != null) && (position != RecyclerView.NO_POSITION)) {
                         listener.onSolarSystemClicked(solarSystemList.get(position));
                     }
                 }

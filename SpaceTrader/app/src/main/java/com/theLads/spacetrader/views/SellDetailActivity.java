@@ -4,7 +4,6 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -68,7 +67,7 @@ public class SellDetailActivity extends AppCompatActivity {
             // error text will display from else statement
         }
 
-        if (quantity <= supply && quantity > 0) {
+        if ((quantity <= supply) && (quantity > 0)) {
             try {
                 viewModel.sellItem(item, quantity, price);
                 Toast.makeText(this, String.format("%d %s sold", quantity, item.toString()), Toast.LENGTH_LONG).show();

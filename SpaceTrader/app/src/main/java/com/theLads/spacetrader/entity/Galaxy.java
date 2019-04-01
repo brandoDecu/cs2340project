@@ -1,12 +1,10 @@
 package com.theLads.spacetrader.entity;
 
-import android.util.Log;
-
 import com.theLads.spacetrader.entity.enums.ItemType;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -17,7 +15,7 @@ public class Galaxy implements Serializable {
 
     private final List<SolarSystem> solarSystemsList = new ArrayList<>();
     private SolarSystem currentSolarSystem;
-    private static int numSolarSystems;
+    private final int numSolarSystems;
 
 
     /**
@@ -55,27 +53,6 @@ public class Galaxy implements Serializable {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         numSolarSystems = solarSystemsList.size();
 
         // Current solar system is random upon starting the game
@@ -84,7 +61,7 @@ public class Galaxy implements Serializable {
     }
 
     public List<SolarSystem> getSolarSystems() {
-        return solarSystemsList;
+        return Collections.unmodifiableList(solarSystemsList);
     }
 
     public List<String> getSolarSystemNames() {
@@ -108,7 +85,7 @@ public class Galaxy implements Serializable {
 
             int xDist = abs(xcoord - currxCoord);
             int yDist = abs(ycoord - curryCoord);
-            distances.add((int) sqrt(xDist*xDist + yDist*yDist));
+            distances.add((int) sqrt((xDist * xDist) + (yDist * yDist)));
         }
         return distances;
     }
@@ -140,5 +117,5 @@ public class Galaxy implements Serializable {
     public int getDistanceTo(SolarSystem solarSystem) {
         int index = solarSystemsList.indexOf(solarSystem);
         return getDistances().get(index);
-    };
+    }
 }

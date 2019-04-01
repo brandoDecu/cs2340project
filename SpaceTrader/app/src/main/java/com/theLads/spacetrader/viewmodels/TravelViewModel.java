@@ -3,20 +3,16 @@ package com.theLads.spacetrader.viewmodels;
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.support.annotation.NonNull;
-import android.util.Log;
 
 import com.theLads.spacetrader.entity.Game;
-import com.theLads.spacetrader.entity.Planet;
 import com.theLads.spacetrader.entity.Player;
 import com.theLads.spacetrader.entity.SolarSystem;
 import com.theLads.spacetrader.entity.enums.ItemType;
-import com.theLads.spacetrader.entity.enums.Resources;
 import com.theLads.spacetrader.model.GameInteractor;
 
 import com.theLads.spacetrader.model.Model;
 
 import java.util.List;
-import java.util.Random;
 
 public class TravelViewModel extends AndroidViewModel {
     private final GameInteractor interactor;
@@ -33,15 +29,15 @@ public class TravelViewModel extends AndroidViewModel {
 
     public List<String> getSolarSystemNames() {return interactor.getSolarSystemNames();}
 
-    public List<Integer> getSolarSystemDistances() {return interactor.getSolarSystemDistances();}
+    private List<Integer> getSolarSystemDistances() {return interactor.getSolarSystemDistances();}
 
-    public int getFuel() {return interactor.getFuel();}
+    private int getFuel() {return interactor.getFuel();}
 
-    public Game getCurrentGame() {
+    private Game getCurrentGame() {
         currentGame = interactor.getCurrentGame();
         return currentGame;
     }
-    public Player getCurrentPlayer() {
+    private Player getCurrentPlayer() {
         currentGame = getCurrentGame();
         player =  currentGame.getPlayer();
         return player;

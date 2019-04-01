@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Random;
 
-public class Planet implements Serializable {
+class Planet implements Serializable {
 
     private final String name;
 

@@ -3,9 +3,7 @@ package com.theLads.spacetrader.viewmodels;
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.support.annotation.NonNull;
-import android.util.Log;
 
-import com.theLads.spacetrader.entity.Game;
 import com.theLads.spacetrader.entity.enums.ItemType;
 import com.theLads.spacetrader.model.GameInteractor;
 
@@ -24,11 +22,13 @@ public class BuySellViewModel extends AndroidViewModel {
         return interactor.getCargoQuantities();
     }
 
-    public List<Double> getMarketPrices() {
-        return interactor.getMarketPrices();
-    }
+// --Commented out by Inspection START (4/1/2019 10:58 AM):
+//    public List<Double> getMarketPrices() {
+//        return interactor.getMarketPrices();
+//    }
+// --Commented out by Inspection STOP (4/1/2019 10:58 AM)
 
-    public double getCredits() { return interactor.getCredits();}
+    private double getCredits() { return interactor.getCredits();}
 
 
     public List<Integer> getMarketQuantities() {
@@ -36,7 +36,7 @@ public class BuySellViewModel extends AndroidViewModel {
     }
 
     public void buyItem(ItemType item, int quantity, double price) {
-        if (price * quantity <= getCredits()) {
+        if ((price * quantity) <= getCredits()) {
             interactor.buyItem(item, quantity, price);
         } else {
             throw new IllegalArgumentException("You have insufficient funds");

@@ -9,15 +9,14 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.theLads.spacetrader.R;
-import com.theLads.spacetrader.entity.MarketPlace;
 import com.theLads.spacetrader.model.Model;
 
 import java.io.File;
 
 public class NewLoadGameActivity extends AppCompatActivity{
 
-    MediaPlayer music;
-    Boolean binaryExists;
+    private MediaPlayer music;
+    private Boolean binaryExists;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +48,7 @@ public class NewLoadGameActivity extends AppCompatActivity{
     }
 
 
+    @Override
     public void onResume() {
         super.onResume();
 

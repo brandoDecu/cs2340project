@@ -4,6 +4,7 @@ import android.util.Log;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import com.theLads.spacetrader.entity.Game;
@@ -46,7 +47,7 @@ public class Repository implements Serializable {
      * get all the students in teh system
      * @return list of all students
      */
-    public List<Game> getAllGames() { return allGames;}
+    public List<Game> getAllGames() { return Collections.unmodifiableList(allGames);}
 
     public Game getCurrentGame(){
         return currentGame;

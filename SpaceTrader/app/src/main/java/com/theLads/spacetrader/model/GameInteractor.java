@@ -1,9 +1,6 @@
 package com.theLads.spacetrader.model;
 
-import android.util.Log;
-
 import com.theLads.spacetrader.entity.Game;
-import com.theLads.spacetrader.entity.Planet;
 import com.theLads.spacetrader.entity.Player;
 import com.theLads.spacetrader.entity.SolarSystem;
 import com.theLads.spacetrader.entity.enums.ItemType;

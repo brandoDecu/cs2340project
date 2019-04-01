@@ -8,7 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.theLads.spacetrader.R;
-import com.theLads.spacetrader.entity.MarketPlace;
 import com.theLads.spacetrader.viewmodels.TravelViewModel;
 
 public class PoliceRandomActivity extends AppCompatActivity {

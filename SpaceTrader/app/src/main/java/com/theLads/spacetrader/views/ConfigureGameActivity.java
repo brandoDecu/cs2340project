@@ -108,10 +108,10 @@ public class ConfigureGameActivity extends AppCompatActivity {
         }
 
 
-        if (name.equals("")) {
+        if ("".equals(name)) {
             Toast.makeText(this, "Name cannot be empty", Toast.LENGTH_LONG).show();
 
-        } else if (engineerS < 0 || tradeS < 0 || pilotS < 0 || fightS < 0) {
+        } else if ((engineerS < 0) || (tradeS < 0) || (pilotS < 0) || (fightS < 0)) {
             Toast.makeText(this, "Skill points cannot be negative", Toast.LENGTH_LONG).show();
 
 
@@ -140,6 +140,7 @@ public class ConfigureGameActivity extends AppCompatActivity {
 //        //student.setStanding(ClassStanding.val2e( (String) standingSpinner.getSelectedItem()));
 
     }
+    @Override
     public void onResume() {
         super.onResume();
     }

@@ -5,7 +5,7 @@ package com.theLads.spacetrader.model;
 /**
  * Interface for our concrete interactors
  */
-public abstract class Interactor {
+abstract class Interactor {
 
     private final Repository myRepository;
 
@@ -13,7 +13,7 @@ public abstract class Interactor {
         myRepository = repo;
     }
 
-    protected Repository getRepository() {
+    Repository getRepository() {
         return myRepository;
     }
 
