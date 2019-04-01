@@ -23,14 +23,16 @@ public class Repository implements Serializable {
     private static int next_id = 1;
 
     private static int getNextUniqueID() {
-        return next_id++;
+        int result = next_id;
+        next_id++;
+        return result;
     }
 
     private Game currentGame;
 
 
     /** all the students known in the application */
-    private List<Game> allGames;
+    private final List<Game> allGames;
 
     /**
      * Make a new Repository object

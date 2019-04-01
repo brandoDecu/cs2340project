@@ -77,7 +77,7 @@ public class SolarSystemAdapter extends RecyclerView.Adapter<SolarSystemAdapter.
      * This is a holder for the widgets associated with a single entry in the list of SolarSystems
      */
     class SolarSystemViewHolder extends RecyclerView.ViewHolder {
-        private TextView solarSystemIndex;
+        private final TextView solarSystemIndex;
 
         public SolarSystemViewHolder(@NonNull View solarSystemView) {
             super(solarSystemView);

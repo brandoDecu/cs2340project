@@ -12,9 +12,9 @@ import java.util.List;
 
 public class Ship implements Serializable {
 
-    private ShipType type;
-    private int health;
-    private List<Integer> cargoQuantities = new ArrayList<>();
+    private final ShipType type;
+    private final int health;
+    private final List<Integer> cargoQuantities = new ArrayList<>();
 
     /**
      * Ship constructor that takes in a ShipType enum and creates a ship for the player

@@ -17,9 +17,9 @@ import java.util.Random;
 public class MarketPlace implements Serializable {
 
 
-    private List<Integer> itemQuantity = new ArrayList<>();
+    private final List<Integer> itemQuantity = new ArrayList<>();
 
-    private List<Double> itemPrice = new ArrayList<>();
+    private final List<Double> itemPrice = new ArrayList<>();
 
     public MarketPlace(TechLevel techLvl, Resources resources) {
         for(ItemType item : ItemType.values()) {

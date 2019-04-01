@@ -10,13 +10,13 @@ import java.util.Random;
 
 public class Planet implements Serializable {
 
-    private String name;
+    private final String name;
 
-    private TechLevel techLvl;
+    private final TechLevel techLvl;
 
-    private Resources resources;
+    private final Resources resources;
 
-    private MarketPlace market;
+    private final MarketPlace market;
 
     /**
      * Planet constructor that takes in a name and creates a planet with random values for tech,

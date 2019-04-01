@@ -18,7 +18,7 @@ import java.util.List;
 public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder> {
 
     /** a copy of the list of items in the model */
-    private List<ItemType> itemList = new ArrayList<>();
+    private final List<ItemType> itemList = new ArrayList<>();
 
     /** a listener for a touch event on the item */
     private OnItemClickListener listener;
@@ -69,7 +69,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
      * This is a holder for the widgets associated with a single entry in the list of items
      */
     class ItemViewHolder extends RecyclerView.ViewHolder {
-        private TextView itemIndex;
+        private final TextView itemIndex;
 
         public ItemViewHolder(@NonNull View itemView) {
             super(itemView);

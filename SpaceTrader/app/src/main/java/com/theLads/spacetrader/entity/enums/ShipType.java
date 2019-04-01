@@ -3,11 +3,11 @@ package com.theLads.spacetrader.entity.enums;
 public enum ShipType {
     GNAT ("GNAT", 100,500);
 
-    private String typeName;
+    private final String typeName;
 
-    private int maxHealth;
+    private final int maxHealth;
 
-    private int cargoCapacity;
+    private final int cargoCapacity;
 
     /**
      * Constructor for the type of ship to be created

@@ -14,7 +14,7 @@ import com.theLads.spacetrader.model.Model;
 
 public class AddGameViewModel extends AndroidViewModel {
 
-    private GameInteractor interactor;
+    private final GameInteractor interactor;
     public AddGameViewModel(@NonNull Application application) {
         super(application);
         interactor = Model.getInstance().getGameInteractor();

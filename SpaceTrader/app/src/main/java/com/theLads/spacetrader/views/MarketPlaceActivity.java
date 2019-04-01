@@ -15,13 +15,11 @@ import java.io.File;
 
 public class MarketPlaceActivity extends AppCompatActivity {
 
-    private TravelViewModel viewModel;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_market_place);
-        viewModel = ViewModelProviders.of(this).get(TravelViewModel.class);
+        TravelViewModel viewModel = ViewModelProviders.of(this).get(TravelViewModel.class);
         TextView title = (TextView)findViewById(R.id.welcome2planet);
         title.setText("Planet " + viewModel.getPlanetName());
 

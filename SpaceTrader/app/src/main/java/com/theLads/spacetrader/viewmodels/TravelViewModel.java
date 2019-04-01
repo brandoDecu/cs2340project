@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.Random;
 
 public class TravelViewModel extends AndroidViewModel {
-    private GameInteractor interactor;
+    private final GameInteractor interactor;
     private Game currentGame;
     private Player player;
 

@@ -17,17 +17,17 @@ import java.util.Map;
  *
  */
 
-public class Model {
+public final class Model {
 //    Model is a facade so that UI knows nothing about the backend
 
-    public final static String DEFAULT_BINARY_FILE_NAME = "data.bin";
+    public static final String DEFAULT_BINARY_FILE_NAME = "data.bin";
 
     /** the data repository */
     private Repository myRepository;
 
-    private Map<String, Object> interactorMap;
+    private final Map<String, Object> interactorMap;
 
-    private static  Model instance = new Model();
+    private static final Model instance = new Model();
 
     public static Model getInstance() { return instance; }
 

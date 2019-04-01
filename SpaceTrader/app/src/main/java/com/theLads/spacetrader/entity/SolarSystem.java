@@ -10,11 +10,11 @@ import java.util.List;
 
 public class SolarSystem implements Serializable {
 
-    private Planet planet;
+    private final Planet planet;
 
-    private int xCoord;
+    private final int xCoord;
 
-    private int yCoord;
+    private final int yCoord;
 
     /**
      * Solar system constructor that builds a solar system for the game

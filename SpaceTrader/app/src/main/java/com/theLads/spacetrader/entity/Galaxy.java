@@ -15,7 +15,7 @@ import static java.lang.Math.sqrt;
 
 public class Galaxy implements Serializable {
 
-    private List<SolarSystem> solarSystemsList = new ArrayList<>();
+    private final List<SolarSystem> solarSystemsList = new ArrayList<>();
     private SolarSystem currentSolarSystem;
     private static int numSolarSystems;
 

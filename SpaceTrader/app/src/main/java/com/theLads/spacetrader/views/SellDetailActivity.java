@@ -15,14 +15,12 @@ import com.theLads.spacetrader.entity.enums.ItemType;
 import com.theLads.spacetrader.model.Model;
 import com.theLads.spacetrader.viewmodels.BuySellViewModel;
 
+import java.util.Objects;
+
 public class SellDetailActivity extends AppCompatActivity {
 
     private BuySellViewModel viewModel;
 
-    private TextView itemName;
-    private TextView itemQuant;
-    private TextView priceTag;
-    private TextView creditsTag;
     private EditText quantityField;
 
     private ItemType item;
@@ -37,14 +35,14 @@ public class SellDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sell_detail);
 
         // find text fields to set to specific item being bought
-        itemName = findViewById(R.id.itemName);
+        TextView itemName = findViewById(R.id.itemName);
         quantityField = findViewById(R.id.quatityField);
-        itemQuant = findViewById(R.id.itemQuant);
-        priceTag = findViewById(R.id.priceTag);
-        creditsTag = findViewById(R.id.creditsTag);
+        TextView itemQuant = findViewById(R.id.itemQuant);
+        TextView priceTag = findViewById(R.id.priceTag);
+        TextView creditsTag = findViewById(R.id.creditsTag);
 
         //get values from model
-        item = ItemType.valueOf(getIntent().getExtras().getString("ITEM_DATA"));
+        item = ItemType.valueOf(Objects.requireNonNull(getIntent().getExtras()).getString("ITEM_DATA"));
         supply = Model.getInstance().getGameInteractor().getCargoQuantities().get(item.ordinal());
         price = Model.getInstance().getGameInteractor().getMarketPrices().get(item.ordinal());
         Double credits = Model.getInstance().getGameInteractor().getCredits();

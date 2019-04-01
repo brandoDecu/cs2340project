@@ -8,10 +8,10 @@ import java.util.List;
 
 public class Game implements Serializable {
 
-    private GameDifficulty difficulty;
-    private Player player;
+    private final GameDifficulty difficulty;
+    private final Player player;
     private int gameId;
-    private Galaxy galaxy;
+    private final Galaxy galaxy;
 
     /*
     Constructor for Game
