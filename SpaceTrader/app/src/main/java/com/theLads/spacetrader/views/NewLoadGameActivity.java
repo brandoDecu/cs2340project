@@ -38,7 +38,8 @@ public class NewLoadGameActivity extends AppCompatActivity{
 
     public void onContinuePressed(View view) {
         if (binaryExists) {
-            Toast.makeText(this, binaryExists.toString(), Toast.LENGTH_LONG).show();
+            String playername = Model.getInstance().getGameInteractor().getCurrentGame().getPlayer().getName();
+            Toast.makeText(this, "Welcome back: " + playername, Toast.LENGTH_LONG).show();
             Intent i = new Intent(this, MarketPlaceActivity.class);
             this.startActivity(i);
         } else {

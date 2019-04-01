@@ -67,6 +67,7 @@ public class Model {
             ObjectInputStream in = new ObjectInputStream(new FileInputStream(file));
             // assuming we saved our top level object, we read it back in with one line of code.
             myRepository = (Repository) in.readObject();
+            registerInteractors();
             in.close();
         } catch (IOException e) {
             Log.e("Model", "Error reading an entry from binary file",e);
