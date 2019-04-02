@@ -15,7 +15,7 @@ import com.theLads.spacetrader.entity.Player;
  * Normally this would passthrough to our ROOM (database) objects.   To keep this assignment
  * simple, we are just using in-memory storage
  */
-public class Repository implements Serializable {
+class Repository implements Serializable {
 
     /***
      * This provides a mechanism to generate simple unique numbers to be used as

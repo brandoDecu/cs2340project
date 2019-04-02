@@ -6,7 +6,6 @@ import com.theLads.spacetrader.entity.enums.TechLevel;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
@@ -18,37 +17,29 @@ class MarketPlace implements Serializable {
 
     private final List<Double> itemPrice = new ArrayList<>();
 
-    public MarketPlace(TechLevel techLvl, Resources resources) {
+    MarketPlace(TechLevel techLvl, Resources resources) {
         for(ItemType item : ItemType.values()) {
             itemQuantity.add((new Random().nextInt(40)+10));
             itemPrice.add((item.getBasePrice()*(item.ordinal() + 1))/(resources.ordinal() + techLvl.ordinal() + 1));
         }
     }
 
-    public List<ItemType> getItems() {
-        return new ArrayList<ItemType>(Arrays.asList(ItemType.values()));
-    }
-
-    public List<Integer> getMarketQuantities() {
+    List<Integer> getMarketQuantities() {
         return Collections.unmodifiableList(itemQuantity);
     }
 
-    public List<Double> getPrices() {
+    List<Double> getPrices() {
         return Collections.unmodifiableList(itemPrice);
     }
 
-    public double getCostOf(ItemType item) {
-        return itemPrice.get(item.ordinal());
-    }
 
-    public int getQuantityOf(ItemType item) {
+    int getQuantityOf(ItemType item) {
         return itemQuantity.get(item.ordinal());
     }
 
 
-    public void setItemQuantity(ItemType item, int quantity) {
+    void setItemQuantity(ItemType item, int quantity) {
         itemQuantity.set(item.ordinal(), quantity);
     }
-
 
 }

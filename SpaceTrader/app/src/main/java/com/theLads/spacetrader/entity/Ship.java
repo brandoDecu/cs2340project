@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+
 public class Ship implements Serializable {
 
     private final ShipType type;
@@ -16,9 +17,9 @@ public class Ship implements Serializable {
 
     /**
      * Ship constructor that takes in a ShipType enum and creates a ship for the player
-     * @param type
+     * @param type type of ship
      */
-    public Ship(ShipType type) {
+    Ship(ShipType type) {
 
         this.type = type;
         this.health = type.getMaxHealth();
@@ -26,8 +27,6 @@ public class Ship implements Serializable {
             cargoQuantities.add(0);
         }
     }
-
-
 
     /**
     Getter for ShipType
@@ -49,17 +48,31 @@ public class Ship implements Serializable {
         return type.getCargoCapacity();
     }
 
-    public List<Integer> getCargoQuantities() {
+    List<Integer> getCargoQuantities() {
         return Collections.unmodifiableList(cargoQuantities);
     }
 
-    public int getFuel() {return cargoQuantities.get(ItemType.FUEL.ordinal());}
+    /**
+     * getter method for fuel
+     * @return fuel
+     */
+    int getFuel() {return cargoQuantities.get(ItemType.FUEL.ordinal());}
 
-    public int getQuantityOf(ItemType item) {
+    /**
+     * getter method for quantity of item on ship
+     * @param item item to get quantity of
+     * @return quanity of item on ship
+     */
+    int getQuantityOf(ItemType item) {
         return cargoQuantities.get(item.ordinal());
     }
 
-    public void setItemQuantity(ItemType item, int quantity) {
+    /**
+     * setter method to set item quantity on ship
+     * @param item item to set
+     * @param quantity quantity to item to add to ship
+     */
+    void setItemQuantity(ItemType item, int quantity) {
         cargoQuantities.set(item.ordinal(), quantity);
     }
 

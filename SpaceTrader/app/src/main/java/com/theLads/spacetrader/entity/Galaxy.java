@@ -60,11 +60,12 @@ public class Galaxy implements Serializable {
         currentSolarSystem = solarSystemsList.get(rand.nextInt(numSolarSystems-1));
     }
 
-    public List<SolarSystem> getSolarSystems() {
+
+    List<SolarSystem> getSolarSystems() {
         return Collections.unmodifiableList(solarSystemsList);
     }
 
-    public List<String> getSolarSystemNames() {
+    List<String> getSolarSystemNames() {
         List<SolarSystem> solarSystems = getSolarSystems();
         List<String> names = new ArrayList<>();
         for (int i = 0; i < numSolarSystems; i++) {
@@ -73,7 +74,7 @@ public class Galaxy implements Serializable {
         return names;
     }
 
-    public List<Integer> getDistances() {
+    List<Integer> getDistances() {
         List<SolarSystem> solarSystems = getSolarSystems();
         List<Integer> distances  = new ArrayList<>();
         for (int i = 0; i < numSolarSystems; i++) {
@@ -90,31 +91,31 @@ public class Galaxy implements Serializable {
         return distances;
     }
 
-    public String getPlanetName() {return currentSolarSystem.getName();}
+    String getPlanetName() {return currentSolarSystem.getName();}
 
-    public List<Double> getMarketPrices() {
+    List<Double> getMarketPrices() {
         return currentSolarSystem.getMarketPrices();
     }
 
-    public List<Integer> getMarketQuantities() {
+    List<Integer> getMarketQuantities() {
         return currentSolarSystem.getMarketQuantities();
     }
 
-    public SolarSystem getCurrentSolarSystem() {return currentSolarSystem;}
+    SolarSystem getCurrentSolarSystem() {return currentSolarSystem;}
 
-    public void buyItem(ItemType item, int quantity) {
+    void buyItem(ItemType item, int quantity) {
         currentSolarSystem.buyItem(item, quantity);
     }
 
-    public void sellItem(ItemType item, int quantity) {
+    void sellItem(ItemType item, int quantity) {
         currentSolarSystem.sellItem(item, quantity);
     }
 
-    public void travelTo(SolarSystem solarSystem) {
+    void travelTo(SolarSystem solarSystem) {
         currentSolarSystem = solarSystem;
     }
 
-    public int getDistanceTo(SolarSystem solarSystem) {
+    int getDistanceTo(SolarSystem solarSystem) {
         int index = solarSystemsList.indexOf(solarSystem);
         return getDistances().get(index);
     }

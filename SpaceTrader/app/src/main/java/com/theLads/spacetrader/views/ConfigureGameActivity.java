@@ -1,5 +1,6 @@
 package com.theLads.spacetrader.views;
 
+import android.annotation.SuppressLint;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -63,6 +64,7 @@ public class ConfigureGameActivity extends AppCompatActivity {
         viewModel = ViewModelProviders.of(this).get(AddGameViewModel.class);
     }
 
+    @SuppressLint("DefaultLocale")
     public void onAddPressed(View view) {
         Log.d("Edit", "Add/Update Game Pressed");
 
@@ -76,7 +78,7 @@ public class ConfigureGameActivity extends AppCompatActivity {
         String name = "";
 
         try {
-            name = (String) nameField.getText().toString();
+            name = nameField.getText().toString();
         } catch (Exception e) {
             Toast.makeText(this, "You must write valid numbers in each skill field", Toast.LENGTH_LONG).show();
         }

@@ -20,7 +20,7 @@ public class MarketPlaceActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_market_place);
         TravelViewModel viewModel = ViewModelProviders.of(this).get(TravelViewModel.class);
-        TextView title = (TextView)findViewById(R.id.welcome2planet);
+        TextView title = findViewById(R.id.welcome2planet);
         title.setText("Planet " + viewModel.getPlanetName());
 
     }

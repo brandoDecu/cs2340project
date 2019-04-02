@@ -1,5 +1,6 @@
 package com.theLads.spacetrader.views;
 
+import android.annotation.SuppressLint;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
@@ -29,6 +30,7 @@ public class BuyDetailActivity extends AppCompatActivity {
 
 
 
+    @SuppressLint("DefaultLocale")
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +44,8 @@ public class BuyDetailActivity extends AppCompatActivity {
         TextView creditsTag = findViewById(R.id.creditsTag);
 
         //get values from model
-        item = ItemType.valueOf(Objects.requireNonNull(getIntent().getExtras()).getString("ITEM_DATA"));
+        item = ItemType.valueOf(Objects.requireNonNull(getIntent()
+                .getExtras()).getString("ITEM_DATA"));
         supply = Model.getInstance().getGameInteractor().getMarketQuantities().get(item.ordinal());
         price = Model.getInstance().getGameInteractor().getMarketPrices().get(item.ordinal());
         Double credits = Model.getInstance().getGameInteractor().getCredits();
@@ -58,6 +61,7 @@ public class BuyDetailActivity extends AppCompatActivity {
 
     }
 
+    @SuppressLint("DefaultLocale")
     public void onBuyPressed(View view) {
 
         int quantity = 0;
@@ -72,8 +76,10 @@ public class BuyDetailActivity extends AppCompatActivity {
             if (quantity <= supply) {
                 try {
                     viewModel.buyItem(item, quantity, price);
-                    Toast.makeText(this, String.format("%d %s bought!", quantity, item.toString()), Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(BuyDetailActivity.this, BuySellActivity.class);
+                    Toast.makeText(this, String.format("%d %s bought!",
+                            quantity, item.toString()), Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(BuyDetailActivity.this,
+                            BuySellActivity.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception e) {
@@ -81,10 +87,12 @@ public class BuyDetailActivity extends AppCompatActivity {
                 }
 
             } else {
-                Toast.makeText(this, String.format("This store only has %d %ss", supply, item.toString()), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, String.format("This store only has %d %ss",
+                        supply, item.toString()), Toast.LENGTH_LONG).show();
             }
         } else {
-            Toast.makeText(this, "Please enter a valid quantity to buy", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Please enter a valid quantity to buy",
+                    Toast.LENGTH_LONG).show();
         }
     }
 

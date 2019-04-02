@@ -62,7 +62,7 @@ class Planet implements Serializable {
      * @return tech level
      */
 
-    public TechLevel getTechLvl() {
+    TechLevel getTechLvl() {
         return techLvl;
     }
 
@@ -71,24 +71,24 @@ class Planet implements Serializable {
      * @return resources level
      */
 
-    public Resources getResources() {
+    Resources getResources() {
         return resources;
     }
 
 
-    public List<Double> getMarketPrices() {
+    List<Double> getMarketPrices() {
         return market.getPrices();
     }
 
-    public List<Integer> getMarketQuantities() {
+    List<Integer> getMarketQuantities() {
         return market.getMarketQuantities();
     }
 
-    public void buyItem(ItemType item, int quantity) {
+    void buyItem(ItemType item, int quantity) {
         market.setItemQuantity(item, market.getQuantityOf(item) - quantity);
     }
 
-    public void sellItem(ItemType item, int quantity) {
+    void sellItem(ItemType item, int quantity) {
         market.setItemQuantity(item, market.getQuantityOf(item) + quantity);
 
     }

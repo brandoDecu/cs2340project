@@ -15,13 +15,18 @@ import com.theLads.spacetrader.model.Model;
 public class AddGameViewModel extends AndroidViewModel {
 
     private final GameInteractor interactor;
+
+    /**
+     * @param application
+     */
     public AddGameViewModel(@NonNull Application application) {
         super(application);
         interactor = Model.getInstance().getGameInteractor();
     }
 
 
-    public void createGame(GameDifficulty diff, String name, int pilot, int fighter, int trader, int enginr) {
+    public void createGame(GameDifficulty diff, String name, int pilot, int fighter,
+                           int trader, int enginr) {
 //        validate data here
 
         Player player = new Player(name, pilot, fighter, trader, enginr);

@@ -45,7 +45,10 @@ public final class Model {
         interactorMap.put("Game", new GameInteractor(myRepository));
     }
 
-
+    /**
+     * getter method that gets the current game interactor
+     * @return gameinteractor function
+     */
     public GameInteractor getGameInteractor() {
         return (GameInteractor) interactorMap.get("Game");
     }
@@ -90,10 +93,8 @@ public final class Model {
     /**
      * Save Repository
      * @param file the binary file
-     * @return success
      */
     public void saveBinaryRepository(File file) {
-        boolean success = true;
         try {
             /*
                For binary, we use Serialization, so everything we write has to implement

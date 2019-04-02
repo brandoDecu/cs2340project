@@ -66,7 +66,7 @@ public class SolarSystemAdapter extends RecyclerView.Adapter<SolarSystemAdapter.
         return solarSystemList.size();
     }
 
-    public void setSolarSystemList(List<SolarSystem> solarSystems) {
+    void setSolarSystemList(List<SolarSystem> solarSystems) {
         solarSystemList = solarSystems;
         notifyDataSetChanged();
     }

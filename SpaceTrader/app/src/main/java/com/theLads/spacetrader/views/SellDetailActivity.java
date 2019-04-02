@@ -1,5 +1,6 @@
 package com.theLads.spacetrader.views;
 
+import android.annotation.SuppressLint;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
@@ -28,6 +29,7 @@ public class SellDetailActivity extends AppCompatActivity {
     private double price;
     private int supply;
 
+    @SuppressLint("DefaultLocale")
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +59,7 @@ public class SellDetailActivity extends AppCompatActivity {
 
     }
 
+    @SuppressLint("DefaultLocale")
     public void onSellPressed(View view) {
 
         int quantity = 0;
