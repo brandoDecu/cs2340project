@@ -13,6 +13,9 @@ import com.theLads.spacetrader.viewmodels.TravelViewModel;
 
 import java.io.File;
 
+/**
+ * displays the market
+ */
 public class MarketPlaceActivity extends AppCompatActivity {
 
     @Override
@@ -24,6 +27,11 @@ public class MarketPlaceActivity extends AppCompatActivity {
         title.setText("Planet " + viewModel.getPlanetName());
 
     }
+
+    /**
+     * starts BuySellActivity with isBuy equal to true and finishes this intent
+     * @param view the view the button is on
+     */
     public void onBuyClick(View view) {
         Intent i = new Intent(this, BuySellActivity.class);
         i.putExtra("isBuy", true);
@@ -31,6 +39,10 @@ public class MarketPlaceActivity extends AppCompatActivity {
         this.finish();
     }
 
+    /**
+     * starts BuySellActivity with isBuy equal to false and finishes this intent
+     * @param view  the view the button is on
+     */
     public void onSellClick(View view) {
         Intent i = new Intent(this, BuySellActivity.class);
         i.putExtra("isBuy", false);
@@ -39,6 +51,10 @@ public class MarketPlaceActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * when travel button is clicked, the Galaxy Activity starts and this intent finishes
+     * @param view  the view the button is on
+     */
     public void onTravelClick(View view) {
         Intent i = new Intent(this, GalaxyActivity.class);
         this.startActivity(i);

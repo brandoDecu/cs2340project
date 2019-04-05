@@ -12,11 +12,15 @@ import com.theLads.spacetrader.entity.Player;
 import com.theLads.spacetrader.model.GameInteractor;
 import com.theLads.spacetrader.model.Model;
 
+/**
+ * The version of ViewModel for adding a game
+ */
 public class AddGameViewModel extends AndroidViewModel {
 
     private final GameInteractor interactor;
 
     /**
+     * AddGameViewModel constructor that creates an AddGameViewModel on new game start
      * @param application
      */
     public AddGameViewModel(@NonNull Application application) {
@@ -25,6 +29,15 @@ public class AddGameViewModel extends AndroidViewModel {
     }
 
 
+    /**
+     * Creates a Player and a Game uppon game creation
+     * @param diff      difficulty of the new game
+     * @param name      name of the player
+     * @param pilot     pilot skill of the player
+     * @param fighter   fighter skill of the player
+     * @param trader    trader skill of the player
+     * @param enginr    engineer skill of the player
+     */
     public void createGame(GameDifficulty diff, String name, int pilot, int fighter,
                            int trader, int enginr) {
 //        validate data here

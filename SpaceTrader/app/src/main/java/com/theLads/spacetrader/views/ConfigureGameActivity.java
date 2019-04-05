@@ -19,6 +19,9 @@ import com.theLads.spacetrader.entity.enums.GameDifficulty;
 import com.theLads.spacetrader.entity.Player;
 import com.theLads.spacetrader.viewmodels.AddGameViewModel;
 
+/**
+ * Activity that displays login screen
+ */
 public class ConfigureGameActivity extends AppCompatActivity {
 
 //    lets create a splash screen before moving to this screen
