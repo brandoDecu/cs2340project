@@ -61,7 +61,7 @@ public class Ship implements Serializable {
     /**
      * getter method for quantity of item on ship
      * @param item item to get quantity of
-     * @return quanity of item on ship
+     * @return quantity of item on ship
      */
     int getQuantityOf(ItemType item) {
         return cargoQuantities.get(item.ordinal());
