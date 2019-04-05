@@ -16,6 +16,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * displays a list of galaxies to travel to
+ */
 public class GalaxyActivity extends AppCompatActivity {
 
 // --Commented out by Inspection START (4/5/2019 4:28 PM):

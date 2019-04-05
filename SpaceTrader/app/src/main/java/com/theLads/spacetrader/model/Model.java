@@ -15,7 +15,6 @@ import java.util.Map;
  * This class provides all the interactors for the application.
  *
  */
-
 public final class Model {
 //    Model is a facade so that UI knows nothing about the backend
 
@@ -28,6 +27,10 @@ public final class Model {
 
     private static final Model instance = new Model();
 
+    /**
+     * gets the instance of the Model
+     * @return the instance of the Model
+     */
     public static Model getInstance() { return instance; }
 
 

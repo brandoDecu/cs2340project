@@ -17,6 +17,10 @@ import com.theLads.spacetrader.viewmodels.BuySellViewModel;
 
 import java.util.Objects;
 
+
+/**
+ * the class used when buying a specific item
+ */
 @SuppressWarnings("CyclicClassDependency")
 public class BuyDetailActivity extends AppCompatActivity {
 

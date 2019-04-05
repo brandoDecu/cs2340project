@@ -15,6 +15,9 @@ import com.theLads.spacetrader.R;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * used to display items
+ */
 public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder> {
 
     /** a copy of the list of items in the model */
@@ -90,10 +93,17 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
         }
     }
 
+    /**
+     * when an item is selected/clicked, this passes on the item that was selectd
+     */
     public interface OnItemClickListener {
         void onItemClicked(ItemType item);
     }
 
+    /**
+     * Sets the listener for the ItemAdapter
+     * @param listener  the listener to set this.listener to
+     */
     public void setOnItemClickListener(OnItemClickListener listener) {
         this.listener = listener;
     }

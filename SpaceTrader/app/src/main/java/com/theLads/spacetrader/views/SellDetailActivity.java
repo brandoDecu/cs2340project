@@ -17,6 +17,9 @@ import com.theLads.spacetrader.viewmodels.BuySellViewModel;
 
 import java.util.Objects;
 
+/**
+ * displays the sell screen
+ */
 public class SellDetailActivity extends AppCompatActivity {
 
     private BuySellViewModel viewModel;
