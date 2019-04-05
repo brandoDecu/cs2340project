@@ -51,6 +51,12 @@ public class Game implements Serializable {
     public String getPlanetName() {return galaxy.getPlanetName();}
 
     /**
+     * Getter method for player name
+     * @return
+     */
+    public String getPlayerName() {return player.getName();}
+
+    /**
     Getter method for cargo quantities on player's ship
      */
     public List<Integer> getCargoQuantities() {

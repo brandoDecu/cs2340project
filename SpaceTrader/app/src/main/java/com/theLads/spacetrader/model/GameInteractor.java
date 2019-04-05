@@ -19,12 +19,13 @@ public class GameInteractor extends Interactor {
         getRepository().addGame(g);
     }
 
-
     public Game getCurrentGame() {
         return getRepository().getCurrentGame();
     }
 
     public String getPlanetName() {return getCurrentGame().getPlanetName();}
+
+    public String getPlayerName() {return getCurrentGame().getPlayerName();}
 
     public void setCredits(double credits) {
         Player player = getCurrentGame().getPlayer();

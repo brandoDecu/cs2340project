@@ -205,7 +205,8 @@
         android:inputType="number"
         android:textAlignment="center"
         android:textColor="@android:color/white"
-        android:textSize="30sp" />
+        android:textSize="30sp"
+        tools:ignore="LabelFor" />
 
     <EditText
         android:id="@+id/editTraderSkill"
