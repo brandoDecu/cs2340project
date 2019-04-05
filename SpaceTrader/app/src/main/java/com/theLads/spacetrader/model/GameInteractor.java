@@ -11,14 +11,17 @@ import java.util.List;
 /**
  * Class for the GameInteractor
  */
-public class GameInteractor extends Interactor {
+public class GameInteractor {
+
+    private Repository myRepository;
 
     /**
-     * GameInteractor constructor that relies on thr Interactor constructor
+     * GameInteractor constructor
      * @param repo the repository that this GameInteractor relies on
      */
-    public GameInteractor(Repository repo) {
-        super(repo);
+    GameInteractor(Repository repo) {
+
+        this.myRepository = repo;
     }
 
 
@@ -27,7 +30,7 @@ public class GameInteractor extends Interactor {
      * @param g the Game to be passed through/used
      */
     public void addGame (Game g) {
-        getRepository().addGame(g);
+        myRepository.addGame(g);
     }
 
     /**
@@ -35,7 +38,7 @@ public class GameInteractor extends Interactor {
      * @return the current game
      */
     public Game getCurrentGame() {
-        return getRepository().getCurrentGame();
+        return myRepository.getCurrentGame();
     }
 
     /**
@@ -151,4 +154,7 @@ public class GameInteractor extends Interactor {
      * @return the distance between the solarSystem and the current one
      */
     public int getDistanceTo(SolarSystem solarSystem) {return getCurrentGame().getDistanceTo(solarSystem);}
+
+
 }
+

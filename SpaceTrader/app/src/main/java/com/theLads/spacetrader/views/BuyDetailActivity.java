@@ -12,7 +12,6 @@ import android.widget.Toast;
 
 import com.theLads.spacetrader.R;
 import com.theLads.spacetrader.entity.enums.ItemType;
-import com.theLads.spacetrader.model.Model;
 import com.theLads.spacetrader.viewmodels.BuySellViewModel;
 
 import java.util.Objects;
@@ -48,12 +47,15 @@ public class BuyDetailActivity extends AppCompatActivity {
         TextView priceTag = findViewById(R.id.priceTag);
         TextView creditsTag = findViewById(R.id.creditsTag);
 
+        //grab viewModel
+        viewModel = ViewModelProviders.of(this).get(BuySellViewModel.class);
+
         //get values from model
         item = ItemType.valueOf(Objects.requireNonNull(getIntent()
                 .getExtras()).getString("ITEM_DATA"));
-        supply = Model.getInstance().getGameInteractor().getMarketQuantities().get(item.ordinal());
-        price = Model.getInstance().getGameInteractor().getMarketPrices().get(item.ordinal());
-        Double credits = Model.getInstance().getGameInteractor().getCredits();
+        supply = viewModel.getMarketQuantities().get(item.ordinal());
+        price = viewModel.getMarketPrices().get(item.ordinal());
+        double credits = viewModel.getCredits();
 
         // set text fields
         itemName.setText(String.format("%s", item.toString()));
@@ -61,8 +63,7 @@ public class BuyDetailActivity extends AppCompatActivity {
         priceTag.setText(String.format("%.2f", price));
         creditsTag.setText(String.format("%.2f", credits));
 
-        //grab viewModel
-        viewModel = ViewModelProviders.of(this).get(BuySellViewModel.class);
+
 
     }
 
