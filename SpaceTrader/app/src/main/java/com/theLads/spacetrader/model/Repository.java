@@ -12,7 +12,7 @@ import com.theLads.spacetrader.entity.Player;
 
 /**
  * This class is an abstraction of the data storage for the business classes
- * Normally this would passthrough to our ROOM (database) objects.   To keep this assignment
+ * Normally this would pass through to our ROOM (database) objects.   To keep this assignment
  * simple, we are just using in-memory storage
  */
 class Repository implements Serializable {
