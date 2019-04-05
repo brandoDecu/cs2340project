@@ -16,7 +16,6 @@ public class IntroStoryActivity extends AppCompatActivity{
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
-        Log.d("blub", "blub");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
     }

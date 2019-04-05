@@ -71,9 +71,11 @@ public class TravelViewModel extends AndroidViewModel {
         return player;
     }
 
+
     /**
      * police take half the player's money, and all of their narotics and firearms
      */
+    @SuppressWarnings({"FeatureEnvy", "MagicNumber"})
     public void bustedByPolice() {
         player = getCurrentPlayer();
         player.setCredits(player.getCredits()*0.5);

@@ -12,7 +12,7 @@ import com.theLads.spacetrader.entity.Player;
 
 /**
  * This class is an abstraction of the data storage for the business classes
- * Normally this would passthrough to our ROOM (database) objects.   To keep this assignment
+ * Normally this would pass through to our ROOM (database) objects.   To keep this assignment
  * simple, we are just using in-memory storage
  */
 class Repository implements Serializable {
@@ -78,6 +78,7 @@ class Repository implements Serializable {
      * Updates the values stored in a Game. This is useless right now
      * @param g the game to update
      */
+    @SuppressWarnings("FeatureEnvy")
     public void updateGame(Game g) {
         for (Game game: allGames) {
             if (game.getGameId() == g.getGameId()) {
