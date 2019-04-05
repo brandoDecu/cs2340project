@@ -101,6 +101,7 @@ public class SolarSystem implements Serializable {
 
     }
 
+    @SuppressWarnings("NullableProblems")
     @SuppressLint("DefaultLocale")
     @Override
     public String toString() {

@@ -15,6 +15,9 @@ import com.theLads.spacetrader.viewmodels.SaveGameViewModel;
 
 import java.io.File;
 
+/**
+ * displays the new game/load screen
+ */
 public class NewLoadGameActivity extends AppCompatActivity{
 
     private MediaPlayer music;
@@ -33,12 +36,21 @@ public class NewLoadGameActivity extends AppCompatActivity{
         binaryExists = model.loadBinaryRepository(file);
         viewModel = ViewModelProviders.of(this).get(SaveGameViewModel.class);
     }
+
+    /**
+     * starts ConfigureGameActivity intent and finishes current intent
+     * @param view the current view
+     */
     public void onNewGamePressed(View view) {
         Intent i = new Intent(this, ConfigureGameActivity.class);
         this.startActivity(i);
         //this.finish();
     }
 
+    /**
+     * starts MarketPlaceActivity intent with the saved game data and finishes current intent
+     * @param view  the current view
+     */
     public void onContinuePressed(View view) {
         if (binaryExists) {
             String playername = viewModel.getPlayerName();

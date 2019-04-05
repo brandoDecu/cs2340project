@@ -12,7 +12,7 @@ import com.theLads.spacetrader.entity.Player;
 
 /**
  * This class is an abstraction of the data storage for the business classes
- * Normally this would passthrough to our ROOM (database) objects.   To keep this assignment
+ * Normally this would pass through to our ROOM (database) objects.   To keep this assignment
  * simple, we are just using in-memory storage
  */
 class Repository implements Serializable {
@@ -23,6 +23,10 @@ class Repository implements Serializable {
      */
     private static int next_id = 1;
 
+    /**
+     * Gives each new instance a unique ID
+     * @return the unique ID
+     */
     private static int getNextUniqueID() {
         int result = next_id;
         next_id++;
@@ -32,7 +36,7 @@ class Repository implements Serializable {
     private Game currentGame;
 
 
-    /** all the students known in the application */
+    /** all the Games known in the application */
     private final List<Game> allGames;
 
     /**
@@ -44,11 +48,15 @@ class Repository implements Serializable {
 
 
     /**
-     * get all the students in teh system
+     * get all the games in the system
      * @return list of all students
      */
     public List<Game> getAllGames() { return Collections.unmodifiableList(allGames);}
 
+    /**
+     * get current game in system
+     * @return current game
+     */
     public Game getCurrentGame(){
         return currentGame;
     }
@@ -70,6 +78,7 @@ class Repository implements Serializable {
      * Updates the values stored in a Game. This is useless right now
      * @param g the game to update
      */
+    @SuppressWarnings("FeatureEnvy")
     public void updateGame(Game g) {
         for (Game game: allGames) {
             if (game.getGameId() == g.getGameId()) {

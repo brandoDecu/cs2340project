@@ -74,6 +74,7 @@ public class Galaxy implements Serializable {
         return names;
     }
 
+    @SuppressWarnings("FeatureEnvy")
     List<Integer> getDistances() {
         List<SolarSystem> solarSystems = getSolarSystems();
         List<Integer> distances  = new ArrayList<>();

@@ -18,6 +18,9 @@ import com.theLads.spacetrader.viewmodels.TravelViewModel;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * the adapter for the list of SolarSytems display (recycler view)
+ */
 public class SolarSystemAdapter extends RecyclerView.Adapter<SolarSystemAdapter.SolarSystemViewHolder> {
 
     /** a copy of the list of solar system in the model */
@@ -66,6 +69,7 @@ public class SolarSystemAdapter extends RecyclerView.Adapter<SolarSystemAdapter.
         return solarSystemList.size();
     }
 
+    @SuppressWarnings("AssignmentOrReturnOfFieldWithMutableType")
     void setSolarSystemList(List<SolarSystem> solarSystems) {
         solarSystemList = solarSystems;
         notifyDataSetChanged();
@@ -96,15 +100,22 @@ public class SolarSystemAdapter extends RecyclerView.Adapter<SolarSystemAdapter.
 
         }
 
-        public void setText(String string) {
+        public void setText(CharSequence string) {
             solarSystemIndex.setText(string);
         }
     }
 
+    /**
+     * passes on the current solar system
+     */
     public interface OnSolarSystemClickListener {
         void onSolarSystemClicked(SolarSystem solarSystem);
     }
 
+    /**
+     * Sets the listener for the adapter
+     * @param listener  the listener to set to
+     */
     public void setOnSolarSystemClickListener(OnSolarSystemClickListener listener) {
         this.listener = listener;
     }

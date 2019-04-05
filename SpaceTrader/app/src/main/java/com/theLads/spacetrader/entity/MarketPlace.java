@@ -19,6 +19,7 @@ class MarketPlace implements Serializable {
 
     MarketPlace(TechLevel techLvl, Resources resources) {
         for(ItemType item : ItemType.values()) {
+            //noinspection MagicNumber
             itemQuantity.add((new Random().nextInt(40)+10));
             itemPrice.add((item.getBasePrice()*(item.ordinal() + 1))/(resources.ordinal() + techLvl.ordinal() + 1));
         }

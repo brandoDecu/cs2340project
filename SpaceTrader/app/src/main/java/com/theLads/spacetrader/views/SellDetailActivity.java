@@ -17,6 +17,9 @@ import com.theLads.spacetrader.viewmodels.BuySellViewModel;
 
 import java.util.Objects;
 
+/**
+ * displays the sell screen
+ */
 public class SellDetailActivity extends AppCompatActivity {
 
     private BuySellViewModel viewModel;
@@ -29,6 +32,7 @@ public class SellDetailActivity extends AppCompatActivity {
     private double price;
     private int supply;
 
+    @SuppressWarnings("FeatureEnvy")
     @SuppressLint("DefaultLocale")
     @Override
     public void onCreate(Bundle savedInstanceState) {

@@ -13,7 +13,7 @@ import com.theLads.spacetrader.viewmodels.BuySellViewModel;
 
 
 /**
- * This displays all students in the model, regardless of registration
+ * the class used when buying or selling an item
  */
 public class BuySellActivity extends AppCompatActivity {
 
