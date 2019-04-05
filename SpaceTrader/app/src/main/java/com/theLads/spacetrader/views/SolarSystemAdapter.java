@@ -66,6 +66,7 @@ public class SolarSystemAdapter extends RecyclerView.Adapter<SolarSystemAdapter.
         return solarSystemList.size();
     }
 
+    @SuppressWarnings("AssignmentOrReturnOfFieldWithMutableType")
     void setSolarSystemList(List<SolarSystem> solarSystems) {
         solarSystemList = solarSystems;
         notifyDataSetChanged();
@@ -96,7 +97,7 @@ public class SolarSystemAdapter extends RecyclerView.Adapter<SolarSystemAdapter.
 
         }
 
-        public void setText(String string) {
+        public void setText(CharSequence string) {
             solarSystemIndex.setText(string);
         }
     }

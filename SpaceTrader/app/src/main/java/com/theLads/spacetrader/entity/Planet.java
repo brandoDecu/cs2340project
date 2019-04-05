@@ -36,12 +36,12 @@ class Planet implements Serializable {
 
 
         Random r2 = new Random();
-        int highResource = 12;
+        final int high_Resource = 12;
         int resultResource = r2.nextInt(5);
         if (resultResource <= 3) {
             this.resources = Resources.NOSPECIALRESOURCES;
         } else {
-            resultResource = r2.nextInt(highResource);
+            resultResource = r2.nextInt(high_Resource);
             this.resources =  Resources.values()[resultResource];
         }
         this.market = new MarketPlace(techLvl, resources);

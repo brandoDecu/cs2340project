@@ -43,6 +43,7 @@ public class TravelViewModel extends AndroidViewModel {
         return player;
     }
 
+    @SuppressWarnings({"FeatureEnvy", "MagicNumber"})
     public void bustedByPolice() {
         player = getCurrentPlayer();
         player.setCredits(player.getCredits()*0.5);

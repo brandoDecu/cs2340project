@@ -52,7 +52,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
         return itemList.size();
     }
 
-    public void setItemList(List<Integer> quantities) {
+    public void setItemList(Iterable<Integer> quantities) {
         int i = 0;
         itemList.clear();
         for (Integer q : quantities) {

@@ -2,7 +2,6 @@ package com.theLads.spacetrader.entity;
 
 import com.theLads.spacetrader.entity.enums.GameDifficulty;
 import com.theLads.spacetrader.entity.enums.ItemType;
-import com.theLads.spacetrader.entity.enums.ShipType;
 
 import java.io.Serializable;
 import java.util.List;
@@ -51,10 +50,11 @@ public class Player implements Serializable {
         this.fighterSkill = fighter;
         this.traderSkill = trader;
         this.engineerSkill = engineer;
-        this.ship = new Ship(ShipType.GNAT);
+        this.ship = new Ship();
 
+        final int skill_total = 16;
         int total = pilot + fighter + trader + engineer;
-        this.credits = 1000 + (100 * (16 - total));
+        this.credits = 1000 + (100 * (skill_total - total));
     }
 
     /**
@@ -198,6 +198,7 @@ public class Player implements Serializable {
 
 
 
+    @SuppressWarnings("NullableProblems")
     @Override
     public String toString() {
         return String.format("Player: %s, Pilot: %d, Fighter: %d, Trader: %d," +

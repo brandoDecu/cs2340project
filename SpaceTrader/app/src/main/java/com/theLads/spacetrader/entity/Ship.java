@@ -17,12 +17,11 @@ public class Ship implements Serializable {
 
     /**
      * Ship constructor that takes in a ShipType enum and creates a ship for the player
-     * @param type type of ship
      */
-    Ship(ShipType type) {
+    Ship() {
 
-        this.type = type;
-        this.health = type.getMaxHealth();
+        this.type = ShipType.GNAT;
+        this.health = ShipType.GNAT.getMaxHealth();
         for(ItemType item : ItemType.values()) {
             cargoQuantities.add(0);
         }
@@ -77,6 +76,7 @@ public class Ship implements Serializable {
     }
 
 
+    @SuppressWarnings("NullableProblems")
     @Override
     public String toString() {
         return "Ship Type: " + type + " with Max Health: " +

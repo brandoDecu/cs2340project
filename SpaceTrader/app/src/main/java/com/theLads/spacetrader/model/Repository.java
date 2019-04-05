@@ -70,6 +70,7 @@ class Repository implements Serializable {
      * Updates the values stored in a Game. This is useless right now
      * @param g the game to update
      */
+    @SuppressWarnings("FeatureEnvy")
     public void updateGame(Game g) {
         for (Game game: allGames) {
             if (game.getGameId() == g.getGameId()) {

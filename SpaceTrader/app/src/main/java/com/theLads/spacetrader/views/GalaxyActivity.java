@@ -18,8 +18,10 @@ import java.util.Random;
 
 public class GalaxyActivity extends AppCompatActivity {
 
-    /** a key for passing data */
-    public static final String SOLAR_SYSTEM_DATA = "SOLAR_SYSTEM_DATA";
+// --Commented out by Inspection START (4/5/2019 4:28 PM):
+//    /** a key for passing data */
+//    public static final String SOLAR_SYSTEM_DATA = "SOLAR_SYSTEM_DATA";
+// --Commented out by Inspection STOP (4/5/2019 4:28 PM)
     /** an int for the request code */
     private static final int EDIT_REQUEST = 5;
     /** our data model */
@@ -56,7 +58,7 @@ public class GalaxyActivity extends AppCompatActivity {
     @Override
     public void onResume() {
         super.onResume();
-        List<SolarSystem> solarSystems = new ArrayList<SolarSystem>(viewModel.getSolarSystems());
+        List<SolarSystem> solarSystems = new ArrayList<>(viewModel.getSolarSystems());
         solarSystems.remove(viewModel.getCurrentSolarSystem());
         adapter.setSolarSystemList(solarSystems);
 

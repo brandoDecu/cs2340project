@@ -94,6 +94,7 @@ public final class Model {
      * Save Repository
      * @param file the binary file
      */
+    @SuppressWarnings("TypeMayBeWeakened")
     public void saveBinaryRepository(File file) {
         try {
             /*

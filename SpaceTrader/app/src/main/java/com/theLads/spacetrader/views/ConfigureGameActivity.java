@@ -68,6 +68,8 @@ public class ConfigureGameActivity extends AppCompatActivity {
     public void onAddPressed(View view) {
         Log.d("Edit", "Add/Update Game Pressed");
 
+
+        final int SKILL_LIMIT = 16;
         GameDifficulty difficulty = (GameDifficulty) difficultySpinner.getSelectedItem();
         int engineerS = 0;
         int tradeS = 0;
@@ -117,10 +119,10 @@ public class ConfigureGameActivity extends AppCompatActivity {
             Toast.makeText(this, "Skill points cannot be negative", Toast.LENGTH_LONG).show();
 
 
-        } else if (total <= 16) {
+        } else if (total <= SKILL_LIMIT) {
             Toast.makeText(this, "Character created!", Toast.LENGTH_LONG).show();
-            if (total < 16) {
-                int bonusCreds = (16 - total) * 100;
+            if (total < SKILL_LIMIT) {
+                int bonusCreds = (SKILL_LIMIT - total) * 100;
                 Toast.makeText(this, String.format("Character created with %d extra credits!", bonusCreds), Toast.LENGTH_LONG).show();
             }
             viewModel.createGame(difficulty, name, pilotS, fightS, tradeS, engineerS);
