@@ -61,7 +61,7 @@ public class Galaxy implements Serializable {
     }
 
 
-    List<SolarSystem> getSolarSystems() {
+    public List<SolarSystem> getSolarSystems() {
         return Collections.unmodifiableList(solarSystemsList);
     }
 
@@ -102,7 +102,7 @@ public class Galaxy implements Serializable {
         return currentSolarSystem.getMarketQuantities();
     }
 
-    SolarSystem getCurrentSolarSystem() {return currentSolarSystem;}
+    public SolarSystem getCurrentSolarSystem() {return currentSolarSystem;}
 
     void buyItem(ItemType item, int quantity) {
         currentSolarSystem.buyItem(item, quantity);
@@ -112,12 +112,16 @@ public class Galaxy implements Serializable {
         currentSolarSystem.sellItem(item, quantity);
     }
 
-    void travelTo(SolarSystem solarSystem) {
+    public void travelTo(SolarSystem solarSystem) {
         currentSolarSystem = solarSystem;
     }
 
     int getDistanceTo(SolarSystem solarSystem) {
         int index = solarSystemsList.indexOf(solarSystem);
         return getDistances().get(index);
+    }
+    public void setCurrentSolarSystem(SolarSystem solarSystem){
+        currentSolarSystem = solarSystem;
+
     }
 }

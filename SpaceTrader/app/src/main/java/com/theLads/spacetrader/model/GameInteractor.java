@@ -60,6 +60,7 @@ public class GameInteractor {
         player.setCredits(credits);
     }
 
+
     /**
      * gets the quantities of each item in cargo in the form of a List
      * @return a List of quantities of the items in the cargo
@@ -155,6 +156,9 @@ public class GameInteractor {
      */
     public int getDistanceTo(SolarSystem solarSystem) {return getCurrentGame().getDistanceTo(solarSystem);}
 
+    public void setFuel(int fuel) {
+        getCurrentGame().getPlayer().setFuel(fuel);
+    }
 
 }
 

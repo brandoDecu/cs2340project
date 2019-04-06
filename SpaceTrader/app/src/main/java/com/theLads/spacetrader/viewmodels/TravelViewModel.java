@@ -53,7 +53,7 @@ public class TravelViewModel extends AndroidViewModel {
      * gets a list of SolarSystem distances
      * @return a list of SolarSystem distances
      */
-    private List<Integer> getSolarSystemDistances() {return interactor.getSolarSystemDistances();}
+    public List<Integer> getSolarSystemDistances() {return interactor.getSolarSystemDistances();}
 
     /**
      * gets the amount of fuel a player has
