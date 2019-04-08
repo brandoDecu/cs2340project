@@ -124,7 +124,7 @@ public class Player implements Serializable {
      * getter method to get player's fuel
      * @return player's fuel
      */
-    int getFuel() {return ship.getFuel();}
+    public int getFuel() {return ship.getFuel();}
 
     public void setFuel(int fuel) {
         ship.setItemQuantity(ItemType.FUEL, fuel);

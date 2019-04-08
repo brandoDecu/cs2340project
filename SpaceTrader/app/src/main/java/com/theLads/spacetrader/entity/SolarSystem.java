@@ -23,7 +23,7 @@ public class SolarSystem implements Serializable {
      * @param name Name of the solar system to be created; creates a planet with the same name
      */
 
-    SolarSystem(String name) {
+    public SolarSystem(String name) {
         this.planet = new Planet(name);
 
         this.xCoord = (int) (Math.random() * 100);

@@ -116,7 +116,11 @@ public class Galaxy implements Serializable {
         currentSolarSystem = solarSystem;
     }
 
-    int getDistanceTo(SolarSystem solarSystem) {
+    public boolean contains(SolarSystem solarSystem) {
+        return solarSystemsList.contains(solarSystem);
+    }
+
+    public int getDistanceTo(SolarSystem solarSystem) {
         int index = solarSystemsList.indexOf(solarSystem);
         return getDistances().get(index);
     }
