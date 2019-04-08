@@ -128,6 +128,15 @@ public class Game implements Serializable {
      * @param solarSystem solar system to travel to
      */
     public void travelTo(SolarSystem solarSystem) {
+        if (!galaxy.contains(solarSystem)) {
+            throw new IllegalArgumentException("SolarSystem: " + solarSystem.getName()
+                    + " is not in the galaxy");
+        }
+        int index = getSolarSystems().indexOf(solarSystem);
+        int fuelRequired = getSolarSystemDistances().get(index);
+        if (getFuel() < fuelRequired) {
+            throw new IllegalArgumentException("You need " + fuelRequired + " fuel to travel here");
+        }
         player.useFuel(galaxy.getDistanceTo(solarSystem));
         galaxy.travelTo(solarSystem);
     }
