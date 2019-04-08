@@ -8,7 +8,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,19 +15,22 @@ import java.util.Map;
  * This class provides all the interactors for the application.
  *
  */
-
-public class Model {
+public final class Model {
 //    Model is a facade so that UI knows nothing about the backend
 
-    public final static String DEFAULT_BINARY_FILE_NAME = "data.bin";
+    public static final String DEFAULT_BINARY_FILE_NAME = "data.bin";
 
     /** the data repository */
     private Repository myRepository;
 
-    private Map<String, Object> interactorMap;
+    private final Map<String, Object> interactorMap;
 
-    private static  Model instance = new Model();
+    private static final Model instance = new Model();
 
+    /**
+     * gets the instance of the Model
+     * @return the instance of the Model
+     */
     public static Model getInstance() { return instance; }
 
 
@@ -46,7 +48,10 @@ public class Model {
         interactorMap.put("Game", new GameInteractor(myRepository));
     }
 
-
+    /**
+     * getter method that gets the current game interactor
+     * @return gameinteractor function
+     */
     public GameInteractor getGameInteractor() {
         return (GameInteractor) interactorMap.get("Game");
     }
@@ -95,10 +100,9 @@ public class Model {
     /**
      * Save Repository
      * @param file the binary file
-     * @return success
      */
-    public boolean saveBinaryRepository(File file) {
-        boolean success = true;
+    @SuppressWarnings("TypeMayBeWeakened")
+    public void saveBinaryRepository(File file) {
         try {
             /*
                For binary, we use Serialization, so everything we write has to implement
@@ -120,9 +124,7 @@ public class Model {
 
         } catch (IOException e) {
             Log.e("Model", "Error writing an entry from binary file",e);
-            success = false;
         }
-        return success;
     }
 
 

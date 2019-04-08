@@ -1,10 +1,10 @@
 package com.theLads.spacetrader.views;
 
+import android.annotation.SuppressLint;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -15,14 +15,15 @@ import com.theLads.spacetrader.entity.enums.ItemType;
 import com.theLads.spacetrader.model.Model;
 import com.theLads.spacetrader.viewmodels.BuySellViewModel;
 
+import java.util.Objects;
+
+/**
+ * displays the sell screen
+ */
 public class SellDetailActivity extends AppCompatActivity {
 
     private BuySellViewModel viewModel;
 
-    private TextView itemName;
-    private TextView itemQuant;
-    private TextView priceTag;
-    private TextView creditsTag;
     private EditText quantityField;
 
     private ItemType item;
@@ -31,20 +32,23 @@ public class SellDetailActivity extends AppCompatActivity {
     private double price;
     private int supply;
 
+    @SuppressWarnings("FeatureEnvy")
+    @SuppressLint("DefaultLocale")
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sell_detail);
 
         // find text fields to set to specific item being bought
-        itemName = findViewById(R.id.itemName);
+        TextView itemName = findViewById(R.id.itemName);
         quantityField = findViewById(R.id.quatityField);
-        itemQuant = findViewById(R.id.itemQuant);
-        priceTag = findViewById(R.id.priceTag);
-        creditsTag = findViewById(R.id.creditsTag);
+        TextView itemQuant = findViewById(R.id.itemQuant);
+        TextView priceTag = findViewById(R.id.priceTag);
+        TextView creditsTag = findViewById(R.id.creditsTag);
 
         //get values from model
-        item = ItemType.valueOf(getIntent().getExtras().getString("ITEM_DATA"));
+        item = ItemType.valueOf(
+                Objects.requireNonNull(getIntent().getExtras()).getString("ITEM_DATA"));
         supply = Model.getInstance().getGameInteractor().getCargoQuantities().get(item.ordinal());
         price = Model.getInstance().getGameInteractor().getMarketPrices().get(item.ordinal());
         Double credits = Model.getInstance().getGameInteractor().getCredits();
@@ -60,6 +64,7 @@ public class SellDetailActivity extends AppCompatActivity {
 
     }
 
+    @SuppressLint("DefaultLocale")
     public void onSellPressed(View view) {
 
         int quantity = 0;
@@ -70,10 +75,11 @@ public class SellDetailActivity extends AppCompatActivity {
             // error text will display from else statement
         }
 
-        if (quantity <= supply && quantity > 0) {
+        if ((quantity <= supply) && (quantity > 0)) {
             try {
                 viewModel.sellItem(item, quantity, price);
-                Toast.makeText(this, String.format("%d %s sold", quantity, item.toString()), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, String.format("%d %s sold",
+                        quantity, item.toString()), Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(SellDetailActivity.this, BuySellActivity.class);
                 startActivity(intent);
                 finish();
@@ -82,7 +88,8 @@ public class SellDetailActivity extends AppCompatActivity {
             }
 
         } else if (quantity > supply){
-            Toast.makeText(this, String.format("You only have %d %ss", supply, item.toString()), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, String.format("You only have %d %ss",
+                    supply, item.toString()), Toast.LENGTH_LONG).show();
         } else {
             Toast.makeText(this, "Please enter a valid quantity to sell", Toast.LENGTH_LONG).show();
         }

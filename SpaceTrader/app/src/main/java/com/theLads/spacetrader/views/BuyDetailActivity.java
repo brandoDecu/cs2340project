@@ -1,5 +1,6 @@
 package com.theLads.spacetrader.views;
 
+import android.annotation.SuppressLint;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,17 +12,19 @@ import android.widget.Toast;
 
 import com.theLads.spacetrader.R;
 import com.theLads.spacetrader.entity.enums.ItemType;
-import com.theLads.spacetrader.model.Model;
 import com.theLads.spacetrader.viewmodels.BuySellViewModel;
 
+import java.util.Objects;
+
+
+/**
+ * the class used when buying a specific item
+ */
+@SuppressWarnings("CyclicClassDependency")
 public class BuyDetailActivity extends AppCompatActivity {
 
     private BuySellViewModel viewModel;
 
-    private TextView itemName;
-    private TextView itemQuant;
-    private TextView priceTag;
-    private TextView creditsTag;
     private EditText quatityField;
 
     private ItemType item;
@@ -31,23 +34,28 @@ public class BuyDetailActivity extends AppCompatActivity {
 
 
 
+    @SuppressLint("DefaultLocale")
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buy_detail);
 
         // find text fields to set to specific item being bought
-        itemName = findViewById(R.id.itemName);
+        TextView itemName = findViewById(R.id.itemName);
         quatityField = findViewById(R.id.quatityField);
-        itemQuant = findViewById(R.id.itemQuant);
-        priceTag = findViewById(R.id.priceTag);
-        creditsTag = findViewById(R.id.creditsTag);
+        TextView itemQuant = findViewById(R.id.itemQuant);
+        TextView priceTag = findViewById(R.id.priceTag);
+        TextView creditsTag = findViewById(R.id.creditsTag);
+
+        //grab viewModel
+        viewModel = ViewModelProviders.of(this).get(BuySellViewModel.class);
 
         //get values from model
-        item = ItemType.valueOf(getIntent().getExtras().getString("ITEM_DATA"));
-        supply = Model.getInstance().getGameInteractor().getMarketQuantities().get(item.ordinal());
-        price = Model.getInstance().getGameInteractor().getMarketPrices().get(item.ordinal());
-        Double credits = Model.getInstance().getGameInteractor().getCredits();
+        item = ItemType.valueOf(Objects.requireNonNull(getIntent()
+                .getExtras()).getString("ITEM_DATA"));
+        supply = viewModel.getMarketQuantities().get(item.ordinal());
+        price = viewModel.getMarketPrices().get(item.ordinal());
+        double credits = viewModel.getCredits();
 
         // set text fields
         itemName.setText(String.format("%s", item.toString()));
@@ -55,11 +63,11 @@ public class BuyDetailActivity extends AppCompatActivity {
         priceTag.setText(String.format("%.2f", price));
         creditsTag.setText(String.format("%.2f", credits));
 
-        //grab viewModel
-        viewModel = ViewModelProviders.of(this).get(BuySellViewModel.class);
+
 
     }
 
+    @SuppressLint("DefaultLocale")
     public void onBuyPressed(View view) {
 
         int quantity = 0;
@@ -74,8 +82,10 @@ public class BuyDetailActivity extends AppCompatActivity {
             if (quantity <= supply) {
                 try {
                     viewModel.buyItem(item, quantity, price);
-                    Toast.makeText(this, String.format("%d %s bought!", quantity, item.toString()), Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(BuyDetailActivity.this, BuySellActivity.class);
+                    Toast.makeText(this, String.format("%d %s bought!",
+                            quantity, item.toString()), Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(BuyDetailActivity.this,
+                            BuySellActivity.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception e) {
@@ -83,10 +93,12 @@ public class BuyDetailActivity extends AppCompatActivity {
                 }
 
             } else {
-                Toast.makeText(this, String.format("This store only has %d %ss", supply, item.toString()), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, String.format("This store only has %d %ss",
+                        supply, item.toString()), Toast.LENGTH_LONG).show();
             }
         } else {
-            Toast.makeText(this, "Please enter a valid quantity to buy", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Please enter a valid quantity to buy",
+                    Toast.LENGTH_LONG).show();
         }
     }
 

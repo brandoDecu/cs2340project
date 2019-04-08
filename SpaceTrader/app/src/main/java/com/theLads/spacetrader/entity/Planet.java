@@ -8,15 +8,15 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Random;
 
-public class Planet implements Serializable {
+class Planet implements Serializable {
 
-    private String name;
+    private final String name;
 
-    private TechLevel techLvl;
+    private final TechLevel techLvl;
 
-    private Resources resources;
+    private final Resources resources;
 
-    private MarketPlace market;
+    private final MarketPlace market;
 
     /**
      * Planet constructor that takes in a name and creates a planet with random values for tech,
@@ -36,12 +36,12 @@ public class Planet implements Serializable {
 
 
         Random r2 = new Random();
-        int highResource = 12;
+        final int high_Resource = 12;
         int resultResource = r2.nextInt(5);
         if (resultResource <= 3) {
             this.resources = Resources.NOSPECIALRESOURCES;
         } else {
-            resultResource = r2.nextInt(highResource);
+            resultResource = r2.nextInt(high_Resource);
             this.resources =  Resources.values()[resultResource];
         }
         this.market = new MarketPlace(techLvl, resources);
@@ -62,7 +62,7 @@ public class Planet implements Serializable {
      * @return tech level
      */
 
-    public TechLevel getTechLvl() {
+    TechLevel getTechLvl() {
         return techLvl;
     }
 
@@ -71,24 +71,24 @@ public class Planet implements Serializable {
      * @return resources level
      */
 
-    public Resources getResources() {
+    Resources getResources() {
         return resources;
     }
 
 
-    public List<Double> getMarketPrices() {
+    List<Double> getMarketPrices() {
         return market.getPrices();
     }
 
-    public List<Integer> getMarketQuantities() {
+    List<Integer> getMarketQuantities() {
         return market.getMarketQuantities();
     }
 
-    public void buyItem(ItemType item, int quantity) {
+    void buyItem(ItemType item, int quantity) {
         market.setItemQuantity(item, market.getQuantityOf(item) - quantity);
     }
 
-    public void sellItem(ItemType item, int quantity) {
+    void sellItem(ItemType item, int quantity) {
         market.setItemQuantity(item, market.getQuantityOf(item) + quantity);
 
     }

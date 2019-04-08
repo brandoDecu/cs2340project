@@ -15,10 +15,13 @@ import com.theLads.spacetrader.R;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * used to display items
+ */
 public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder> {
 
     /** a copy of the list of items in the model */
-    private List<ItemType> itemList = new ArrayList<>();
+    private final List<ItemType> itemList = new ArrayList<>();
 
     /** a listener for a touch event on the item */
     private OnItemClickListener listener;
@@ -52,8 +55,8 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
         return itemList.size();
     }
 
-    public void setItemList(List<Integer> quantities) {
-        Integer i = 0;
+    public void setItemList(Iterable<Integer> quantities) {
+        int i = 0;
         itemList.clear();
         for (Integer q : quantities) {
             if (q != 0) {
@@ -69,9 +72,9 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
      * This is a holder for the widgets associated with a single entry in the list of items
      */
     class ItemViewHolder extends RecyclerView.ViewHolder {
-        private TextView itemIndex;
+        private final TextView itemIndex;
 
-        public ItemViewHolder(@NonNull View itemView) {
+        ItemViewHolder(@NonNull View itemView) {
             super(itemView);
             itemIndex = itemView.findViewById(R.id.text_item_id);
 
@@ -81,7 +84,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
                 public void onClick(View view) {
                     int position = getAdapterPosition();
 
-                    if (listener != null && position != RecyclerView.NO_POSITION) {
+                    if ((listener != null) && (position != RecyclerView.NO_POSITION)) {
                         listener.onItemClicked(itemList.get(position));
                     }
                 }
@@ -90,10 +93,17 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
         }
     }
 
+    /**
+     * when an item is selected/clicked, this passes on the item that was selectd
+     */
     public interface OnItemClickListener {
         void onItemClicked(ItemType item);
     }
 
+    /**
+     * Sets the listener for the ItemAdapter
+     * @param listener  the listener to set this.listener to
+     */
     public void setOnItemClickListener(OnItemClickListener listener) {
         this.listener = listener;
     }

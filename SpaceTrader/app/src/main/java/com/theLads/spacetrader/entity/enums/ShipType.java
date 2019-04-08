@@ -1,25 +1,23 @@
 package com.theLads.spacetrader.entity.enums;
 
 public enum ShipType {
-    GNAT ("GNAT", 100,500);
+    GNAT ();
 
-    private String typeName;
+    private final String typeName;
 
-    private int maxHealth;
+    private final int maxHealth;
 
-    private int cargoCapacity;
+    private final int cargoCapacity;
 
     /**
      * Constructor for the type of ship to be created
-     * @param typeName name of the type of ship
-     * @param maxHealth the overall total health the ship can have
-     * @param cargoCapacity the overall total capacity a ship can have
+     *
      */
 
-    ShipType(String typeName, int maxHealth, int cargoCapacity) {
-        this.typeName = typeName;
-        this.maxHealth = maxHealth;
-        this.cargoCapacity = cargoCapacity;
+    ShipType() {
+        this.typeName = "GNAT";
+        this.maxHealth = 100;
+        this.cargoCapacity = 500;
     }
 
     public String getTypeName() {

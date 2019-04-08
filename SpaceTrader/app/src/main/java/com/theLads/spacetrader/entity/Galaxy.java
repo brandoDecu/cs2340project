@@ -1,12 +1,10 @@
 package com.theLads.spacetrader.entity;
 
-import android.util.Log;
-
 import com.theLads.spacetrader.entity.enums.ItemType;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -15,9 +13,9 @@ import static java.lang.Math.sqrt;
 
 public class Galaxy implements Serializable {
 
-    private List<SolarSystem> solarSystemsList = new ArrayList<>();
+    private final List<SolarSystem> solarSystemsList = new ArrayList<>();
     private SolarSystem currentSolarSystem;
-    private static int numSolarSystems;
+    private final int numSolarSystems;
 
 
     /**
@@ -55,27 +53,6 @@ public class Galaxy implements Serializable {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         numSolarSystems = solarSystemsList.size();
 
         // Current solar system is random upon starting the game
@@ -83,11 +60,12 @@ public class Galaxy implements Serializable {
         currentSolarSystem = solarSystemsList.get(rand.nextInt(numSolarSystems-1));
     }
 
+
     public List<SolarSystem> getSolarSystems() {
-        return solarSystemsList;
+        return Collections.unmodifiableList(solarSystemsList);
     }
 
-    public List<String> getSolarSystemNames() {
+    List<String> getSolarSystemNames() {
         List<SolarSystem> solarSystems = getSolarSystems();
         List<String> names = new ArrayList<>();
         for (int i = 0; i < numSolarSystems; i++) {
@@ -96,7 +74,8 @@ public class Galaxy implements Serializable {
         return names;
     }
 
-    public List<Integer> getDistances() {
+    @SuppressWarnings("FeatureEnvy")
+    List<Integer> getDistances() {
         List<SolarSystem> solarSystems = getSolarSystems();
         List<Integer> distances  = new ArrayList<>();
         for (int i = 0; i < numSolarSystems; i++) {
@@ -108,28 +87,28 @@ public class Galaxy implements Serializable {
 
             int xDist = abs(xcoord - currxCoord);
             int yDist = abs(ycoord - curryCoord);
-            distances.add((int) sqrt(xDist*xDist + yDist*yDist));
+            distances.add((int) sqrt((xDist * xDist) + (yDist * yDist)));
         }
         return distances;
     }
 
-    public String getPlanetName() {return currentSolarSystem.getName();}
+    String getPlanetName() {return currentSolarSystem.getName();}
 
-    public List<Double> getMarketPrices() {
+    List<Double> getMarketPrices() {
         return currentSolarSystem.getMarketPrices();
     }
 
-    public List<Integer> getMarketQuantities() {
+    List<Integer> getMarketQuantities() {
         return currentSolarSystem.getMarketQuantities();
     }
 
     public SolarSystem getCurrentSolarSystem() {return currentSolarSystem;}
 
-    public void buyItem(ItemType item, int quantity) {
+    void buyItem(ItemType item, int quantity) {
         currentSolarSystem.buyItem(item, quantity);
     }
 
-    public void sellItem(ItemType item, int quantity) {
+    void sellItem(ItemType item, int quantity) {
         currentSolarSystem.sellItem(item, quantity);
     }
 
@@ -137,8 +116,12 @@ public class Galaxy implements Serializable {
         currentSolarSystem = solarSystem;
     }
 
-    public int getDistanceTo(SolarSystem solarSystem) {
+    int getDistanceTo(SolarSystem solarSystem) {
         int index = solarSystemsList.indexOf(solarSystem);
         return getDistances().get(index);
-    };
+    }
+    public void setCurrentSolarSystem(SolarSystem solarSystem){
+        currentSolarSystem = solarSystem;
+
+    }
 }

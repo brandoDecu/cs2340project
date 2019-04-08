@@ -1,7 +1,6 @@
 package com.theLads.spacetrader.views;
 
 import android.app.Activity;
-import android.arch.lifecycle.ViewModelProvider;
 import android.arch.lifecycle.ViewModelProviders;
 import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentActivity;
@@ -19,7 +18,11 @@ import com.theLads.spacetrader.viewmodels.TravelViewModel;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SolarSystemAdapter extends RecyclerView.Adapter<SolarSystemAdapter.SolarSystemViewHolder> {
+/**
+ * the adapter for the list of SolarSytems display (recycler view)
+ */
+public class SolarSystemAdapter
+        extends RecyclerView.Adapter<SolarSystemAdapter.SolarSystemViewHolder> {
 
     /** a copy of the list of solar system in the model */
     private List<SolarSystem> solarSystemList = new ArrayList<>();
@@ -56,7 +59,8 @@ public class SolarSystemAdapter extends RecyclerView.Adapter<SolarSystemAdapter.
 
         Log.d("APP", "Binding: " + position + " " + solarSystemList.get(position));
 
-        String solarSystemInfo = solarSystem.getName() + " Dist: " + viewModel.getDistanceTo(solarSystem);
+        String solarSystemInfo = solarSystem.getName() + " Dist: " +
+                viewModel.getDistanceTo(solarSystem);
 
         holder.solarSystemIndex.setText(solarSystemInfo);
 
@@ -67,7 +71,8 @@ public class SolarSystemAdapter extends RecyclerView.Adapter<SolarSystemAdapter.
         return solarSystemList.size();
     }
 
-    public void setSolarSystemList(List<SolarSystem> solarSystems) {
+    @SuppressWarnings("AssignmentOrReturnOfFieldWithMutableType")
+    void setSolarSystemList(List<SolarSystem> solarSystems) {
         solarSystemList = solarSystems;
         notifyDataSetChanged();
     }
@@ -77,9 +82,9 @@ public class SolarSystemAdapter extends RecyclerView.Adapter<SolarSystemAdapter.
      * This is a holder for the widgets associated with a single entry in the list of SolarSystems
      */
     class SolarSystemViewHolder extends RecyclerView.ViewHolder {
-        private TextView solarSystemIndex;
+        private final TextView solarSystemIndex;
 
-        public SolarSystemViewHolder(@NonNull View solarSystemView) {
+        SolarSystemViewHolder(@NonNull View solarSystemView) {
             super(solarSystemView);
             solarSystemIndex = solarSystemView.findViewById(R.id.text_solar_system_id);
 
@@ -89,7 +94,7 @@ public class SolarSystemAdapter extends RecyclerView.Adapter<SolarSystemAdapter.
                 public void onClick(View view) {
                     int position = getAdapterPosition();
 
-                    if (listener != null && position != RecyclerView.NO_POSITION) {
+                    if ((listener != null) && (position != RecyclerView.NO_POSITION)) {
                         listener.onSolarSystemClicked(solarSystemList.get(position));
                     }
                 }
@@ -97,15 +102,22 @@ public class SolarSystemAdapter extends RecyclerView.Adapter<SolarSystemAdapter.
 
         }
 
-        public void setText(String string) {
+        public void setText(CharSequence string) {
             solarSystemIndex.setText(string);
         }
     }
 
+    /**
+     * passes on the current solar system
+     */
     public interface OnSolarSystemClickListener {
         void onSolarSystemClicked(SolarSystem solarSystem);
     }
 
+    /**
+     * Sets the listener for the adapter
+     * @param listener  the listener to set to
+     */
     public void setOnSolarSystemClickListener(OnSolarSystemClickListener listener) {
         this.listener = listener;
     }

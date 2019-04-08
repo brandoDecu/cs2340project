@@ -4,10 +4,8 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
 import android.widget.Toast;
 
 import com.theLads.spacetrader.R;
@@ -18,10 +16,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * displays a list of galaxies to travel to
+ */
 public class GalaxyActivity extends AppCompatActivity {
 
-    /** a key for passing data */
-    public static final String SOLAR_SYSTEM_DATA = "SOLAR_SYSTEM_DATA";
+// --Commented out by Inspection START (4/5/2019 4:28 PM):
+//    /** a key for passing data */
+//    public static final String SOLAR_SYSTEM_DATA = "SOLAR_SYSTEM_DATA";
+// --Commented out by Inspection STOP (4/5/2019 4:28 PM)
     /** an int for the request code */
     private static final int EDIT_REQUEST = 5;
     /** our data model */
@@ -58,7 +61,7 @@ public class GalaxyActivity extends AppCompatActivity {
     @Override
     public void onResume() {
         super.onResume();
-        List<SolarSystem> solarSystems = new ArrayList<SolarSystem>(viewModel.getSolarSystems());
+        List<SolarSystem> solarSystems = new ArrayList<>(viewModel.getSolarSystems());
         solarSystems.remove(viewModel.getCurrentSolarSystem());
         adapter.setSolarSystemList(solarSystems);
 
@@ -69,7 +72,7 @@ public class GalaxyActivity extends AppCompatActivity {
                     viewModel.travelTo(solarSystem);
                     Random r = new Random();
                     int highRandom = r.nextInt(100);
-                    if (highRandom <= 4) {
+                    if (highRandom <= 5) {
                         Intent i = new Intent(GalaxyActivity.this, PoliceRandomActivity.class);
                         startActivity(i);
                         finish();
