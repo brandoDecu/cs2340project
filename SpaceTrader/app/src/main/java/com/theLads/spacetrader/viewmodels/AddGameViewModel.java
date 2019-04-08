@@ -48,5 +48,6 @@ public class AddGameViewModel extends AndroidViewModel {
         Game game = new Game(diff, player, galaxy);
         Log.d("Game Made: ", player.toString());
         interactor.addGame(game);
+        player.setSolarSystem(galaxy.getCurrentSolarSystem());
     }
 }

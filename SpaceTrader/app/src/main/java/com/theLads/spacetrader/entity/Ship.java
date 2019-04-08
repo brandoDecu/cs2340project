@@ -62,7 +62,7 @@ public class Ship implements Serializable {
      * @param item item to get quantity of
      * @return quantity of item on ship
      */
-    int getQuantityOf(ItemType item) {
+    public int getQuantityOf(ItemType item) {
         return cargoQuantities.get(item.ordinal());
     }
 
@@ -71,7 +71,7 @@ public class Ship implements Serializable {
      * @param item item to set
      * @param quantity quantity to item to add to ship
      */
-    void setItemQuantity(ItemType item, int quantity) {
+    public void setItemQuantity(ItemType item, int quantity) {
         cargoQuantities.set(item.ordinal(), quantity);
     }
 

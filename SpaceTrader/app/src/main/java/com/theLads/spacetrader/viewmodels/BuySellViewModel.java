@@ -40,7 +40,12 @@ public class BuySellViewModel extends AndroidViewModel {
 //    }
 // --Commented out by Inspection STOP (4/1/2019 10:58 AM)
 
-    private double getCredits() { return interactor.getCredits();}
+
+    /**
+     * gets credits
+     * @return credits
+     */
+    public double getCredits() { return interactor.getCredits();}
 
 
     /**
@@ -49,6 +54,14 @@ public class BuySellViewModel extends AndroidViewModel {
      */
     public List<Integer> getMarketQuantities() {
         return interactor.getMarketQuantities();
+    }
+
+    /**
+     * gets market prices
+     * @return market prices
+     */
+    public List<Double> getMarketPrices() {
+        return interactor.getMarketPrices();
     }
 
     /**

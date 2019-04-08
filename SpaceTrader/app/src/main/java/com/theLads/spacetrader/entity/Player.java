@@ -36,6 +36,9 @@ public class Player implements Serializable {
 
     private GameDifficulty difficulty;
 
+    private SolarSystem solarSystem;
+
+
     /**
      *
      * @param nam name of Character
@@ -54,7 +57,15 @@ public class Player implements Serializable {
 
         final int skill_total = 16;
         int total = pilot + fighter + trader + engineer;
-        this.credits = 1000 + (100 * (skill_total - total));
+        this.credits = 1000;
+
+        if (skill_total - total > 0) {
+            this.credits += 100 * (skill_total - total);
+        }
+        if (total > skill_total) {
+            throw new IllegalArgumentException("Total skill points for player creation will be " +
+                    "less than or equal to 16.");
+        }
     }
 
     /**
@@ -114,6 +125,10 @@ public class Player implements Serializable {
      * @return player's fuel
      */
     int getFuel() {return ship.getFuel();}
+
+    public void setFuel(int fuel) {
+        ship.setItemQuantity(ItemType.FUEL, fuel);
+    }
 
 
     /**
@@ -192,9 +207,14 @@ public class Player implements Serializable {
      * method to use fuel to travel to planet
      * @param fuel player fuel
      */
-    void useFuel(int fuel) {
+    public void useFuel(int fuel) {
         ship.setItemQuantity(ItemType.FUEL, ship.getQuantityOf(ItemType.FUEL) - fuel);
     }
+
+    public void setSolarSystem(SolarSystem solarSystem) {
+        this.solarSystem = solarSystem;
+    }
+
 
 
 
