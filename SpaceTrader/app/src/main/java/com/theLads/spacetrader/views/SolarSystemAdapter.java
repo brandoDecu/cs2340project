@@ -21,7 +21,8 @@ import java.util.List;
 /**
  * the adapter for the list of SolarSytems display (recycler view)
  */
-public class SolarSystemAdapter extends RecyclerView.Adapter<SolarSystemAdapter.SolarSystemViewHolder> {
+public class SolarSystemAdapter
+        extends RecyclerView.Adapter<SolarSystemAdapter.SolarSystemViewHolder> {
 
     /** a copy of the list of solar system in the model */
     private List<SolarSystem> solarSystemList = new ArrayList<>();
@@ -58,7 +59,8 @@ public class SolarSystemAdapter extends RecyclerView.Adapter<SolarSystemAdapter.
 
         Log.d("APP", "Binding: " + position + " " + solarSystemList.get(position));
 
-        String solarSystemInfo = solarSystem.getName() + " Dist: " + viewModel.getDistanceTo(solarSystem);
+        String solarSystemInfo = solarSystem.getName() + " Dist: " +
+                viewModel.getDistanceTo(solarSystem);
 
         holder.solarSystemIndex.setText(solarSystemInfo);
 

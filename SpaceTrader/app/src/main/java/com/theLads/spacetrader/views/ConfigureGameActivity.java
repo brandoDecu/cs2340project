@@ -85,33 +85,39 @@ public class ConfigureGameActivity extends AppCompatActivity {
         try {
             name = nameField.getText().toString();
         } catch (Exception e) {
-            Toast.makeText(this, "You must write valid numbers in each skill field", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "You must write valid numbers in each skill field",
+                    Toast.LENGTH_LONG).show();
         }
 
         try {
             engineerS = Integer.parseInt(editEngineerSkill.getText().toString());
         } catch (Exception e) {
-            Toast.makeText(this, "You must write valid numbers in each skill field", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "You must write valid numbers in each skill field",
+                    Toast.LENGTH_LONG).show();
         }
         try {
             tradeS = Integer.parseInt(editTraderSkill.getText().toString());
         } catch (Exception e) {
-            Toast.makeText(this, "You must write valid numbers in each skill field", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "You must write valid numbers in each skill field",
+                    Toast.LENGTH_LONG).show();
         }
         try {
             pilotS = Integer.parseInt(editPilotSkill.getText().toString());
         } catch (Exception e) {
-            Toast.makeText(this, "You must write valid numbers in each skill field", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "You must write valid numbers in each skill field",
+                    Toast.LENGTH_LONG).show();
         }
         try {
             fightS = Integer.parseInt(editFighterSkill.getText().toString());
         } catch (Exception e) {
-            Toast.makeText(this, "You must write valid numbers in each skill field", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "You must write valid numbers in each skill field",
+                    Toast.LENGTH_LONG).show();
         }
         try {
             total = engineerS + tradeS + pilotS + fightS;
         } catch (Exception e) {
-            Toast.makeText(this, "You must write valid numbers in each skill field", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "You must write valid numbers in each skill field",
+                    Toast.LENGTH_LONG).show();
         }
 
 
@@ -119,14 +125,17 @@ public class ConfigureGameActivity extends AppCompatActivity {
             Toast.makeText(this, "Name cannot be empty", Toast.LENGTH_LONG).show();
 
         } else if ((engineerS < 0) || (tradeS < 0) || (pilotS < 0) || (fightS < 0)) {
-            Toast.makeText(this, "Skill points cannot be negative", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Skill points cannot be negative",
+                    Toast.LENGTH_LONG).show();
 
 
         } else if (total <= SKILL_LIMIT) {
             Toast.makeText(this, "Character created!", Toast.LENGTH_LONG).show();
             if (total < SKILL_LIMIT) {
                 int bonusCreds = (SKILL_LIMIT - total) * 100;
-                Toast.makeText(this, String.format("Character created with %d extra credits!", bonusCreds), Toast.LENGTH_LONG).show();
+                Toast.makeText(this,
+                        String.format("Character created with %d extra credits!", bonusCreds),
+                        Toast.LENGTH_LONG).show();
             }
             viewModel.createGame(difficulty, name, pilotS, fightS, tradeS, engineerS);
             Log.d("malleable", "malleable");
@@ -137,7 +146,8 @@ public class ConfigureGameActivity extends AppCompatActivity {
             this.startActivity(i);
             this.finish();
         } else {
-            Toast.makeText(this, "Skill points must add up to 16 or less", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Skill points must add up to 16 or less",
+                    Toast.LENGTH_LONG).show();
         }
 
 

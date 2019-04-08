@@ -105,6 +105,7 @@ public class SolarSystem implements Serializable {
     @SuppressLint("DefaultLocale")
     @Override
     public String toString() {
-        return String.format("Solar System: %s, Location: (%d, %d)", planet.getName(), xCoord, yCoord);
+        return String.format("Solar System: %s, Location: (%d, %d)",
+                planet.getName(), xCoord, yCoord);
     }
 }

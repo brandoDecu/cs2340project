@@ -79,8 +79,10 @@ public class TravelViewModel extends AndroidViewModel {
     public void bustedByPolice() {
         player = getCurrentPlayer();
         player.setCredits(player.getCredits()*0.5);
-        player.sellItem(ItemType.FIREARMS, player.getCargoQuantities().get(ItemType.FIREARMS.ordinal()), 0);
-        player.sellItem(ItemType.NARCOTICS, player.getCargoQuantities().get(ItemType.NARCOTICS.ordinal()), 0);
+        player.sellItem(ItemType.FIREARMS,
+                player.getCargoQuantities().get(ItemType.FIREARMS.ordinal()), 0);
+        player.sellItem(ItemType.NARCOTICS,
+                player.getCargoQuantities().get(ItemType.NARCOTICS.ordinal()), 0);
     }
 
     /**
@@ -102,7 +104,9 @@ public class TravelViewModel extends AndroidViewModel {
      * @param solarSystem   the desired SolarSystem to travel to
      * @return              the distance from current SolarSystem to desired SolarSystem
      */
-    public int getDistanceTo(SolarSystem solarSystem) {return interactor.getDistanceTo(solarSystem);}
+    public int getDistanceTo(SolarSystem solarSystem) {
+        return interactor.getDistanceTo(solarSystem);
+    }
 
     /**
      * gets the current SolarSystem

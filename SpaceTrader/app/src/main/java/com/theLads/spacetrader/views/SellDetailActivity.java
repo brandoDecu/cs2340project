@@ -47,7 +47,8 @@ public class SellDetailActivity extends AppCompatActivity {
         TextView creditsTag = findViewById(R.id.creditsTag);
 
         //get values from model
-        item = ItemType.valueOf(Objects.requireNonNull(getIntent().getExtras()).getString("ITEM_DATA"));
+        item = ItemType.valueOf(
+                Objects.requireNonNull(getIntent().getExtras()).getString("ITEM_DATA"));
         supply = Model.getInstance().getGameInteractor().getCargoQuantities().get(item.ordinal());
         price = Model.getInstance().getGameInteractor().getMarketPrices().get(item.ordinal());
         Double credits = Model.getInstance().getGameInteractor().getCredits();
@@ -77,7 +78,8 @@ public class SellDetailActivity extends AppCompatActivity {
         if ((quantity <= supply) && (quantity > 0)) {
             try {
                 viewModel.sellItem(item, quantity, price);
-                Toast.makeText(this, String.format("%d %s sold", quantity, item.toString()), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, String.format("%d %s sold",
+                        quantity, item.toString()), Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(SellDetailActivity.this, BuySellActivity.class);
                 startActivity(intent);
                 finish();
@@ -86,7 +88,8 @@ public class SellDetailActivity extends AppCompatActivity {
             }
 
         } else if (quantity > supply){
-            Toast.makeText(this, String.format("You only have %d %ss", supply, item.toString()), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, String.format("You only have %d %ss",
+                    supply, item.toString()), Toast.LENGTH_LONG).show();
         } else {
             Toast.makeText(this, "Please enter a valid quantity to sell", Toast.LENGTH_LONG).show();
         }

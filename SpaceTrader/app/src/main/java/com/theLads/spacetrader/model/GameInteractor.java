@@ -123,7 +123,9 @@ public class GameInteractor extends Interactor {
      * gets a list of the available SolarSystems distances
      * @return a list of the available SolarSystems distances
      */
-    public List<Integer> getSolarSystemDistances() {return getCurrentGame().getSolarSystemDistances();}
+    public List<Integer> getSolarSystemDistances() {
+        return getCurrentGame().getSolarSystemDistances();
+    }
 
     /**
      * used when player travels to another SolarSystem
@@ -150,5 +152,7 @@ public class GameInteractor extends Interactor {
      * @param solarSystem SolarSystem used to calculate distance from current SolarSystem
      * @return the distance between the solarSystem and the current one
      */
-    public int getDistanceTo(SolarSystem solarSystem) {return getCurrentGame().getDistanceTo(solarSystem);}
+    public int getDistanceTo(SolarSystem solarSystem) {
+        return getCurrentGame().getDistanceTo(solarSystem);
+    }
 }
