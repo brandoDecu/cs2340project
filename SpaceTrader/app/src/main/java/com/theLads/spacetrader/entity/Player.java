@@ -59,7 +59,7 @@ public class Player implements Serializable {
         int total = pilot + fighter + trader + engineer;
         this.credits = 1000;
 
-        if (skill_total - total > 0) {
+        if ((skill_total - total) > 0) {
             this.credits += 100 * (skill_total - total);
         }
         if (total > skill_total) {

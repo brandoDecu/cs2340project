@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class GameInteractor {
 
-    private Repository myRepository;
+    private final Repository myRepository;
 
     /**
      * GameInteractor constructor
