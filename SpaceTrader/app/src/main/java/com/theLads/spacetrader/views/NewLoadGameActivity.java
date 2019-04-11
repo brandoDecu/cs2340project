@@ -33,9 +33,9 @@ public class NewLoadGameActivity extends AppCompatActivity{
         music.setLooping(true);
         setTitle("");
         Model model = Model.getInstance();
-        File file = new File(this.getFilesDir(), Model.DEFAULT_BINARY_FILE_NAME);
-        Log.d("Model", this.getFilesDir().getAbsolutePath());
-        binaryExists = model.loadBinaryRepository(file);
+        //File file = new File(this.getFilesDir(), Model.DEFAULT_BINARY_FILE_NAME);
+        //Log.d("Model", this.getFilesDir().getAbsolutePath());
+        //binaryExists = model.loadBinaryRepository(file);
         viewModel = ViewModelProviders.of(this).get(SaveGameViewModel.class);
     }
 

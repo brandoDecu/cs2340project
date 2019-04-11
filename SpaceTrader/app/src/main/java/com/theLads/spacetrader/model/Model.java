@@ -82,13 +82,13 @@ public final class Model {
             success = false;
         }
 
-        if (myRepository == null || myRepository.getCurrentGame().getPlayer().getName() == null) {
-            Log.d("Model", "Null");
+        //if (myRepository == null || myRepository.getCurrentGame().getPlayer().getName() == null) {
+        //    Log.d("Model", "Null");
 
-            success = false;
-        } else {
-            Log.d("Model", myRepository.getCurrentGame().getPlanetName());
-        }
+        //    success = false;
+        //} else {
+         //   Log.d("Model", myRepository.getCurrentGame().getPlanetName());
+        //}
 
         Log.d("Model", "hello");
 
