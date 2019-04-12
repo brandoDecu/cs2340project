@@ -17,7 +17,7 @@ import com.theLads.spacetrader.entity.enums.ItemType;
  * Normally this would pass through to our ROOM (database) objects.   To keep this assignment
  * simple, we are just using in-memory storage
  */
-class Repository implements Serializable {
+public class Repository implements Serializable {
 
     /***
      * This provides a mechanism to generate simple unique numbers to be used as
@@ -98,7 +98,10 @@ class Repository implements Serializable {
         }
         Log.d("APP", "Game not found with id = " + g.getGameId());
     }
-    
+
+    public void setCurrentGame(Game currentGame) {
+        this.currentGame = currentGame;
+    }
 
     /**
      * gets the name of the Planet

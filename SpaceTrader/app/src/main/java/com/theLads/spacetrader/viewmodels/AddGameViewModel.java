@@ -12,6 +12,8 @@ import com.theLads.spacetrader.entity.Player;
 import com.theLads.spacetrader.model.GameInteractor;
 import com.theLads.spacetrader.model.Model;
 
+import java.util.List;
+
 /**
  * The version of ViewModel for adding a game
  */
@@ -26,6 +28,18 @@ public class AddGameViewModel extends AndroidViewModel {
     public AddGameViewModel(@NonNull Application application) {
         super(application);
         interactor = Model.getInstance().getGameInteractor();
+    }
+
+    /**
+     * Returns a list of games
+     * @return a list of games
+     */
+    public List<Game> getAllGames() {
+        return Model.getInstance().getMyRepository().getAllGames();
+    }
+
+    public void setCurrentGame(Game game) {
+        Model.getInstance().getMyRepository().setCurrentGame(game);
     }
 
 

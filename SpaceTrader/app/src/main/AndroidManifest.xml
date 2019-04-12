@@ -48,6 +48,15 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".views.GameSelectActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
         <activity android:name=".views.BuyDetailActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -66,6 +75,7 @@
         <activity android:name=".views.NewLoadGameActivity" />
         <activity android:name=".views.MarketPlaceActivity" />
         <activity android:name=".views.PoliceRandomActivity" />
+
 
 
     </application>

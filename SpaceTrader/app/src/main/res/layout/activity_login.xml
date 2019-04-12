@@ -36,6 +36,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="12dp"
         android:layout_marginBottom="12dp"
+        android:onClick="onLoadGamePressed"
         android:text="@string/loadButton" />
 
     <Button

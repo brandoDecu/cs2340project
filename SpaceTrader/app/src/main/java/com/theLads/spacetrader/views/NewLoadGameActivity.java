@@ -50,6 +50,16 @@ public class NewLoadGameActivity extends AppCompatActivity{
     }
 
     /**
+     * starts ConfigureGameActivity intent and finishes current intent
+     * @param view the current view
+     */
+    public void onLoadGamePressed(View view) {
+        Intent i = new Intent(this, GameSelectActivity.class);
+        this.startActivity(i);
+        //this.finish();
+    }
+
+    /**
      * starts MarketPlaceActivity intent with the saved game data and finishes current intent
      * @param view  the current view
      */

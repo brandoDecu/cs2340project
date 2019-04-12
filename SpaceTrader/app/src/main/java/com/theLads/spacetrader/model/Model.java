@@ -33,7 +33,13 @@ public final class Model {
      */
     public static Model getInstance() { return instance; }
 
-
+    /**
+     * gets the instance of the Repository
+     * @return the instance of the Repository
+     */
+    public Repository getMyRepository() {
+        return myRepository;
+    }
 
     /**
      * Make a new Model instance
