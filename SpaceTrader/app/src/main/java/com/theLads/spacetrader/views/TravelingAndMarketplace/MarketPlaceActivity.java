@@ -1,4 +1,4 @@
-package com.theLads.spacetrader.views;
+package com.theLads.spacetrader.views.TravelingAndMarketplace;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
@@ -10,6 +10,8 @@ import android.widget.TextView;
 import com.theLads.spacetrader.R;
 import com.theLads.spacetrader.model.Model;
 import com.theLads.spacetrader.viewmodels.TravelViewModel;
+import com.theLads.spacetrader.views.BuySell.BuySellActivity;
+import com.theLads.spacetrader.views.TravelingAndMarketplace.GalaxyActivity;
 
 import java.io.File;
 

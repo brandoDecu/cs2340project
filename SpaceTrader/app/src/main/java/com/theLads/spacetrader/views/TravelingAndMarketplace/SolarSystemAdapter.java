@@ -1,4 +1,4 @@
-package com.theLads.spacetrader.views;
+package com.theLads.spacetrader.views.TravelingAndMarketplace;
 
 import android.app.Activity;
 import android.arch.lifecycle.ViewModelProviders;
@@ -72,7 +72,7 @@ public class SolarSystemAdapter
     }
 
     @SuppressWarnings("AssignmentOrReturnOfFieldWithMutableType")
-    void setSolarSystemList(List<SolarSystem> solarSystems) {
+    public void setSolarSystemList(List<SolarSystem> solarSystems) {
         solarSystemList = solarSystems;
         notifyDataSetChanged();
     }
@@ -81,7 +81,7 @@ public class SolarSystemAdapter
     /**
      * This is a holder for the widgets associated with a single entry in the list of SolarSystems
      */
-    class SolarSystemViewHolder extends RecyclerView.ViewHolder {
+    public class SolarSystemViewHolder extends RecyclerView.ViewHolder {
         private final TextView solarSystemIndex;
 
         SolarSystemViewHolder(@NonNull View solarSystemView) {

@@ -1,9 +1,8 @@
-package com.theLads.spacetrader.views;
+package com.theLads.spacetrader.views.StartGame;
 
 import android.annotation.SuppressLint;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -14,9 +13,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.theLads.spacetrader.R;
-import com.theLads.spacetrader.entity.Game;
 import com.theLads.spacetrader.entity.enums.GameDifficulty;
-import com.theLads.spacetrader.entity.Player;
 import com.theLads.spacetrader.viewmodels.AddGameViewModel;
 
 /**
@@ -75,14 +72,8 @@ public class ConfigureGameActivity extends AppCompatActivity {
         int fightS = 0;
         int total = 0;
 
-        String name = "";
+        String name = nameField.getText().toString();
 
-        try {
-            name = nameField.getText().toString();
-        } catch (Exception e) {
-            Toast.makeText(this, "You must write valid numbers in each skill field",
-                    Toast.LENGTH_LONG).show();
-        }
 
         try {
             engineerS = Integer.parseInt(editEngineerSkill.getText().toString());
@@ -116,7 +107,7 @@ public class ConfigureGameActivity extends AppCompatActivity {
         }
 
 
-        if ("".equals(name)) {
+        if (name.equals("")) {
             Toast.makeText(this, "Name cannot be empty", Toast.LENGTH_LONG).show();
 
         } else if ((engineerS < 0) || (tradeS < 0) || (pilotS < 0) || (fightS < 0)) {

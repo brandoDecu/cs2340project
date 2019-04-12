@@ -1,4 +1,4 @@
-package com.theLads.spacetrader.views;
+package com.theLads.spacetrader.views.BuySell;
 
 import android.annotation.SuppressLint;
 import android.arch.lifecycle.ViewModelProviders;

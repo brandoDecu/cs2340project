@@ -1,4 +1,4 @@
-package com.theLads.spacetrader.views;
+package com.theLads.spacetrader.views.BuySell;
 
 import android.support.annotation.NonNull;
 import android.util.Log;

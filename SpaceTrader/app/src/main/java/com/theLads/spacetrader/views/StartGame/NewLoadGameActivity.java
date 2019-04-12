@@ -1,4 +1,4 @@
-package com.theLads.spacetrader.views;
+package com.theLads.spacetrader.views.StartGame;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
@@ -6,12 +6,16 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
 import com.theLads.spacetrader.R;
 import com.theLads.spacetrader.model.Model;
 import com.theLads.spacetrader.viewmodels.SaveGameViewModel;
+import com.theLads.spacetrader.views.TravelingAndMarketplace.MarketPlaceActivity;
+
+import java.io.File;
 
 /**
  * displays the new game/load screen
@@ -30,9 +34,9 @@ public class NewLoadGameActivity extends AppCompatActivity{
         music.setLooping(true);
         setTitle("");
         Model model = Model.getInstance();
-        //File file = new File(this.getFilesDir(), Model.DEFAULT_BINARY_FILE_NAME);
-        //Log.d("Model", this.getFilesDir().getAbsolutePath());
-        //binaryExists = model.loadBinaryRepository(file);
+        File file = new File(this.getFilesDir(), Model.DEFAULT_BINARY_FILE_NAME);
+        Log.d("Model", this.getFilesDir().getAbsolutePath());
+        binaryExists = model.loadBinaryRepository(file);
         viewModel = ViewModelProviders.of(this).get(SaveGameViewModel.class);
     }
 
@@ -43,7 +47,7 @@ public class NewLoadGameActivity extends AppCompatActivity{
     public void onNewGamePressed(View view) {
         Intent i = new Intent(this, ConfigureGameActivity.class);
         this.startActivity(i);
-        //this.finish();
+        /* this.finish(); */
     }
 
     /**

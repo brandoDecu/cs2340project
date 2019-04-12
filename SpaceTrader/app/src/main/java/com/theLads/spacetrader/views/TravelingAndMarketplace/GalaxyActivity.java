@@ -1,4 +1,4 @@
-package com.theLads.spacetrader.views;
+package com.theLads.spacetrader.views.TravelingAndMarketplace;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
