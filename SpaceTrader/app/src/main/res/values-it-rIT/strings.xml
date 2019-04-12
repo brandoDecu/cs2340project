@@ -6,4 +6,27 @@
     <string name="loadButton">Carica Gioco</string>
     <string name="newButton">Nuovo Gioco</string>
     <string name="settings">Impostazioni</string>
+    <string name="mainTitle" translatable="false">Inserisci Informazioni Giocatore</string>
+    <string name="story0">Benvenuto Space Trader!</string>
+    <string name="newGameStart">Inizia</string>
+    <string name="shopItem" translatable="false">Bene:</string>
+    <string name="shopPrice" translatable="false">Prezzo:</string>
+    <string name="playerCredits">Tuoi soldi:</string>
+    <string name="storeSupply">Nel Negozio:</string>
+    <string name="buy_detail_button" translatable="false">Compra</string>
+    <string name="buy_quantity" translatable="false">Quantità</string>
+    <string name="buy_activity_desc">Quanti ne vuoi comprare?</string>
+    <string name="sellPrice" translatable="false">Prezzo Vendita:</string>
+    <string name="cargoSupply">Sulla Nave:</string>
+    <string name="sell_detail_button" translatable="false">Vendi</string>
+    <string name="sell_activity_desc" translatable="false">Quanti ne vuoi vendere?</string>
+    <string name="choose_an_item" translatable="false">Scegli un bene:</string>
+    <string name="choose_a_solarsystem" translatable="false">Scegli un Sistema Solare:</string>
+    <string name="travel">Viaggia</string>
+    <string name="buy">Compra</string>
+    <string name="sell">Vendi</string>
+    <string name="busted_by_the_police">Beccato dalla Polizia!</string>
+    <string name="as_a_bribe_to_stay_of_your_back_you_pay_a_fine_of_50_of_your_credits_and_give_up_your_firearms_and_narcotics">Corrompi il polizziotto e paga una multa del 50% dei tuoi soldi e consegna le armi da fuoco e i narcotici</string>
+    <string name="accept_deal">Accetta</string>
+    <string name="choose_a_game">Scegli un Gioco</string>
 </resources>
