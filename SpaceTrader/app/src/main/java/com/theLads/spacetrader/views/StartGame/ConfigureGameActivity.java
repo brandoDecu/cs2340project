@@ -1,9 +1,8 @@
-package com.theLads.spacetrader.views;
+package com.theLads.spacetrader.views.StartGame;
 
 import android.annotation.SuppressLint;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -14,9 +13,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.theLads.spacetrader.R;
-import com.theLads.spacetrader.entity.Game;
 import com.theLads.spacetrader.entity.enums.GameDifficulty;
-import com.theLads.spacetrader.entity.Player;
 import com.theLads.spacetrader.viewmodels.AddGameViewModel;
 
 /**

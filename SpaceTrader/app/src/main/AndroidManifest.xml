@@ -12,7 +12,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
 
-        <activity android:name=".views.SplashActivity"
+        <activity android:name=".views.StartGame.SplashActivity"
             android:theme="@style/SplashTheme"
             android:exported="true">
             <intent-filter>
@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".views.ConfigureGameActivity">
+        <activity android:name=".views.StartGame.ConfigureGameActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,18 +29,18 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".views.GalaxyActivity"
+        <activity android:name=".views.TravelingAndMarketplace.GalaxyActivity"
             android:exported="true">
 
         </activity>
 
-        <activity android:name=".views.IntroStoryActivity"
+        <activity android:name=".views.StartGame.IntroStoryActivity"
             android:exported="true">
 
         </activity>
 
 
-        <activity android:name=".views.BuySellActivity">
+        <activity android:name=".views.BuySell.BuySellActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -48,7 +48,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".views.GameSelectActivity">
+        <activity android:name=".views.StartGame.GameSelectActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -57,7 +57,7 @@
         </activity>
 
 
-        <activity android:name=".views.BuyDetailActivity">
+        <activity android:name=".views.BuySell.BuyDetailActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -65,16 +65,16 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".views.SellDetailActivity">
+        <activity android:name=".views.BuySell.SellDetailActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".views.NewLoadGameActivity" />
-        <activity android:name=".views.MarketPlaceActivity" />
-        <activity android:name=".views.PoliceRandomActivity" />
+        <activity android:name=".views.StartGame.NewLoadGameActivity" />
+        <activity android:name=".views.TravelingAndMarketplace.MarketPlaceActivity" />
+        <activity android:name=".views.TravelingAndMarketplace.PoliceRandomActivity" />
 
 
 

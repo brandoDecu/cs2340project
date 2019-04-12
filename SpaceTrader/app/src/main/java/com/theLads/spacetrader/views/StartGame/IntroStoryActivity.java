@@ -1,4 +1,4 @@
-package com.theLads.spacetrader.views;
+package com.theLads.spacetrader.views.StartGame;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.theLads.spacetrader.R;
+import com.theLads.spacetrader.views.TravelingAndMarketplace.MarketPlaceActivity;
 
 /**
  * displays the introductory story

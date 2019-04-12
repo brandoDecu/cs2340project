@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.BuySellActivity"
+    tools:context=".views.BuySell.BuySellActivity"
     android:background="@drawable/buy_activity"
     tools:ignore="Overdraw">
 

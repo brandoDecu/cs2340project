@@ -1,4 +1,4 @@
-package com.theLads.spacetrader.views;
+package com.theLads.spacetrader.views.StartGame;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.theLads.spacetrader.R;
 import com.theLads.spacetrader.model.Model;
 import com.theLads.spacetrader.viewmodels.SaveGameViewModel;
+import com.theLads.spacetrader.views.TravelingAndMarketplace.MarketPlaceActivity;
 
 /**
  * displays the new game/load screen

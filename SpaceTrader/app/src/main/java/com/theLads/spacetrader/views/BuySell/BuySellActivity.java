@@ -1,4 +1,4 @@
-package com.theLads.spacetrader.views;
+package com.theLads.spacetrader.views.BuySell;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import com.theLads.spacetrader.R;
 import com.theLads.spacetrader.entity.enums.ItemType;
 import com.theLads.spacetrader.viewmodels.BuySellViewModel;
+import com.theLads.spacetrader.views.TravelingAndMarketplace.MarketPlaceActivity;
 
 
 /**
