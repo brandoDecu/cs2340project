@@ -73,6 +73,7 @@ public class NewLoadGameActivity extends AppCompatActivity{
             this.startActivity(i);
         } else {
             Toast.makeText(this, "No previous game found", Toast.LENGTH_LONG).show();
+            Log.d("Model", binaryExists.toString());
         }
 
     }
