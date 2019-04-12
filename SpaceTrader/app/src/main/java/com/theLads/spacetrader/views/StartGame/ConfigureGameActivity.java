@@ -72,14 +72,8 @@ public class ConfigureGameActivity extends AppCompatActivity {
         int fightS = 0;
         int total = 0;
 
-        String name = "";
+        String name = nameField.getText().toString();
 
-        try {
-            name = nameField.getText().toString();
-        } catch (Exception e) {
-            Toast.makeText(this, "You must write valid numbers in each skill field",
-                    Toast.LENGTH_LONG).show();
-        }
 
         try {
             engineerS = Integer.parseInt(editEngineerSkill.getText().toString());
@@ -113,7 +107,7 @@ public class ConfigureGameActivity extends AppCompatActivity {
         }
 
 
-        if ("".equals(name)) {
+        if (name.equals("")) {
             Toast.makeText(this, "Name cannot be empty", Toast.LENGTH_LONG).show();
 
         } else if ((engineerS < 0) || (tradeS < 0) || (pilotS < 0) || (fightS < 0)) {
