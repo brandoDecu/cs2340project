@@ -64,5 +64,11 @@
 
     <string name="logo" translatable="false">Logo</string>
     <string name="choose_a_game">Choose a game</string>
+    <string name="enter_player_name">Enter player name</string>
+    <string name="piloting">Piloting:</string>
+    <string name="fighting">Fighting:</string>
+    <string name="engineering">Engineering:</string>
+    <string name="trading">Trading:</string>
+    <string name="difficulty">Difficulty:</string>
 
 </resources>
