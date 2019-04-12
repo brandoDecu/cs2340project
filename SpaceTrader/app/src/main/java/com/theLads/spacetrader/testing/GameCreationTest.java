@@ -15,7 +15,8 @@ import static org.junit.Assert.assertEquals;
 
 /**
  * JUnit class to test the createGame method, which creates an instance of Game, Player, and Galaxy.
- * Tests for correct Player and Game instance created, as well as a non-Null Galaxy.
+ * Tests for correct Player and Game instance created with proper attributes,
+ * as well as a non-Null Galaxy of the correct size.
  *
  * Author: Joshua Martin-Jaffe
  */
@@ -23,7 +24,7 @@ import static org.junit.Assert.assertEquals;
 public class GameCreationTest {
 
         @Test
-        public final void galaxyAttributeAssignment() {
+        public final void galaxyNotNull() {
             Application application = new Application();
             AddGameViewModel viewModel = new AddGameViewModel(application);
             Galaxy galaxy = new Galaxy();
