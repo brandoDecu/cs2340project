@@ -44,10 +44,17 @@ public class AddGameViewModel extends AndroidViewModel {
 
         Player player = new Player(name, pilot, fighter, trader, enginr);
         Galaxy galaxy = new Galaxy();
-        Log.d("Player Made: ", player.toString());
+//        Log.d("Player Made: ", player.toString());
         Game game = new Game(diff, player, galaxy);
-        Log.d("Game Made: ", player.toString());
+//        Log.d("Game Made: ", player.toString());
         interactor.addGame(game);
         player.setSolarSystem(galaxy.getCurrentSolarSystem());
     }
+
+    /**
+     * Returns an instance of interactor used for the AddGameViewModel
+     *
+     * @return interactor
+     */
+    public GameInteractor getInteractor() { return interactor; }
 }

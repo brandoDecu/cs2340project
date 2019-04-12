@@ -32,6 +32,18 @@ public class Game implements Serializable {
     public int getGameId() { return gameId; }
 
     /**
+     * getter method that returns the galaxy
+     * @return galaxy
+     */
+    public Galaxy getGalaxy() { return galaxy; }
+
+    /**
+     * getter method that returns the difficulty
+     * @return difficulty
+     */
+    public GameDifficulty getDifficulty() { return difficulty; }
+
+    /**
      * setter method to set game ID
      * @param id game id
      */
