@@ -89,9 +89,13 @@ public class TravelTest {
         player.setFuel(0);
         //travels to Fitness
         SolarSystem starting = galaxy.getCurrentSolarSystem();
-        int distance = galaxy.getDistanceTo(galaxy.getSolarSystems().get(3));
+        int index = 3;
+        if (galaxy.getSolarSystems().indexOf(starting) == index) {
+            index = 4;
+        }
+        int distance = galaxy.getDistanceTo(galaxy.getSolarSystems().get(index));
         try {
-            game.travelTo(galaxy.getSolarSystems().get(3));
+            game.travelTo(galaxy.getSolarSystems().get(index));
             fail("Expected an IllegalArgumentException to be thrown");
         } catch (IllegalArgumentException anIllegalArgumentException) {
             assertThat(anIllegalArgumentException.getMessage(), is("You need " + distance
