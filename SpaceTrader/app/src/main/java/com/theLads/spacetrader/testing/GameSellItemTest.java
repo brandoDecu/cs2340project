@@ -30,6 +30,7 @@ public class GameSellItemTest {
         }
     }
 
+    @SuppressWarnings("RedundantCast")
     @Test
     public final void sellWithFullCargo(){
         Player testPlayer = new Player("test", 4,4,4,4);

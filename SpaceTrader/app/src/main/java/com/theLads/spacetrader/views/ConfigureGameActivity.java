@@ -36,11 +36,6 @@ public class ConfigureGameActivity extends AppCompatActivity {
 
     private Spinner difficultySpinner;
 
-    private Player player;
-
-    private Game game;
-
-    MediaPlayer music;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
