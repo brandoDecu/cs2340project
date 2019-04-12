@@ -126,6 +126,5 @@ public class Galaxy implements Serializable {
     }
     public void setCurrentSolarSystem(SolarSystem solarSystem){
         currentSolarSystem = solarSystem;
-
     }
 }
