@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Space Trader</string>
+    <string name="accept">Accetta</string>
+    <string name="continueButton">Continua</string>
+    <string name="loadButton">Carica Gioco</string>
+    <string name="newButton">Nuovo Gioco</string>
+    <string name="settings">Impostazioni</string>
+</resources>

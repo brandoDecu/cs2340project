@@ -172,4 +172,8 @@ public class Game implements Serializable {
      */
     public int getDistanceTo(SolarSystem solarSystem) {return galaxy.getDistanceTo(solarSystem);}
 
+    @Override
+    public String toString(){
+        return "Player Name: " + getPlayerName() + ", Credits: " + getCredits();
+    }
 }
