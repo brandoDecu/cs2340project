@@ -6,15 +6,12 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
 import com.theLads.spacetrader.R;
 import com.theLads.spacetrader.model.Model;
 import com.theLads.spacetrader.viewmodels.SaveGameViewModel;
-
-import java.io.File;
 
 /**
  * displays the new game/load screen

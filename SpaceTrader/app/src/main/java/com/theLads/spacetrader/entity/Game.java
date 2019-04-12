@@ -64,7 +64,7 @@ public class Game implements Serializable {
 
     /**
      * Getter method for player name
-     * @return
+     * @return name of player
      */
     public String getPlayerName() {return player.getName();}
 

@@ -3,7 +3,6 @@ package com.theLads.spacetrader.viewmodels;
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.support.annotation.NonNull;
-import android.util.Log;
 
 import com.theLads.spacetrader.entity.Galaxy;
 import com.theLads.spacetrader.entity.Game;
@@ -23,7 +22,7 @@ public class AddGameViewModel extends AndroidViewModel {
 
     /**
      * AddGameViewModel constructor that creates an AddGameViewModel on new game start
-     * @param application
+     * @param application Application to add Game View model
      */
     public AddGameViewModel(@NonNull Application application) {
         super(application);

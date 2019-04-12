@@ -5,21 +5,15 @@ import com.theLads.spacetrader.entity.Game;
 import com.theLads.spacetrader.entity.Player;
 import com.theLads.spacetrader.entity.SolarSystem;
 import com.theLads.spacetrader.entity.enums.GameDifficulty;
-import com.theLads.spacetrader.entity.enums.ItemType;
-import com.theLads.spacetrader.entity.enums.ShipType;
-import com.theLads.spacetrader.model.GameInteractor;
 import com.theLads.spacetrader.viewmodels.TravelViewModel;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
-
 import static junit.framework.TestCase.fail;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.junit.Assert.assertEquals;
 
 /**
  * JUnit class to test the creation of a Player. Tests for correct credit assignment and skill point
