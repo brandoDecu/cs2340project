@@ -12,8 +12,7 @@ import com.theLads.spacetrader.entity.Game;
 import com.theLads.spacetrader.viewmodels.AddGameViewModel;
 
 public class GameSelectActivity extends AppCompatActivity {
-    /** a key for passing data */
-    private static final String GAME_DATA = "GAME_DATA";
+
     /** an int for the request code */
     private static final int EDIT_REQUEST = 5;
     /** our data model */
@@ -21,6 +20,7 @@ public class GameSelectActivity extends AppCompatActivity {
     /** an adapter for the recycler view */
     private GameAdapter adapter;
 
+    @SuppressWarnings("unused")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Intent intent = getIntent();

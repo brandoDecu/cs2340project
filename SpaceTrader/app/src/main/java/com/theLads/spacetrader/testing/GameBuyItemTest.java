@@ -25,7 +25,7 @@ public class GameBuyItemTest {
         testGame.buyItem(ItemType.WATER, 1, ItemType.WATER.getBasePrice());
 
         Assert.assertEquals(980, (int) testPlayer.getCredits());
-        Assert.assertEquals(1, (int) testPlayer.getShip().getQuantityOf(ItemType.WATER));
+        Assert.assertEquals(1, testPlayer.getShip().getQuantityOf(ItemType.WATER));
     }
 
     @Test

@@ -56,6 +56,7 @@ public class GameInteractor {
      * sets the amount of credits a player has
      * @param credits the amount of credits to set a player's wealth to
      */
+    @SuppressWarnings("unused")
     public void setCredits(double credits) {
         Player player = getCurrentGame().getPlayer();
         player.setCredits(credits);
@@ -161,9 +162,6 @@ public class GameInteractor {
         return getCurrentGame().getDistanceTo(solarSystem);
     }
 
-    public void setFuel(int fuel) {
-        getCurrentGame().getPlayer().setFuel(fuel);
-    }
 
 }
 
