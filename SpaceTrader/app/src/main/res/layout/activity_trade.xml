@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".views.BuySell.BuySellActivity"
-    android:background="@drawable/buy_activity"
+    android:background="@drawable/pastel"
     tools:ignore="Overdraw">
 
     <android.support.v7.widget.RecyclerView
