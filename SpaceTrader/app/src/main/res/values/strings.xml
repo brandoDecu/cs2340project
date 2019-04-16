@@ -14,7 +14,7 @@
 
     <!--main/game create-->
     <string name="story0">Welcome Space Trader!</string>
-    <string name="story1" translatable="false">Get ready to embark in a wild adventure that will span the vast infinity of space.\n
+    <string name="story1">Get ready to embark in a wild adventure that will span the vast infinity of space.\n
 
         You will be trading all kinds of goods to all kinds of wacky individuals across the
         cosmos.\n
@@ -62,7 +62,7 @@
 
 
 
-    <string name="logo" translatable="false">Logo</string>
+    <string name="logo">Logo</string>
     <string name="choose_a_game">Choose a game</string>
     <string name="enter_player_name">Enter player name</string>
     <string name="piloting">Piloting:</string>

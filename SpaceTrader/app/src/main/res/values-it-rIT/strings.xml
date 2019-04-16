@@ -29,4 +29,16 @@
     <string name="as_a_bribe_to_stay_of_your_back_you_pay_a_fine_of_50_of_your_credits_and_give_up_your_firearms_and_narcotics">Corrompi il polizziotto e paga una multa del 50% dei tuoi soldi e consegna le armi da fuoco e i narcotici</string>
     <string name="accept_deal">Accetta</string>
     <string name="choose_a_game">Scegli un Gioco</string>
+    <string name="story1" translatable="false">Preparati per una fantastica avventura che percorrera i confini dello spazio.\n
+        Esegurai vendite e acquisti di ogni genere con dei personaggi bizzarri attraverso lo spazio.\n
+        Traendo vantaggio dalle differenze in domanda e offerta tra sistemi solari
+        potrai accumulare una fortuna mai vista e diventare un multimigliardario interplanetare.\n
+        Diventa ricco e viviti la pensione sulla luna</string>
+    <string name="logo">Logo</string>
+    <string name="enter_player_name">Inserisci nome giocatore</string>
+    <string name="piloting">Pilotaggio:</string>
+    <string name="fighting">Combattimento:</string>
+    <string name="engineering">Ingegneria:</string>
+    <string name="trading">Commercio:</string>
+    <string name="difficulty">Difficolta:</string>
 </resources>
