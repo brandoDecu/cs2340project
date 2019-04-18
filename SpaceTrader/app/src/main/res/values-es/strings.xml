@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Space Trader</string>
+    <string name="travel">Viaje</string>
+    <string name="story0">¡Bienvenido a Space Trader!</string>
+    <string name="sell_activity_desc" translatable="false">¿Cúantos te gustariá vender?</string>
+    <string name="sell">Vende</string>
+    <string name="playerCredits">Tus credítos</string>
+    <string name="accept">Acepta</string>
+    <string name="buy">Compre</string>
+    <string name="buy_activity_desc">¿Cuantós te gustaría comprar?</string>
+    <string name="buy_detail_button" translatable="false">Compre</string>
+    <string name="sell_detail_button">Vende</string>
+    <string name="storeSupply">En negocio</string>
+    <string name="choose_a_solarsystem" translatable="false">Elige una Sistema Solar:</string>
+    <string name="engineering">Ingeniero:</string>
+    <string name="enter_player_name">Escribe el nombre del jugador:</string>
+    <string name="continueButton">Continua</string>
+    <string name="trading">Comercio</string>
+    <string name="story1" translatable="false">Prepárate para embarcar en una aventura que abarcará la vasta infinidad del universo. Estarás intercambiando todo tipo de productos a todo tipo de personas extravagantes en todo el cosmos. Al aprovechar las diferencias de oferta y demanda entre los sistemas solares, tiene la oportunidad de amasar una fortuna con el tiempo y convertirse en un multibillonario interplanetario. ¡Acumula una fortuna y retírate a la luna!</string>
+    <string name="shopPrice">Precio:</string>
+    <string name="shopItem" translatable="false">Artículo:</string>
+    <string name="settings">Ajustes</string>
+    <string name="sellPrice" translatable="false">Precio de Venta:</string>
+    <string name="piloting">Pilota:</string>
+    <string name="newGameStart">Comienza</string>
+    <string name="newButton">Nuevo Juego</string>
+    <string name="mainTitle">Escribe la Información de Jugador</string>
+    <string name="loadButton">Juego Anterior</string>
+    <string name="fighting">Combate</string>
+    <string name="difficulty">Dificultad</string>
+    <string name="choose_an_item" translatable="false">Elige un artículo:</string>
+    <string name="choose_a_game">Elige un Juego:</string>
+    <string name="cargoSupply">En Capacidad</string>
+    <string name="buy_quantity">Cantidad</string>
+    <string name="busted_by_the_police">Arrestado por la Policía!</string>
+    <string name="as_a_bribe_to_stay_of_your_back_you_pay_a_fine_of_50_of_your_credits_and_give_up_your_firearms_and_narcotics">Como un soborno para dejarte solo, pagas una multa del 50% de tus créditos y renuncias a tus armas de fuego y narcóticos.</string>
+    <string name="accept_deal">Acepta Trato</string>
+    <string name="logo">Logo</string>
+</resources>

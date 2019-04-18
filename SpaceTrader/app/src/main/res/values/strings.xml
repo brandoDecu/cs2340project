@@ -14,14 +14,7 @@
 
     <!--main/game create-->
     <string name="story0">Welcome Space Trader!</string>
-    <string name="story1" translatable="false">Get ready to embark in a wild adventure that will span the vast infinity of space.\n
-
-        You will be trading all kinds of goods to all kinds of wacky individuals across the
-        cosmos.\n
-        By taking advantage of supply and demand differences between solar systems
-        you have the opportunity to amass a fortune over time and become an interplanetary multibillionaire. \n
-        Amass a fortune and retire to the moon!
-    </string>
+    <string name="story1">"Get ready to embark in a wild adventure that will span the vast infinity of space.           You will be trading all kinds of goods to all kinds of wacky individuals across the         cosmos.          By taking advantage of supply and demand differences between solar systems         you have the opportunity to amass a fortune over time and become an interplanetary multibillionaire.           Amass a fortune and retire to the moon!     "</string>
     <string name="newGameStart">Start</string>
 
     <!--main/buyDetailActivity-->
@@ -62,8 +55,8 @@
 
 
 
-    <string name="logo" translatable="false">Logo</string>
-    <string name="choose_a_game">Choose a game</string>
+    <string name="logo">Logo</string>
+    <string name="choose_a_game">Choose a Game:</string>
     <string name="enter_player_name">Enter player name</string>
     <string name="piloting">Piloting:</string>
     <string name="fighting">Fighting:</string>
